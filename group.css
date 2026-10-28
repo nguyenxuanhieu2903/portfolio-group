@@ -1671,3 +1671,101 @@ body.hud-photo-mode .radar-scanline-layer {
 body.hud-photo-mode #photoModeToast {
   display: flex !important;
 }
+
+
+/* =========================================================
+   17. CỤM NÚT ZOOM, GÓC NHÌN & CHẾ ĐỘ TOÀN CẢNH (PANORAMA HUD)
+   ========================================================= */
+#zoom-in,
+#zoom-out,
+#zoom-reset,
+#btnZoomIn,
+#btnZoomOut,
+#btnZoomReset,
+#btn-orbit-mode,
+#btn-warp-mode,
+#btnModeOrbit,
+#btnModeWarp,
+.zoom-controls,
+.hud-zoom-controls {
+  z-index: 999 !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
+body.panorama-mode header,
+body.panorama-mode footer,
+body.panorama-mode .top-bar,
+body.panorama-mode .bottom-bar,
+body.panorama-mode .hud-top-bar,
+body.panorama-mode .hud-bottom-bar,
+body.panorama-mode .drawer,
+body.panorama-mode #spatialDetailPanel,
+body.panorama-mode .spatial-detail-panel,
+body.panorama-mode #zoom-controls,
+body.panorama-mode .zoom-controls,
+body.panorama-mode #hudZoomControls,
+body.panorama-mode .hud-zoom-controls,
+body.panorama-mode #hudTimeControl,
+body.panorama-mode .hud-time-controller,
+body.panorama-mode .spatial-labels-layer,
+body.panorama-mode .radar-scanline-layer,
+body.panorama-mode .photo-mode-toast {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.panorama-badge {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100000 !important;
+  pointer-events: auto !important;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(8, 12, 24, 0.94);
+  border: 1px solid var(--accent-gold);
+  border-radius: 9999px;
+  padding: 8px 18px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--accent-gold);
+  box-shadow: 0 4px 25px rgba(240, 200, 121, 0.4), 0 0 15px rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  user-select: none;
+  animation: toastFloat 3s ease-in-out infinite alternate;
+}
+
+.panorama-badge.hidden {
+  display: none !important;
+}
+
+.btn-exit-panorama {
+  background: var(--accent-gold);
+  color: #080B16;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 14px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  pointer-events: auto !important;
+}
+
+.btn-exit-panorama:hover,
+.btn-exit-panorama:active {
+  background: #FFFFFF;
+  color: #080B16;
+  transform: scale(1.05);
+}

@@ -32,7 +32,7 @@
   <!-- MÀN HÌNH CHỜ VIỄN TRẮC SCI-FI (SCI-FI ASSET PRELOADER) -->
   <div class="sci-fi-preloader font-mono" id="sciFiPreloader" role="progressbar"
     aria-label="Đang nạp dữ liệu viễn trắc Hệ Mặt Trời">
-    <div class="preloader-content">
+  <div class="preloader-content">
       <div class="preloader-radar">
         <div class="radar-circle radar-circle-outer"></div>
         <div class="radar-circle radar-circle-mid"></div>
@@ -85,11 +85,11 @@
 
       <!-- DUAL-PERSPECTIVE KINEMATIC SWITCH -->
       <div class="hud-perspective-switch font-mono" id="hudPerspectiveSwitch">
-        <button type="button" class="btn-perspective active" id="btnModeOrbit"
+        <button type="button" class="btn-perspective active" id="btn-orbit-mode"
           title="Góc nhìn quỹ đạo 360° bao quát Hệ Mặt Trời [Q]">
           <span class="perspective-dot orbit-dot"></span> [Q] Quỹ đạo 360°
         </button>
-        <button type="button" class="btn-perspective" id="btnModeWarp"
+        <button type="button" class="btn-perspective" id="btn-warp-mode"
           title="Chế độ du hành không gian xuyên quỹ đạo [W]">
           <span class="perspective-dot warp-dot"></span> [W] Du hành siêu tốc
         </button>
@@ -112,7 +112,7 @@
         </button>
 
         <!-- NÚT CHẾ ĐỘ ẢNH / TOÀN CẢNH (CLEAN PHOTO MODE) -->
-        <button type="button" class="hud-action-btn font-mono" id="btnPhotoMode"
+        <button type="button" class="hud-action-btn font-mono" id="btn-panorama"
           title="Ẩn giao diện HUD để chiêm ngưỡng / chụp ảnh toàn cảnh [H]">
           <span aria-hidden="true">📷</span> <span class="btn-text">Toàn cảnh</span> <span
             class="key-shortcut">[H]</span>
@@ -122,7 +122,7 @@
           title="Trở về góc nhìn toàn cảnh Hệ Mặt Trời">
           <span class="btn-text">Hệ Mặt Trời</span> <span class="key-shortcut">[Esc]</span>
         </button>
-        <a href="https://github.com/lenguyennhattruongg/Portfolio" class="hud-action-btn font-mono hud-github-link"
+        <a href="https://github.com/nguyenxuanhieu2903/portfolio-group" class="hud-action-btn font-mono hud-github-link"
           target="_blank" rel="noopener noreferrer">
           GitHub ↗
         </a>
@@ -208,6 +208,14 @@
       </div>
     </aside>
 
+    <!-- BADGE CHẾ ĐỘ TOÀN CẢNH (PANORAMA HUD MODE) -->
+    <div id="panorama-badge" class="panorama-badge hidden" role="status" aria-live="polite">
+      <span class="badge-title">📷 CHẾ ĐỘ TOÀN CẢNH</span>
+      <button id="btn-exit-panorama" class="btn-exit-panorama font-mono" type="button" aria-label="Thoát chế độ toàn cảnh">
+        ✕ Thoát toàn cảnh
+      </button>
+    </div>
+
     <!-- TOAST THÔNG BÁO CHẾ ĐỘ QUAN SÁT TOÀN CẢNH / CHỤP ẢNH -->
     <div class="photo-mode-toast font-mono" id="photoModeToast" role="status" aria-live="polite" hidden>
       <span class="photo-toast-icon">📷</span>
@@ -233,15 +241,15 @@
     </div>
 
     <!-- CỤM ĐIỀU KHIỂN THU PHÓNG VŨ TRỤ (SPATIAL ZOOM HUD CLUSTER) -->
-    <div class="hud-zoom-controls spatial-hud-element font-mono" id="hudZoomControls" role="toolbar"
+    <div class="hud-zoom-controls spatial-hud-element font-mono zoom-controls" id="hudZoomControls" role="toolbar"
       aria-label="Điều khiển thu phóng Hệ Mặt Trời">
-      <button type="button" class="btn-hud-zoom" id="btnZoomIn" title="Phóng to Hệ Mặt Trời (+)">
+      <button type="button" class="btn-hud-zoom" id="zoom-in" title="Phóng to Hệ Mặt Trời (+)">
         <span class="zoom-icon">+</span>
       </button>
-      <button type="button" class="btn-hud-zoom" id="btnZoomOut" title="Thu nhỏ Hệ Mặt Trời (−)">
+      <button type="button" class="btn-hud-zoom" id="zoom-out" title="Thu nhỏ Hệ Mặt Trời (−)">
         <span class="zoom-icon">−</span>
       </button>
-      <button type="button" class="btn-hud-zoom" id="btnZoomReset" title="Trở về toàn cảnh Hệ Mặt Trời (⟲)">
+      <button type="button" class="btn-hud-zoom" id="zoom-reset" title="Trở về toàn cảnh Hệ Mặt Trời (⟲)">
         <span class="zoom-icon">⟲</span>
       </button>
     </div>

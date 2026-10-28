@@ -25,7 +25,7 @@ const MEMBERS_DATA = MEMBERS.map((m, idx) => ({
   role: m.role || 'Thành viên',
   seq: `THÀNH VIÊN // 0${idx + 1}`,
   portfolio: m.portfolio,
-  github: m.github || 'https://github.com/lenguyennhattruongg/Portfolio',
+  github: m.github || 'https://github.com/nguyenxuanhieu2903/portfolio-group',
   avatar: m.avatar || (m.slug === 'le-nguyen-nhat-truong' ? truongAvatarUrl : (m.slug === 'nguyen-xuan-hieu' ? hieuAvatarUrl : null)),
   tags: Array.isArray(m.tags) ? m.tags : []
 }));
@@ -807,23 +807,24 @@ const dom = {
   btnPillScrollLeft: document.getElementById('btnPillScrollLeft'),
   btnPillScrollRight: document.getElementById('btnPillScrollRight'),
   btnHelpGuide: document.getElementById('btnHelpGuide'),
-  btnModeOrbit: document.getElementById('btnModeOrbit'),
-  btnModeWarp: document.getElementById('btnModeWarp'),
+  btnModeOrbit: document.getElementById('btn-orbit-mode') || document.getElementById('btnModeOrbit'),
+  btnModeWarp: document.getElementById('btn-warp-mode') || document.getElementById('btnModeWarp'),
   btnAudioToggle: document.getElementById('btnAudioToggle'),
   audioStatusText: document.getElementById('audioStatusText'),
   btnResetOrbit: document.getElementById('btnResetOrbit'),
-  btnZoomIn: document.getElementById('btnZoomIn'),
-  btnZoomOut: document.getElementById('btnZoomOut'),
-  btnZoomReset: document.getElementById('btnZoomReset'),
+  btnZoomIn: document.getElementById('zoom-in') || document.getElementById('btnZoomIn'),
+  btnZoomOut: document.getElementById('zoom-out') || document.getElementById('btnZoomOut'),
+  btnZoomReset: document.getElementById('zoom-reset') || document.getElementById('btnZoomReset'),
 
   // Các phần tử mới nâng cấp
   preloader: document.getElementById('sciFiPreloader'),
   preloaderPercent: document.getElementById('preloaderPercent'),
   preloaderFillBar: document.getElementById('preloaderFillBar'),
   preloaderItemText: document.getElementById('preloaderItemText'),
-  btnPhotoMode: document.getElementById('btnPhotoMode'),
+  btnPhotoMode: document.getElementById('btn-panorama') || document.getElementById('btnPhotoMode'),
   photoModeToast: document.getElementById('photoModeToast'),
-  btnExitPhoto: document.getElementById('btnExitPhoto'),
+  btnExitPhoto: document.getElementById('btn-exit-panorama') || document.getElementById('btnExitPhoto'),
+  panoramaBadge: document.getElementById('panorama-badge'),
   hudTimeControl: document.getElementById('hudTimeControl'),
   btnTimeToggle: document.getElementById('btnTimeToggle'),
   timePlayIcon: document.getElementById('timePlayIcon'),
@@ -1516,6 +1517,12 @@ class MilkyWaySolarSystemEngine {
 
     // c. Ánh sáng nhẹ bổ trợ góc nhìn camera (Subtle Directional Rim Fill)
     this.cameraFillLight = new THREE.DirectionalLight(0xd1d5db, 0.35);
+    const directionalLight = this.cameraFillLight;
+    directionalLight.castShadow = true;
+    directionalLight.shadow.bias = -0.0001;
+    directionalLight.shadow.normalBias = 0.02;
+    directionalLight.shadow.mapSize.width = 2048;
+    directionalLight.shadow.mapSize.height = 2048;
     this.camera.add(this.cameraFillLight);
 
     // 7. Xây dựng môi trường vũ trụ đa tầng
@@ -1806,6 +1813,8 @@ class MilkyWaySolarSystemEngine {
     this.sunMat = sunMat;
     this.sunMesh = new THREE.Mesh(sunGeom, sunMat);
     this.sunMesh.userData = { isPlanet: true, data: SOLAR_SYSTEM_DATA[0] };
+    this.sunMesh.castShadow = false;
+    this.sunMesh.receiveShadow = false;
     this.scene.add(this.sunMesh);
 
     // Tải ảnh thực tế NASA từ thư mục public/planets/sun.jpg
@@ -2554,8 +2563,13 @@ class MilkyWaySolarSystemEngine {
   /**
    * Bật / Tắt chế độ quan sát toàn cảnh không HUD (Clean Photo Mode [H])
    */
-  togglePhotoMode() {
-    this.isPhotoMode = !this.isPhotoMode;
+  togglePhotoMode(forceState) {
+    this.isPhotoMode = (forceState !== undefined) ? Boolean(forceState) : !this.isPhotoMode;
+    document.body.classList.toggle('panorama-mode', this.isPhotoMode);
+    const badge = document.getElementById('panorama-badge');
+    if (badge) {
+      badge.classList.toggle('hidden', !this.isPhotoMode);
+    }
     document.body.classList.toggle('hud-photo-mode', this.isPhotoMode);
     if (dom.photoModeToast) {
       dom.photoModeToast.hidden = !this.isPhotoMode;
@@ -3121,13 +3135,38 @@ class MilkyWaySolarSystemEngine {
 
     // Nút Zoom HUD
     if (dom.btnZoomIn) {
-      dom.btnZoomIn.addEventListener('click', () => this.zoom(0.70));
+      const btnZoomIn = dom.btnZoomIn || document.getElementById('zoom-in');
+      btnZoomIn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (this.controls) {
+          this.camera.position.sub(this.controls.target).multiplyScalar(0.8).add(this.controls.target);
+          this.controls.update();
+        } else {
+          this.zoom(0.8);
+        }
+      });
     }
     if (dom.btnZoomOut) {
-      dom.btnZoomOut.addEventListener('click', () => this.zoom(1.35));
+      const btnZoomOut = dom.btnZoomOut || document.getElementById('zoom-out');
+      btnZoomOut.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (this.controls) {
+          this.camera.position.sub(this.controls.target).multiplyScalar(1.25).add(this.controls.target);
+          this.controls.update();
+        } else {
+          this.zoom(1.25);
+        }
+      });
     }
     if (dom.btnZoomReset) {
-      dom.btnZoomReset.addEventListener('click', () => this.resetToOverview());
+      const btnZoomReset = dom.btnZoomReset || document.getElementById('zoom-reset');
+      btnZoomReset.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (this.controls) {
+          this.controls.reset();
+        }
+        this.resetToOverview();
+      });
     }
 
     window.addEventListener('keydown', (e) => {
@@ -3155,7 +3194,11 @@ class MilkyWaySolarSystemEngine {
       } else if (e.key.toLowerCase() === 'h' || e.key.toLowerCase() === 'c') {
         this.togglePhotoMode();
       } else if (e.key === 'Escape') {
-        if (this.isPhotoMode) {
+        if (this.isPhotoMode || document.body.classList.contains('panorama-mode')) {
+          this.togglePhotoMode(false);
+          return;
+        }
+        if (false) {
           this.togglePhotoMode();
         } else {
           this.resetToOverview();
@@ -3187,6 +3230,11 @@ class MilkyWaySolarSystemEngine {
     // Kích hoạt Hyper-Warp
     if (dom.btnModeOrbit && dom.btnModeWarp) {
       dom.btnModeOrbit.addEventListener('click', () => {
+        if (this.controls) {
+          this.controls.autoRotate = !this.controls.autoRotate;
+          this.controls.autoRotateSpeed = 1.2;
+          dom.btnModeOrbit.classList.toggle('active', this.controls.autoRotate);
+        }
         if (this.isWarpMode) {
           this.resetToOverview();
         }
@@ -3311,9 +3359,20 @@ class MilkyWaySolarSystemEngine {
 
     // Chế độ quan sát toàn cảnh / Chụp ảnh (Clean Photo Mode [H])
     if (dom.btnPhotoMode) {
-      dom.btnPhotoMode.addEventListener('click', () => this.togglePhotoMode());
+      dom.btnPhotoMode.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.togglePhotoMode(true);
+      });
     }
 
+    const btnExitPanorama = document.getElementById('btn-exit-panorama');
+    if (btnExitPanorama) {
+      btnExitPanorama.addEventListener('click', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        this.togglePhotoMode(false);
+      });
+    }
     if (dom.btnExitPhoto) {
       dom.btnExitPhoto.addEventListener('click', (e) => {
         e.stopPropagation();
