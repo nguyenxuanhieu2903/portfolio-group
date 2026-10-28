@@ -1609,6 +1609,7 @@ html, body {
   transition: all 0.25s ease;
   user-select: none;
   animation: toastFloat 3s ease-in-out infinite alternate;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
 }
 
 .photo-mode-toast:hover {
@@ -1693,6 +1694,29 @@ body.hud-photo-mode #photoModeToast {
   cursor: pointer !important;
 }
 
+/* Thiết lập CSS Transition mượt mà cho các thành phần HUD */
+header,
+footer,
+.top-bar,
+.bottom-bar,
+.hud-top-bar,
+.hud-bottom-bar,
+.drawer,
+#spatialDetailPanel,
+.spatial-detail-panel,
+#zoom-controls,
+.zoom-controls,
+#hudZoomControls,
+.hud-zoom-controls,
+#hudTimeControl,
+.hud-time-controller,
+.spatial-labels-layer,
+.radar-scanline-layer,
+.photo-mode-toast {
+  transition: opacity 0.3s ease, visibility 0.3s ease !important;
+}
+
+/* Ẩn mượt mà các thành phần HUD khi ở chế độ toàn cảnh */
 body.panorama-mode header,
 body.panorama-mode footer,
 body.panorama-mode .top-bar,
@@ -1711,7 +1735,7 @@ body.panorama-mode .hud-time-controller,
 body.panorama-mode .spatial-labels-layer,
 body.panorama-mode .radar-scanline-layer,
 body.panorama-mode .photo-mode-toast {
-  display: none !important;
+  visibility: hidden !important;
   opacity: 0 !important;
   pointer-events: none !important;
 }
@@ -1740,10 +1764,12 @@ body.panorama-mode .photo-mode-toast {
   -webkit-backdrop-filter: blur(16px);
   user-select: none;
   animation: toastFloat 3s ease-in-out infinite alternate;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
 }
 
 .panorama-badge.hidden {
-  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
 }
 
 .btn-exit-panorama {
