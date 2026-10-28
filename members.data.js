@@ -16,7 +16,7 @@ export const MEMBERS = [
     role: 'Trưởng nhóm',
     headline: null,
     tags: [],
-    github: null,
+    github: 'https://github.com/nguyenxuanhieu2903',
     avatar: './avatars/nguyen-xuan-hieu.jpg',
     portfolio: './members/nguyen-xuan-hieu/index.html',
     portfolioStatus: 'live'
@@ -31,7 +31,7 @@ export const MEMBERS = [
     role: null,
     headline: null,
     tags: [],
-    github: null,
+    github: 'https://github.com/nguyenxuanhieu2903/portfolio-group',
     avatar: './avatars/le-nguyen-nhat-truong.png',
     portfolio: './members/le-nguyen-nhat-truong/index.html',
     portfolioStatus: 'live'
@@ -46,7 +46,7 @@ export const MEMBERS = [
     role: null,
     headline: null,
     tags: [],
-    github: null,
+    github: 'https://github.com/nguyenxuanhieu2903/portfolio-group',
     avatar: null,
     portfolio: './members/nguyen-thi-thao-nhu/index.html',
     portfolioStatus: 'live'
@@ -61,7 +61,7 @@ export const MEMBERS = [
     role: null,
     headline: null,
     tags: [],
-    github: null,
+    github: 'https://github.com/nguyenxuanhieu2903/portfolio-group',
     avatar: null,
     portfolio: './members/nguyen-pham-y-huynh/index.html',
     portfolioStatus: 'live'
@@ -76,7 +76,7 @@ export const MEMBERS = [
     role: null,
     headline: null,
     tags: [],
-    github: null,
+    github: 'https://github.com/nguyenxuanhieu2903/portfolio-group',
     avatar: null,
     portfolio: './members/le-huu-chau/index.html',
     portfolioStatus: 'live'
@@ -91,12 +91,14 @@ export const MEMBERS = [
     role: null,
     headline: null,
     tags: [],
-    github: null,
+    github: 'https://github.com/nguyenxuanhieu2903/portfolio-group',
     avatar: null,
     portfolio: './members/nguyen-anh-thu/index.html',
     portfolioStatus: 'live'
   }
 ];
+
+export const members = MEMBERS;
 
 /**
  * Chuẩn hóa chuỗi tiếng Việt phục vụ tìm kiếm không phân biệt dấu và chữ đ/Đ
