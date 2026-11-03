@@ -454,6 +454,7 @@ main:focus {
   display: flex;
   align-items: center;
   gap: var(--space-sm);
+  margin-left: auto;
 }
 
 /* Language Switcher Button */
