@@ -38,7 +38,8 @@ const translations = {
     hero_badge: "Full-Stack Web Developer & Network Administrator",
     hero_greeting: "Xin chào, tôi là",
     hero_tagline_static: "Xây dựng ứng dụng toàn diện từ giao diện người dùng, logic hệ thống cho đến hạ tầng mạng vững chắc.",
-    hero_cta_projects: "Khám phá Dự án",
+    hero_cta_projects: "Hợp tác ngay ↗",
+    hero_cta_contact: "Hợp tác ngay ↗",
     hero_cta_cv: "Tải CV (.PDF)",
     portrait_caption: "Nguyễn Xuân Hiếu • UTH Campus 2",
     stat_projects: "Dự án tiêu biểu",
@@ -202,7 +203,8 @@ const translations = {
     hero_badge: "Full-Stack Web Developer & Network Administrator",
     hero_greeting: "Hello, I am",
     hero_tagline_static: "Building comprehensive applications from user interfaces and system logic to resilient network infrastructure.",
-    hero_cta_projects: "Explore Projects",
+    hero_cta_projects: "Let's Collaborate ↗",
+    hero_cta_contact: "Let's Collaborate ↗",
     hero_cta_cv: "Download CV (.PDF)",
     portrait_caption: "Nguyen Xuan Hieu • UTH Campus 2",
     stat_projects: "Featured Projects",
@@ -2133,9 +2135,9 @@ function initLanyardPhysics() {
   };
 
   // Cache Scene Dimensions & Anchor Coordinates
-  let sceneWidth = 440;
-  let sceneHeight = 540;
-  let anchorX = 220;
+  let sceneWidth = 520;
+  let sceneHeight = 620;
+  let anchorX = 260;
   const anchorY = 0;
   const restAttachY = 88; // Y distance from anchor to clasp loop
 
