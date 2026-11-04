@@ -60,27 +60,24 @@ const translations = {
 
     // About Section
     about_tag: "01 / Giới thiệu",
-    about_title: "Tư duy hệ thống & Kỷ luật thực thi",
-    about_lead: "Tôi là một kỹ sư phần mềm định hướng Backend chuyên sâu và không ngừng mở rộng năng lực Full-Stack, kết hợp nền tảng vận hành hạ tầng mạng thực tế.",
-    about_p1: "Tôi tin rằng một sản phẩm công nghệ xuất sắc bắt đầu từ kiến trúc dữ liệu chuẩn mực, logic xử lý chặt chẽ và khả năng vận hành ổn định trong môi trường thực tế. Thay vì chỉ viết mã cho giao diện, tôi luôn tiếp cận bài toán dưới góc nhìn hệ thống tổng thể: từ phân tích đặc tả, thiết kế cơ sở dữ liệu đạt chuẩn, xử lý đồng thời, đến việc đảm bảo hạ tầng mạng kết nối liền mạch.",
-    about_p2: "Kinh nghiệm thực tế hỗ trợ và quản lý phòng máy tại UTH Campus 2 (bảo trì mạng nội bộ, cấu hình thiết bị, đảm bảo hạ tầng kỹ thuật thông suốt phục vụ các kỳ thi và sự kiện quy mô của trường) cùng vai trò điều phối kỹ thuật cho Nhóm 02 (6 thành viên) đã rèn luyện cho tôi tính kỷ luật cao, tư duy phân tích nguyên nhân gốc rễ (Root Cause Analysis) và tinh thần trách nhiệm trong từng dòng mã.",
+    about_title: "POV — Góc nhìn của một dân IT",
+    about_bio_p1: "Tôi là Nguyễn Xuân Hiếu, sinh viên ngành Công nghệ Thông tin tại Trường Đại học Giao thông Vận tải TP.HCM (UTH), định hướng phát triển chuyên sâu trở thành Backend Specialist kết hợp năng lực Full-Stack Development và quản trị hạ tầng mạng.",
+    about_bio_p2: "Tôi tin rằng một sản phẩm công nghệ xuất sắc luôn bắt đầu từ kiến trúc dữ liệu chuẩn mực, logic xử lý chặt chẽ và khả năng vận hành ổn định trong môi trường thực tế. Thay vì chỉ dừng lại ở lập trình giao diện, tôi luôn tiếp cận bài toán dưới góc nhìn hệ thống tổng thể: từ phân tích đặc tả, thiết kế cơ sở dữ liệu đạt chuẩn (3NF, ACID), xử lý đồng thời, cho đến đảm bảo hạ tầng kết nối liền mạch.",
+    about_bio_p3: "Kinh nghiệm thực tế từ việc hỗ trợ quản lý phòng máy tại UTH CS2 bảo trì mạng nội bộ, cấu hình thiết bị, đảm bảo hạ tầng kỹ thuật cho các kỳ thi và sự kiện quy mô lớn và cùng vai trò leader team trong nhiều dự án khác đã rèn luyện cho tôi tính kỷ luật cao, tư duy phân tích nguyên nhân gốc rễ và tinh thần trách nhiệm trong từng dòng mã.",
     about_quote: "Think in systems. Build with purpose. Deliver with discipline.",
-    about_quote_author: "— Nguyễn Xuân Hiếu",
-    about_specs_title: "Thông tin tổng quan",
-    spec_institution_label: "Đơn vị đào tạo",
-    spec_institution_val: "ĐH Giao thông Vận tải TP.HCM (UTH - Campus 2)",
-    spec_major_label: "Chuyên ngành",
+    about_quote_author: "— NGUYỄN XUÂN HIẾU",
+    about_specs_title: "THÔNG TIN TỔNG QUAN",
+    spec_institution_label: "ĐƠN VỊ ĐÀO TẠO",
+    spec_institution_val: "ĐH Giao thông Vận tải TP.HCM (UTH – Campus 2)",
+    spec_major_label: "CHUYÊN NGÀNH",
     spec_major_val: "Công nghệ Thông tin",
-    spec_location_label: "Địa điểm làm việc",
+    spec_location_label: "ĐỊA ĐIỂM LÀM VIỆC",
     spec_location_val: "TP. Hồ Chí Minh, Việt Nam",
-    spec_focus_label: "Định hướng nghề nghiệp",
+    spec_focus_label: "ĐỊNH HƯỚNG NGHỀ NGHIỆP",
     spec_focus_val: "Backend Specialist & Full-Stack Expansion",
-    spec_role_label: "Vai trò dự án nhóm",
-    spec_role_val: "Full-Stack Developer & Điều phối kỹ thuật",
-    spec_credo_label: "Nguyên tắc làm việc",
-    spec_credo_val: "Clean Code • Chuẩn hóa 3NF • ACID Compliant",
-
-        // Experience Section
+    spec_credo_label: "NĂNG LỰC CỐT LÕI & NGUYÊN TẮC",
+    spec_credo_val: "Clean Code • Thiết kế CSDL 3NF • Giao dịch ACID • Quản trị mạng",
+    // Experience Section
     experience_tag: "02 / Hành trình thực chiến",
     experience_title: "Trải nghiệm & Vai trò thực tế",
     exp_period_1: "2024 — HIỆN TẠI",
@@ -242,27 +239,24 @@ const translations = {
 
     // About Section
     about_tag: "01 / About Me",
-    about_title: "Systems Thinking & Disciplined Delivery",
-    about_lead: "I am a software engineer focused on in-depth Backend development while expanding Full-Stack capabilities, grounded in hands-on network operations.",
-    about_p1: "I believe exceptional software starts with normalized data architecture, resilient business logic, and reliable runtime execution. Rather than just crafting UI, I approach every challenge holistically: from requirements specification, schema design, and concurrency handling, to ensuring seamless network communication.",
-    about_p2: "Hands-on experience managing computer labs at UTH Campus 2 (internal network maintenance, equipment configuration, supporting university exams and large-scale events) alongside coordinating Team 02 (6 members) has shaped my technical discipline, Root Cause Analysis approach, and commitment to clean, purposeful code.",
+    about_title: "POV — An IT Mindset & Perspective",
+    about_bio_p1: "I am Nguyen Xuan Hieu, an Information Technology student at University of Transport Ho Chi Minh City (UTH), aiming to specialize as a Backend Specialist combined with Full-Stack Development and resilient network administration.",
+    about_bio_p2: "I believe superior software begins with disciplined data architecture, tight processing logic, and stable runtime reliability. Rather than merely writing UI components, I approach engineering holistically: from requirement specifications and normalized database design (3NF, ACID) to concurrency handling and resilient network connectivity.",
+    about_bio_p3: "Practical experience supporting campus computer labs at UTH Campus 2 (internal LAN maintenance, equipment setup, ensuring uptime during high-stakes exams and university events) and coordinating team leadership in multiple projects has fostered disciplined execution, Root Cause Analysis mindset, and engineering accountability in every line of code.",
     about_quote: "Think in systems. Build with purpose. Deliver with discipline.",
-    about_quote_author: "— Nguyen Xuan Hieu",
-    about_specs_title: "Profile Overview",
-    spec_institution_label: "Institution",
-    spec_institution_val: "University of Transport Ho Chi Minh City (UTH - Campus 2)",
-    spec_major_label: "Major",
+    about_quote_author: "— NGUYEN XUAN HIEU",
+    about_specs_title: "GENERAL INFORMATION",
+    spec_institution_label: "INSTITUTION",
+    spec_institution_val: "HCM City Univ. of Transport (UTH – Campus 2)",
+    spec_major_label: "MAJOR",
     spec_major_val: "Information Technology",
-    spec_location_label: "Location",
+    spec_location_label: "LOCATION",
     spec_location_val: "Ho Chi Minh City, Vietnam",
-    spec_focus_label: "Career Focus",
+    spec_focus_label: "CAREER FOCUS",
     spec_focus_val: "Backend Specialist & Full-Stack Expansion",
-    spec_role_label: "Group Project Role",
-    spec_role_val: "Full-Stack Developer & Technical Coordinator",
-    spec_credo_label: "Engineering Credo",
-    spec_credo_val: "Clean Code • 3NF Normalized • ACID Compliant",
-
-        // Experience Section
+    spec_credo_label: "CORE COMPETENCIES & CREDO",
+    spec_credo_val: "Clean Code • 3NF Normalized Schema • ACID Transactions • Network Admin",
+    // Experience Section
     experience_tag: "02 / Hands-on Journey",
     experience_title: "Experience & Practical Roles",
     exp_period_1: "2024 — PRESENT",
@@ -525,7 +519,11 @@ export function setLanguage(lang) {
     }
     const key = el.getAttribute('data-i18n');
     if (translations[lang][key]) {
-      el.textContent = translations[lang][key];
+      if (translations[lang][key].includes('<')) {
+        el.innerHTML = translations[lang][key];
+      } else {
+        el.textContent = translations[lang][key];
+      }
     }
   });
 
@@ -2642,7 +2640,7 @@ const cliCommands = {
   exit        Đóng cửa sổ dòng lệnh`,
     about: `KỸ SƯ NGUYỄN XUÂN HIẾU:
 • Chức danh: Full-Stack Web Developer & Network Administrator
-• Đơn vị: ĐH Giao thông Vận tải TP.HCM (UTH - Campus 2) - Ngành CNTT
+• Đơn vị: ĐH Giao thông Vận tải TP.HCM (UTH - Campus 2) - Ngành CNTT (K24 - MSSV: 060206005938)
 • Định hướng: Backend Specialist & Full-Stack Expansion
 • Kinh nghiệm hạ tầng: Hỗ trợ vận hành phòng máy UTH Campus 2 (VLAN, AD, DNS, DHCP)
 • Triết lý phát triển: Clean Code • Chuẩn hóa 3NF • ACID Compliant
@@ -2695,7 +2693,7 @@ rtt min/avg/max/mdev = 1.310/1.545/1.850/0.198 ms [Connection: EXCELLENT]`,
   exit        Close terminal window`,
     about: `ENGINEER NGUYEN XUAN HIEU:
 • Title: Full-Stack Web Developer & Network Administrator
-• Institution: University of Transport HCM (UTH - Campus 2) - IT Major
+• Institution: University of Transport HCM (UTH - Campus 2) - IT Major (K24 - ID: 060206005938)
 • Focus: Backend Specialist & Full-Stack Expansion
 • Infrastructure: Campus lab network support at UTH Campus 2 (VLAN, AD, DNS, DHCP)
 • Engineering Credo: Clean Code • 3NF Normalized • ACID Compliant
