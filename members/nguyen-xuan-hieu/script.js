@@ -26,6 +26,7 @@ const translations = {
     skip_to_content: "Chuyển đến nội dung chính",
     nav_home: "Trang chủ",
     nav_about: "Giới thiệu",
+    nav_experience: "Trải nghiệm",
     nav_skills: "Kỹ năng",
     nav_projects: "Dự án",
     nav_process: "Quy trình",
@@ -79,8 +80,32 @@ const translations = {
     spec_credo_label: "Nguyên tắc làm việc",
     spec_credo_val: "Clean Code • Chuẩn hóa 3NF • ACID Compliant",
 
+        // Experience Section
+    experience_tag: "02 / Hành trình thực chiến",
+    experience_title: "Trải nghiệm & Vai trò thực tế",
+    exp_period_1: "2024 — HIỆN TẠI",
+    exp_role_1: "Network Infrastructure Support Lead",
+    exp_org_1: "Đại học Giao thông Vận tải TP.HCM (UTH - Campus 2)",
+    exp_badge_active: "Active Role",
+    exp_desc_1: "Trực tiếp quản lý và hỗ trợ kỹ thuật phòng máy thực hành. Đảm bảo hạ tầng mạng nội bộ thông suốt phục vụ các đợt thi trực tuyến và sự kiện quy mô của nhà trường.",
+    exp_bullet_1_1: "Bảo trì hạ tầng mạng LAN/VLAN, cấu hình Switch/Router và xử lý sự cố kết nối thực tế.",
+    exp_bullet_1_2: "Hỗ trợ kỹ thuật trực tiếp cho sinh viên và giảng viên trong các buổi thực hành chuyên ngành.",
+    exp_bullet_1_3: "Rèn luyện tư duy phân tích nguyên nhân gốc rễ (Root Cause Analysis) và tính kỷ luật cao.",
+    exp_period_2: "2024 — 2026",
+    exp_role_2: "Full-Stack Developer & Điều phối kỹ thuật",
+    exp_org_2: "Nhóm 02 — Lập trình Web (UTH)",
+    exp_badge_team: "Team Lead",
+    exp_desc_2: "Chịu trách nhiệm thiết kế kiến trúc hệ thống, chuẩn hóa CSDL 3NF và phân chia nhiệm vụ lập trình cho 6 thành viên trong nhóm đồ án.",
+    exp_bullet_2_1: "Xây dựng quy trình làm việc Git Flow, review code đảm bảo nguyên tắc Clean Code & ACID.",
+    exp_bullet_2_2: "Trực tiếp phát triển các module Backend phức tạp (quản lý giao dịch, chuẩn hóa dữ liệu).",
+    exp_period_3: "2024 — 2028 (Dự kiến)",
+    exp_role_3: "Sinh viên Công nghệ Thông tin (K24)",
+    exp_org_3: "Trường Đại học Giao thông Vận tải TP.HCM",
+    exp_badge_academic: "Academic",
+    exp_desc_3: "Tập trung nghiên cứu chuyên sâu về Kiến trúc phần mềm Backend, Hệ quản trị CSDL quan hệ, Mạng máy tính và An toàn thông tin.",
+
     // Skills Section
-    skills_tag: "02 / Năng lực công nghệ",
+    skills_tag: "03 / Năng lực công nghệ",
     skills_title: "Ngăn xếp công nghệ & Hệ thống",
     skills_subtitle: "Danh mục kỹ năng thực tế được ứng dụng trực tiếp qua các dự án phần mềm và quản trị hạ tầng.",
     skill_group_webbase: "Web Base & Ngôn ngữ lõi",
@@ -91,7 +116,7 @@ const translations = {
     tooltip_role_tag: "Vai trò ứng dụng",
 
     // Projects Section
-    projects_tag: "03 / Dự án thực tế",
+    projects_tag: "04 / Dự án thực tế",
     projects_title: "Sản phẩm kỹ thuật tiêu biểu",
     projects_subtitle: "Minh chứng năng lực qua các dự án giải quyết bài toán nghiệp vụ, cơ sở dữ liệu và xử lý hệ thống.",
     status_completed: "Đã hoàn thành",
@@ -113,7 +138,7 @@ const translations = {
     project_02_h4: "Phân quyền chi tiết (Bác sĩ, Khách hàng, Quản trị viên).",
 
     // Work Process Section
-    process_tag: "04 / Phương pháp làm việc",
+    process_tag: "05 / Phương pháp làm việc",
     process_title: "Quy trình phát triển chuẩn mực (SDLC)",
     process_subtitle: "Cách thức tiếp cận bài toán có hệ thống từ yêu cầu ban đầu cho tới triển khai sản phẩm.",
     step_1_title: "Đặc tả & Phân tích yêu cầu",
@@ -130,7 +155,7 @@ const translations = {
 
 
     // Contact Section
-    contact_tag: "05 / Trao đổi & Kết nối",
+    contact_tag: "06 / Trao đổi & Kết nối",
     contact_title: "Liên hệ hợp tác",
     contact_subtitle: "Sẵn sàng trao đổi về các bài toán kiến trúc backend, kỹ thuật hệ thống và các dự án phát triển phần mềm.",
     contact_info_title: "Kênh kết nối chính thức",
@@ -183,6 +208,7 @@ const translations = {
     skip_to_content: "Skip to main content",
     nav_home: "Home",
     nav_about: "About",
+    nav_experience: "Experience",
     nav_skills: "Skills",
     nav_projects: "Projects",
     nav_process: "Process",
@@ -236,8 +262,32 @@ const translations = {
     spec_credo_label: "Engineering Credo",
     spec_credo_val: "Clean Code • 3NF Normalized • ACID Compliant",
 
+        // Experience Section
+    experience_tag: "02 / Hands-on Journey",
+    experience_title: "Experience & Practical Roles",
+    exp_period_1: "2024 — PRESENT",
+    exp_role_1: "Network Infrastructure Support Lead",
+    exp_org_1: "HCM City Univ. of Transport (UTH - Campus 2)",
+    exp_badge_active: "Active Role",
+    exp_desc_1: "Directly managing and maintaining the university computer lab infrastructure. Ensuring resilient LAN/VLAN connectivity for online examinations and large-scale academic events.",
+    exp_bullet_1_1: "Maintained internal LAN/VLAN networks, configured switches/routers, and resolved physical/network connectivity incidents.",
+    exp_bullet_1_2: "Provided direct on-site technical support for students and faculty across practical computing sessions.",
+    exp_bullet_1_3: "Honed high-discipline execution and Root Cause Analysis (RCA) troubleshooting methodologies.",
+    exp_period_2: "2024 — 2026",
+    exp_role_2: "Full-Stack Developer & Technical Coordinator",
+    exp_org_2: "Team 02 — Web Programming (UTH)",
+    exp_badge_team: "Team Lead",
+    exp_desc_2: "Responsible for core system architecture design, 3NF database normalization, and task delegation for our 6-member engineering team.",
+    exp_bullet_2_1: "Formulated Git Flow development workflows and conducted code reviews ensuring Clean Code & ACID principles.",
+    exp_bullet_2_2: "Developed complex backend modules (transaction handling, concurrency control, and data validation).",
+    exp_period_3: "2024 — 2028 (Expected)",
+    exp_role_3: "Information Technology Undergraduate (K24)",
+    exp_org_3: "University of Transport Ho Chi Minh City",
+    exp_badge_academic: "Academic",
+    exp_desc_3: "Focused on advanced backend software architectures, relational database management systems, computer networks, and cybersecurity.",
+
     // Skills Section
-    skills_tag: "02 / Technical Stack",
+    skills_tag: "03 / Technical Stack",
     skills_title: "Engineering Stack & Systems",
     skills_subtitle: "Validated competencies applied directly across software engineering projects and infrastructure operations.",
     skill_group_webbase: "Web Base & Core Languages",
@@ -248,7 +298,7 @@ const translations = {
     tooltip_role_tag: "Practical Role",
 
     // Projects Section
-    projects_tag: "03 / Featured Projects",
+    projects_tag: "04 / Featured Projects",
     projects_title: "Selected Technical Projects",
     projects_subtitle: "Proven capabilities solving practical business requirements, database integrity, and system concurrency.",
     status_completed: "Completed",
@@ -270,7 +320,7 @@ const translations = {
     project_02_h4: "Granular role-based access control (Doctor, Customer, Admin).",
 
     // Work Process Section
-    process_tag: "04 / Work Methodology",
+    process_tag: "05 / Work Methodology",
     process_title: "Standard Software Development Life Cycle (SDLC)",
     process_subtitle: "A disciplined, systematic approach from initial specifications to production deployment.",
     step_1_title: "Specification & Requirements Analysis",
@@ -287,7 +337,7 @@ const translations = {
 
 
     // Contact Section
-    contact_tag: "05 / Contact & Connect",
+    contact_tag: "06 / Contact & Connect",
     contact_title: "Get In Touch",
     contact_subtitle: "Always open to discussing backend architectures, systems engineering, and collaborative software projects.",
     contact_info_title: "Official Channels",
@@ -2584,6 +2634,7 @@ const cliCommands = {
     help: `CÁC LỆNH KHẢ DỤNG:
   help        Hiển thị hướng dẫn & danh mục câu lệnh
   about       Thông tin lý lịch & định hướng kỹ sư
+  experience  Hành trình học tập & quản trị hạ tầng UTH
   skills      Xem 5 nhóm kỹ năng công nghệ & hạ tầng
   projects    Tóm tắt 2 dự án kỹ thuật tiêu biểu
   ping        Kiểm tra độ trễ mạng đến máy chủ UTH Campus 2
@@ -2597,6 +2648,15 @@ const cliCommands = {
 • Triết lý phát triển: Clean Code • Chuẩn hóa 3NF • ACID Compliant
 • Email: nguyenxuanhieu2903@gmail.com
 • GitHub: https://github.com/nguyenxuanhieu2903`,
+    experience: `HÀNH TRÌNH TRẢI NGHIỆM THỰC TẾ:
+[1] 2024 — HIỆN TẠI: Network Infrastructure Support Lead
+    • Đơn vị: ĐH Giao thông Vận tải TP.HCM (UTH - Campus 2)
+    • Nhiệm vụ: Quản trị phòng máy, bảo trì mạng LAN/VLAN, hỗ trợ kỳ thi trực tuyến.
+[2] 2024 — 2026: Full-Stack Developer & Điều phối kỹ thuật
+    • Dự án: Nhóm 02 — Lập trình Web UTH (6 thành viên)
+    • Nhiệm vụ: Thiết kế kiến trúc, chuẩn hóa CSDL 3NF, Git Flow, phát triển Backend.
+[3] 2024 — 2028 (Dự kiến): Sinh viên Công nghệ Thông tin (K24)
+    • Trọng tâm: Backend architecture, RDBMS, mạng máy tính & bảo mật hệ thống.`,
     skills: `DANH MỤC 5 NHÓM CÔNG NGHỆ CHÍNH:
 [1] Web Base: C/C++, Java, Python, PHP, JavaScript, HTML5/CSS3
 [2] Frameworks: Spring Boot, Django, React, Vue.js
@@ -2627,6 +2687,7 @@ rtt min/avg/max/mdev = 1.310/1.545/1.850/0.198 ms [Connection: EXCELLENT]`,
     help: `AVAILABLE COMMANDS:
   help        Display manual & available command list
   about       Engineer background & career focus
+  experience  Academic milestones & UTH lab support
   skills      Inspect 5 technology stacks & infrastructure
   projects    Summary of 2 featured engineering projects
   ping        Test network latency to UTH Campus 2 Server
@@ -2640,6 +2701,15 @@ rtt min/avg/max/mdev = 1.310/1.545/1.850/0.198 ms [Connection: EXCELLENT]`,
 • Engineering Credo: Clean Code • 3NF Normalized • ACID Compliant
 • Email: nguyenxuanhieu2903@gmail.com
 • GitHub: https://github.com/nguyenxuanhieu2903`,
+    experience: `HANDS-ON EXPERIENCE & MILESTONES:
+[1] 2024 — PRESENT: Network Infrastructure Support Lead
+    • Institution: HCM City Univ. of Transport (UTH - Campus 2)
+    • Scope: Lab administration, LAN/VLAN maintenance, exam network support.
+[2] 2024 — 2026: Full-Stack Developer & Technical Coordinator
+    • Project: Team 02 — UTH Web Programming (6 members)
+    • Scope: Architecture design, 3NF schema, Git Flow, backend transactions.
+[3] 2024 — 2028 (Expected): IT Undergraduate (K24)
+    • Scope: Backend architectures, RDBMS, networking, and system security.`,
     skills: `5 CORE TECHNOLOGY CATEGORIES:
 [1] Web Base: C/C++, Java, Python, PHP, JavaScript, HTML5/CSS3
 [2] Frameworks: Spring Boot, Django, React, Vue.js
@@ -2820,6 +2890,8 @@ function initCliTerminal() {
         outputText = dict.help;
       } else if (normalized === 'about') {
         outputText = dict.about;
+      } else if (normalized === 'experience') {
+        outputText = dict.experience;
       } else if (normalized === 'skills') {
         outputText = dict.skills;
       } else if (normalized === 'projects') {
