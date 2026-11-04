@@ -1,3 +1,15 @@
+import imgThoiVu from './images/thoi-vu-tc.jpg';
+import imgCafe from './images/phuc-vu-cafe.jpg';
+import imgLab from './images/thuc-hanh-lab.jpg';
+import imgThi from './images/thuc-hanh-thi.jpg';
+import imgMang from './images/thuc-hanh-mang.jpg';
+import imgMangXong from './images/thuc-hanh-mang-xong.jpg';
+import imgServer from './images/thuc-hanh-server.jpg';
+import imgServerXong from './images/thuc-hanh-server-xong.jpg';
+import imgCam from './images/thuc-hanh-cam.jpg';
+import imgCamCheck from './images/thuc-hanh-cam-check.jpg';
+import imgBanLamViec from './images/ban-lam-viec.jpg';
+
 /**
  * ==============================================================================
  * PORTFOLIO NGUYỄN XUÂN HIẾU - CORE JAVASCRIPT (ES MODULE)
@@ -79,7 +91,7 @@ const translations = {
     spec_credo_val: "Clean Code • Thiết kế CSDL 3NF • Giao dịch ACID • Quản trị mạng",
     // Experience Section
     experience_tag: "02 / Hành trình thực chiến",
-    experience_title: "Trải nghiệm & Vai trò thực tế",
+    experience_title: "Trải nghiệm & Nhật ký hình ảnh",
     exp_period_1: "2024 — HIỆN TẠI",
     exp_role_1: "Network Infrastructure Support Lead",
     exp_org_1: "Đại học Giao thông Vận tải TP.HCM (UTH - Campus 2)",
@@ -258,7 +270,7 @@ const translations = {
     spec_credo_val: "Clean Code • 3NF Normalized Schema • ACID Transactions • Network Admin",
     // Experience Section
     experience_tag: "02 / Hands-on Journey",
-    experience_title: "Experience & Practical Roles",
+    experience_title: "Experience & Visual Journal",
     exp_period_1: "2024 — PRESENT",
     exp_role_1: "Network Infrastructure Support Lead",
     exp_org_1: "HCM City Univ. of Transport (UTH - Campus 2)",
@@ -2980,6 +2992,336 @@ function initLiveStatusMonitor() {
 // ------------------------------------------------------------------------------
 // 17. INITIALIZATION & FOUNDATION EVENT LISTENERS
 // ------------------------------------------------------------------------------
+
+// =============================================================================
+// INTERACTIVE 3D PHOTO FLIPBOOK DATA & CONTROLLER
+// =============================================================================
+const flipbookData = [
+  {
+    image: imgThoiVu,
+    alt: 'Trải nghiệm lao động thời vụ & Rèn luyện sức bền',
+    vi: {
+      period: '2023 — Trước chuyên ngành',
+      badge: 'Khởi đầu',
+      title: 'Trải nghiệm lao động thời vụ & Rèn luyện sức bền',
+      desc: 'Tiếp xúc với môi trường làm việc thực tế từ sớm qua các công việc thời vụ tài chính / kỹ thuật cơ bản. Rèn luyện sự kiên nhẫn, tinh thần vượt khó, kỷ luật thời gian và thái độ nghiêm túc với từng công việc được giao.'
+    },
+    en: {
+      period: '2023 — Pre-Major Journey',
+      badge: 'Foundation',
+      title: 'Early Fieldwork & Building Resilience',
+      desc: 'Engaged with practical work early on through seasonal and technical support roles. Cultivated discipline, time management, grit, and rigorous professional attitude towards every task.'
+    }
+  },
+  {
+    image: imgCafe,
+    alt: 'Phục vụ dịch vụ & Kỹ năng lắng nghe thấu hiểu',
+    vi: {
+      period: '2023 — Kỹ năng mềm',
+      badge: 'Giao tiếp',
+      title: 'Phục vụ dịch vụ & Kỹ năng lắng nghe thấu hiểu',
+      desc: 'Trải nghiệm công việc phục vụ rèn luyện kỹ năng giao tiếp linh hoạt, khả năng ứng biến dưới áp lực cao và sự nhẫn nại. Hiểu sâu sắc giá trị của trải nghiệm người dùng (UX) và tinh thần phục vụ tận tâm.'
+    },
+    en: {
+      period: '2023 — Soft Skills',
+      badge: 'Communication',
+      title: 'Service Experience & Customer Empathy',
+      desc: 'Frontline service work honed active listening, handling high-pressure situations, and adaptability. Developed deep appreciation for user experience (UX) and dedicated customer-centric service.'
+    }
+  },
+  {
+    image: imgLab,
+    alt: 'Tiếp quản & Hỗ trợ kỹ thuật phòng Lab UTH',
+    vi: {
+      period: '2024 — UTH CS2',
+      badge: 'Hạ tầng Lab',
+      title: 'Bắt đầu tiếp quản & Hỗ trợ kỹ thuật phòng Lab UTH',
+      desc: 'Bắt đầu tham gia hỗ trợ quản lý phòng máy tính thực hành tại UTH Campus 2. Kiểm tra phần cứng, cài đặt môi trường học tập, rà soát hệ thống cáp mạng và duy trì sẵn sàng cho các ca học chuyên ngành.'
+    },
+    en: {
+      period: '2024 — UTH Campus 2',
+      badge: 'Lab Operations',
+      title: 'Taking Charge: UTH Lab Operations & Technical Support',
+      desc: 'Assumed responsibilities supporting campus computer laboratories at UTH Campus 2. Maintained desktop hardware, provisioned software environments, and ensured continuous lab availability for practical classes.'
+    }
+  },
+  {
+    image: imgThi,
+    alt: 'Hỗ trợ kỹ thuật kỳ thi trực tuyến',
+    vi: {
+      period: '2024 — Trực chiến',
+      badge: 'Kỳ thi số',
+      title: 'Hỗ trợ kỹ thuật kỳ thi trực tuyến quy mô lớn',
+      desc: 'Trực chiến kỹ thuật trong các đợt thi trực tuyến tập trung. Phản ứng nhanh xử lý sự cố máy trạm, nghẽn mạng cục bộ và sự cố phần mềm thi, bảo đảm tính công bằng và liền mạch tuyệt đối cho hàng trăm sinh viên.'
+    },
+    en: {
+      period: '2024 — High Stakes',
+      badge: 'Online Exams',
+      title: 'On-Duty Support for University-Wide Online Exams',
+      desc: 'On-site standby during high-stakes university online exams. Swiftly resolved workstation issues, localized network anomalies, and exam software glitches to guarantee zero exam downtime.'
+    }
+  },
+  {
+    image: imgMang,
+    alt: 'Triển khai & Đi dây hạ tầng mạng phòng máy',
+    vi: {
+      period: '2024 — Mạng nội bộ',
+      badge: 'Thi công mạng',
+      title: 'Triển khai & Đi dây hạ tầng mạng phòng máy',
+      desc: 'Trực tiếp đo đạc, bấm đầu hạt mạng Cat6, đi dây máng mạng và sắp xếp đường dây tín hiệu kết nối Switch với các bàn máy tính. Đảm bảo tính thẩm mỹ, tiêu chuẩn kỹ thuật và hạn chế tối đa suy hao tín hiệu.'
+    },
+    en: {
+      period: '2024 — Network Setup',
+      badge: 'Deployment',
+      title: 'Deploying & Cabling Lab Network Infrastructure',
+      desc: 'Hands-on measuring, Cat6 crimping, cable trunking, and neat line distribution connecting switches to workstations. Adhered to structural cabling standards for optimal signal integrity and neat aesthetics.'
+    }
+  },
+  {
+    image: imgMangXong,
+    alt: 'Kiểm thử thông mạch & Nghiệm thu hệ thống mạng',
+    vi: {
+      period: '2024 — Hoàn thiện',
+      badge: 'Nghiệm thu',
+      title: 'Kiểm thử thông mạch & Nghiệm thu hệ thống mạng',
+      desc: 'Sử dụng máy test cáp kiểm tra thông mạch 8 lõi, đo kiểm độ trễ ping và phân bố dải IP tĩnh/DHCP cho toàn bộ dàn máy. Hệ thống kết nối đạt độ ổn định 100%, sẵn sàng cho các bài thực hành mạng máy tính.'
+    },
+    en: {
+      period: '2024 — Completion',
+      badge: 'Inspection',
+      title: 'Testing Continuity & Validating LAN Deployment',
+      desc: 'Used cable continuity testers across all 8 pins, measured round-trip ping latency, and validated IP address allocation. Attained 100% link stability, ready for computer network lab curricula.'
+    }
+  },
+  {
+    image: imgServer,
+    alt: 'Cấu hình tủ Rack & Máy chủ trung tâm phòng Lab',
+    vi: {
+      period: '2024 — Hệ thống Server',
+      badge: 'Tủ Rack & Server',
+      title: 'Cấu hình tủ Rack & Máy chủ trung tâm phòng Lab',
+      desc: 'Khảo sát và đấu nối thiết bị vào tủ rack trung tâm: đấu nối Patch Panel, cấu hình Switch Managed, phân chia VLAN quản lý và kết nối máy chủ dịch vụ thực hành nội bộ.'
+    },
+    en: {
+      period: '2024 — Server Systems',
+      badge: 'Rack & Server',
+      title: 'Configuring Server Racks & Central Lab Systems',
+      desc: 'Configured central server rack equipment: Patch Panel patching, Managed Switch configuration, VLAN isolation for administrative traffic, and spinning up internal service servers.'
+    }
+  },
+  {
+    image: imgServerXong,
+    alt: 'Hệ thống Server hoàn chỉnh & Vận hành ổn định',
+    vi: {
+      period: '2024 — Vận hành',
+      badge: 'Hệ thống chuẩn',
+      title: 'Hệ thống Server hoàn chỉnh & Vận hành ổn định',
+      desc: 'Tủ máy chủ và hệ thống mạng phân tầng vận hành ổn định, nhiệt độ kiểm soát tốt, dây cáp được bó gọn gàng (cable management) theo chuẩn công nghiệp. Đảm bảo uptime tối đa cho cả khu vực thực hành.'
+    },
+    en: {
+      period: '2024 — Operations',
+      badge: 'System Ready',
+      title: 'Production-Ready Lab Server Rack & Stability',
+      desc: 'Server rack and tiered switching infrastructure fully operational with clean cable dressing, proper airflow, and enterprise-grade uptime for demanding university lab workloads.'
+    }
+  },
+  {
+    image: imgCam,
+    alt: 'Lắp đặt & Đấu nối hệ thống Camera quan sát phòng máy',
+    vi: {
+      period: '2024 — Giám sát an ninh',
+      badge: 'IP Camera',
+      title: 'Lắp đặt & Đấu nối hệ thống Camera quan sát phòng máy',
+      desc: 'Khảo sát góc quay bao quát phòng thi, đi dây cáp mạng PoE và lắp đặt hệ thống Camera an ninh độ phân giải cao phục vụ công tác giám sát thi cử và bảo vệ tài sản thiết bị trường học.'
+    },
+    en: {
+      period: '2024 — Surveillance',
+      badge: 'IP Camera',
+      title: 'Mounting & Wiring IP Surveillance Cameras',
+      desc: 'Surveyed camera vantage angles covering exam halls, ran PoE network drops, and mounted high-definition security cameras to safeguard equipment and enforce exam integrity.'
+    }
+  },
+  {
+    image: imgCamCheck,
+    alt: 'Hiệu chỉnh luồng video & Kiểm tra hệ thống giám sát',
+    vi: {
+      period: '2024 — Cấu hình NVR',
+      badge: 'Giám sát 24/7',
+      title: 'Hiệu chỉnh luồng video & Kiểm tra hệ thống giám sát',
+      desc: 'Cấu hình đầu ghi NVR, gán dải địa chỉ IP camera, kiểm tra bitrate truyền dẫn thời gian thực và phân quyền truy cập luồng giám sát cho hội đồng khảo thí và ban quản trị kỹ thuật.'
+    },
+    en: {
+      period: '2024 — NVR Config',
+      badge: '24/7 Monitoring',
+      title: 'Calibrating Video Streams & NVR Monitoring Feeds',
+      desc: 'Configured NVR recorder, assigned camera subnets, tuned real-time video bitrates, and managed access privilege matrices for exam committees and technical administrators.'
+    }
+  },
+  {
+    image: imgBanLamViec,
+    alt: 'Góc làm việc cá nhân — Nơi nuôi dưỡng tư duy lập trình',
+    vi: {
+      period: '2024 — HIỆN TẠI',
+      badge: 'Không gian sáng tạo',
+      title: 'Góc làm việc cá nhân — Nơi nuôi dưỡng tư duy lập trình',
+      desc: 'Không gian làm việc tối giản, tập trung cao độ với thiết lập màn hình đa nhiệm, bàn phím cơ và các công cụ lập trình yêu thích. Nơi ra đời những dòng mã chuẩn mực, thiết kế cơ sở dữ liệu 3NF và kiến trúc hệ thống bền vững.'
+    },
+    en: {
+      period: '2024 — PRESENT',
+      badge: 'Dev Workspace',
+      title: 'Personal Developer Workspace — Nurturing Code & Architecture',
+      desc: 'Minimalist, high-focus workspace equipped with multi-monitor workstation, ergonomic tools, and engineering literature. The command center where clean code, 3NF schemas, and resilient systems are designed.'
+    }
+  }
+];
+
+let currentFlipIndex = 0;
+
+export function renderFlipbook(index, direction) {
+  const book = document.getElementById('flipbook-book');
+  const imgEl = document.getElementById('flipbook-img');
+  const periodEl = document.getElementById('flipbook-period');
+  const badgeEl = document.getElementById('flipbook-badge');
+  const titleEl = document.getElementById('flipbook-title');
+  const descEl = document.getElementById('flipbook-desc');
+  const counterEl = document.getElementById('flipbook-counter');
+  const prevBtn = document.getElementById('flip-prev');
+  const nextBtn = document.getElementById('flip-next');
+  const dotsContainer = document.getElementById('flipbook-dots');
+
+  if (!book || !imgEl || !flipbookData[index]) return;
+
+  currentFlipIndex = index;
+  const item = flipbookData[index];
+  const lang = (typeof currentLang !== 'undefined' && currentLang) ? currentLang : 'vi';
+  const data = item[lang] || item.vi;
+
+  // Add animation class if direction provided
+  if (direction) {
+    book.classList.add(direction === 'next' ? 'animating-next' : 'animating-prev');
+    setTimeout(() => {
+      book.classList.remove('animating-next', 'animating-prev');
+    }, 350);
+  }
+
+  // Update content
+  imgEl.src = item.image;
+  imgEl.alt = item.alt;
+  if (periodEl) periodEl.textContent = data.period;
+  if (badgeEl) badgeEl.textContent = data.badge;
+  if (titleEl) titleEl.textContent = data.title;
+  if (descEl) descEl.textContent = data.desc;
+
+  // Update counter
+  if (counterEl) {
+    const pageWord = lang === 'vi' ? 'Trang ' : 'Page ';
+    const currentNum = String(index + 1).padStart(2, '0');
+    const totalNum = String(flipbookData.length).padStart(2, '0');
+    counterEl.textContent = `${pageWord}${currentNum} / ${totalNum}`;
+  }
+
+  // Update buttons state
+  if (prevBtn) {
+    prevBtn.disabled = index === 0;
+  }
+  if (nextBtn) {
+    nextBtn.disabled = index === flipbookData.length - 1;
+  }
+
+  // Update dots
+  if (dotsContainer) {
+    const dots = dotsContainer.querySelectorAll('.page-dot');
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === index);
+      dot.setAttribute('aria-current', i === index ? 'true' : 'false');
+    });
+  }
+}
+
+export function initFlipbook() {
+  const prevBtn = document.getElementById('flip-prev');
+  const nextBtn = document.getElementById('flip-next');
+  const dotsContainer = document.getElementById('flipbook-dots');
+  const book = document.getElementById('flipbook-book');
+
+  if (!book) return;
+
+  // Generate dots indicator
+  if (dotsContainer) {
+    dotsContainer.innerHTML = '';
+    flipbookData.forEach((_, idx) => {
+      const dot = document.createElement('button');
+      dot.className = 'page-dot' + (idx === 0 ? ' active' : '');
+      dot.setAttribute('type', 'button');
+      dot.setAttribute('aria-label', `Trang ${idx + 1}`);
+      dot.addEventListener('click', () => {
+        const dir = idx > currentFlipIndex ? 'next' : 'prev';
+        renderFlipbook(idx, dir);
+      });
+      dotsContainer.appendChild(dot);
+    });
+  }
+
+  // Navigation button listeners
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      if (currentFlipIndex > 0) {
+        renderFlipbook(currentFlipIndex - 1, 'prev');
+      }
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      if (currentFlipIndex < flipbookData.length - 1) {
+        renderFlipbook(currentFlipIndex + 1, 'next');
+      }
+    });
+  }
+
+  // Keyboard navigation when book or controls are active
+  window.addEventListener('keydown', (e) => {
+    // Only if experience section is in viewport
+    const expSec = document.getElementById('experience');
+    if (!expSec) return;
+    const rect = expSec.getBoundingClientRect();
+    const inView = rect.top < window.innerHeight && rect.bottom > 0;
+    if (!inView) return;
+
+    if (e.key === 'ArrowLeft') {
+      if (currentFlipIndex > 0) {
+        renderFlipbook(currentFlipIndex - 1, 'prev');
+      }
+    } else if (e.key === 'ArrowRight') {
+      if (currentFlipIndex < flipbookData.length - 1) {
+        renderFlipbook(currentFlipIndex + 1, 'next');
+      }
+    }
+  });
+
+  // Touch swipe support
+  let touchStartX = 0;
+  let touchEndX = 0;
+  book.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  book.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    const diff = touchStartX - touchEndX;
+    if (Math.abs(diff) > 45) {
+      if (diff > 0 && currentFlipIndex < flipbookData.length - 1) {
+        renderFlipbook(currentFlipIndex + 1, 'next');
+      } else if (diff < 0 && currentFlipIndex > 0) {
+        renderFlipbook(currentFlipIndex - 1, 'prev');
+      }
+    }
+  }, { passive: true });
+
+  // Initial render
+  renderFlipbook(0);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize Language from LocalStorage or default to 'vi'
   let savedLang = 'vi';
@@ -2991,6 +3333,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setLanguage(savedLang);
 
   // Initialize Core Components
+  initFlipbook();
   initHeroAvatar();
   initLanyardPhysics();
   initVanillaTilt();

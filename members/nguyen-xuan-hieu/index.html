@@ -461,90 +461,66 @@
     <!-- 3. EXPERIENCE SECTION                                                    -->
     <!-- ========================================================================= -->
     <section class="section experience-section" id="experience" aria-labelledby="experience-title">
-      <div class="container">
-        <header class="section-header">
-          <span class="section-tag" data-i18n="experience_tag">02 / Hành trình thực chiến</span>
-          <h2 class="section-title" id="experience-title" data-i18n="experience_title">Trải nghiệm &amp; Vai trò thực tế</h2>
-          <div class="section-divider" aria-hidden="true"></div>
-        </header>
+  <div class="container">
+    <header class="section-header">
+      <span class="section-tag" data-i18n="experience_tag">02 / Hành trình thực chiến</span>
+      <h2 class="section-title" id="experience-title" data-i18n="experience_title">Trải nghiệm &amp; Nhật ký hình ảnh</h2>
+      <div class="section-divider" aria-hidden="true"></div>
+    </header>
 
-        <!-- TIMELINE CONTAINER -->
-        <div class="experience-timeline">
+    <!-- FLIPBOOK CONTAINER CHÍNH -->
+    <div class="flipbook-wrapper">
+      
+      <!-- NÚT LẬT TRANG TRÁI -->
+      <button class="flip-btn prev-btn" id="flip-prev" aria-label="Trang trước" disabled>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      </button>
 
-          <!-- CỘT MỐC 1: UTH LAB SUPPORT LEAD -->
-          <div class="timeline-item">
-            <div class="timeline-marker">
-              <div class="marker-dot" aria-hidden="true"></div>
-              <div class="marker-line" aria-hidden="true"></div>
-            </div>
-            <div class="timeline-card bento-card">
-              <div class="card-header-flex">
-                <div>
-                  <span class="timeline-period" data-i18n="exp_period_1">2024 — HIỆN TẠI</span>
-                  <h3 class="timeline-role" data-i18n="exp_role_1">Network Infrastructure Support Lead</h3>
-                  <h4 class="timeline-org" data-i18n="exp_org_1">Đại học Giao thông Vận tải TP.HCM (UTH - Campus 2)</h4>
-                </div>
-                <span class="experience-badge active" data-i18n="exp_badge_active">Active Role</span>
-              </div>
-              <p class="timeline-desc" data-i18n="exp_desc_1">
-                Trực tiếp quản lý và hỗ trợ kỹ thuật phòng máy thực hành. Đảm bảo hạ tầng mạng nội bộ thông suốt phục vụ các đợt thi trực tuyến và sự kiện quy mô của nhà trường.
-              </p>
-              <ul class="timeline-bullets">
-                <li data-i18n="exp_bullet_1_1">Bảo trì hạ tầng mạng LAN/VLAN, cấu hình Switch/Router và xử lý sự cố kết nối thực tế.</li>
-                <li data-i18n="exp_bullet_1_2">Hỗ trợ kỹ thuật trực tiếp cho sinh viên và giảng viên trong các buổi thực hành chuyên ngành.</li>
-                <li data-i18n="exp_bullet_1_3">Rèn luyện tư duy phân tích nguyên nhân gốc rễ (Root Cause Analysis) và tính kỷ luật cao.</li>
-              </ul>
+      <!-- CUỐN SÁCH (BOOK STAGE) -->
+      <div class="flipbook-book" id="flipbook-book">
+        <div class="book-spine" aria-hidden="true"></div>
+        
+        <!-- TRANG TRÁI: HIỂN THỊ ẢNH -->
+        <div class="book-page page-left">
+          <div class="page-inner">
+            <div class="photo-frame">
+              <img id="flipbook-img" src="./images/thoi-vu-tc.jpg" alt="Nhật ký hành trình" class="flipbook-photo">
             </div>
           </div>
-
-          <!-- CỘT MỐC 2: LEAD DEV NHÓM 02 -->
-          <div class="timeline-item">
-            <div class="timeline-marker">
-              <div class="marker-dot" aria-hidden="true"></div>
-              <div class="marker-line" aria-hidden="true"></div>
-            </div>
-            <div class="timeline-card bento-card">
-              <div class="card-header-flex">
-                <div>
-                  <span class="timeline-period" data-i18n="exp_period_2">2024 — 2026</span>
-                  <h3 class="timeline-role" data-i18n="exp_role_2">Full-Stack Developer &amp; Điều phối kỹ thuật</h3>
-                  <h4 class="timeline-org" data-i18n="exp_org_2">Nhóm 02 — Lập trình Web (UTH)</h4>
-                </div>
-                <span class="experience-badge team" data-i18n="exp_badge_team">Team Lead</span>
-              </div>
-              <p class="timeline-desc" data-i18n="exp_desc_2">
-                Chịu trách nhiệm thiết kế kiến trúc hệ thống, chuẩn hóa CSDL 3NF và phân chia nhiệm vụ lập trình cho 6 thành viên trong nhóm đồ án.
-              </p>
-              <ul class="timeline-bullets">
-                <li data-i18n="exp_bullet_2_1">Xây dựng quy trình làm việc Git Flow, review code đảm bảo nguyên tắc Clean Code &amp; ACID.</li>
-                <li data-i18n="exp_bullet_2_2">Trực tiếp phát triển các module Backend phức tạp (quản lý giao dịch, chuẩn hóa dữ liệu).</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- CỘT MỐC 3: HỌC TẬP TẠI UTH -->
-          <div class="timeline-item">
-            <div class="timeline-marker">
-              <div class="marker-dot" aria-hidden="true"></div>
-            </div>
-            <div class="timeline-card bento-card">
-              <div class="card-header-flex">
-                <div>
-                  <span class="timeline-period" data-i18n="exp_period_3">2024 — 2028 (Dự kiến)</span>
-                  <h3 class="timeline-role" data-i18n="exp_role_3">Sinh viên Công nghệ Thông tin (K24)</h3>
-                  <h4 class="timeline-org" data-i18n="exp_org_3">Trường Đại học Giao thông Vận tải TP.HCM</h4>
-                </div>
-                <span class="experience-badge academic" data-i18n="exp_badge_academic">Academic</span>
-              </div>
-              <p class="timeline-desc" data-i18n="exp_desc_3">
-                Tập trung nghiên cứu chuyên sâu về Kiến trúc phần mềm Backend, Hệ quản trị CSDL quan hệ, Mạng máy tính và An toàn thông tin.
-              </p>
-            </div>
-          </div>
-
         </div>
+
+        <!-- TRANG PHẢI: HIỂN THỊ NỘI DUNG -->
+        <div class="book-page page-right">
+          <div class="page-inner">
+            <div class="page-meta">
+              <span class="page-period" id="flipbook-period">2023 — Trước chuyên ngành</span>
+              <span class="page-badge" id="flipbook-badge">Khởi đầu</span>
+            </div>
+            <h3 class="page-title" id="flipbook-title">Trải nghiệm lao động thời vụ &amp; Rèn luyện sức bền</h3>
+            <div class="page-divider"></div>
+            <p class="page-desc" id="flipbook-desc">
+              Tiếp xúc với môi trường làm việc thực tế từ sớm qua các công việc thời vụ tài chính / kỹ thuật cơ bản. Rèn luyện sự kiên nhẫn, tinh thần vượt khó, kỷ luật thời gian và thái độ nghiêm túc với từng công việc được giao.
+            </p>
+          </div>
+        </div>
+
       </div>
-    </section>
+
+      <!-- NÚT LẬT TRANG PHẢI -->
+      <button class="flip-btn next-btn" id="flip-next" aria-label="Trang sau">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+
+    </div>
+
+    <!-- THANH CHỈ SỐ TRANG & DOTS INDICATOR -->
+    <div class="flipbook-controls">
+      <span class="page-counter" id="flipbook-counter">Trang 01 / 11</span>
+      <div class="page-dots" id="flipbook-dots"></div>
+    </div>
+
+  </div>
+</section>
 
     <!-- ========================================================================= -->
     <!-- 4. SKILLS SECTION                                                        -->
