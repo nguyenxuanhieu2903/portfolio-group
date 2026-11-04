@@ -1280,7 +1280,7 @@ main:focus {
    6. ABOUT SECTION: BENTO GRID 4-KHỐI BALANCED LAYOUT
    -------------------------------------------------------------------------- */
 .about-section {
-  background-color: #F2F5F4; /* Sage Mist Canvas */
+  background-color: #FFFFFF;
   position: relative;
 }
 
@@ -2444,7 +2444,7 @@ main:focus {
    9. WORK PROCESS: SDLC TIMELINE & SVG CONNECTOR
    -------------------------------------------------------------------------- */
 .process-section {
-  background-color: var(--color-canvas-alt);
+  background-color: #FFFFFF;
 }
 
 .process-grid {
@@ -4530,6 +4530,110 @@ main:focus {
     flex-wrap: wrap;
     gap: 6px;
   }
+}
+
+/* ==========================================================================
+   ALTERNATING BACKGROUNDS WITH BOTANICAL PATTERN (ZEBRA PATTERN SYSTEM)
+   ========================================================================== */
+
+/* Họa tiết SVG chìm cho các Section nền Sage */
+.bg-pattern-sage {
+  background-color: #F2F5F4 !important;
+  background-image: radial-gradient(circle at 85% 15%, rgba(13, 148, 136, 0.08) 0%, transparent 45%),
+                    url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 0C40 22.0914 22.0914 40 0 40C22.0914 40 40 57.9086 40 80C40 57.9086 57.9086 40 80 40C57.9086 40 40 22.0914 40 0Z' fill='%230F2923' fill-opacity='0.025'/%3E%3C/svg%3E") !important;
+  background-attachment: fixed !important;
+}
+
+/* Nền Trắng Sứ thuần khiết */
+.bg-pattern-white {
+  background-color: #FFFFFF !important;
+  background-image: none !important;
+}
+
+/* Áp dụng cụ thể từng Section theo thứ tự xen kẽ 6 Section */
+#hero {
+  background-color: #F2F5F4 !important;
+  background-image: radial-gradient(circle at 85% 20%, rgba(13, 148, 136, 0.12) 0%, transparent 50%),
+                    url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 0C40 22.0914 22.0914 40 0 40C22.0914 40 40 57.9086 40 80C40 57.9086 57.9086 40 80 40C57.9086 40 40 22.0914 40 0Z' fill='%230F2923' fill-opacity='0.035'/%3E%3C/svg%3E") !important;
+}
+
+#hero::before {
+  display: none !important;
+}
+
+#about { 
+  background-color: #FFFFFF !important; 
+  background-image: none !important;
+}
+
+#experience { 
+  background-color: #F2F5F4 !important;
+  background-image: radial-gradient(circle at 85% 15%, rgba(13, 148, 136, 0.08) 0%, transparent 45%),
+                    url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 0C40 22.0914 22.0914 40 0 40C22.0914 40 40 57.9086 40 80C40 57.9086 57.9086 40 80 40C57.9086 40 40 22.0914 40 0Z' fill='%230F2923' fill-opacity='0.025'/%3E%3C/svg%3E") !important;
+  background-attachment: fixed !important;
+}
+
+#skills { 
+  background-color: #FFFFFF !important; 
+  background-image: none !important;
+}
+
+#projects { 
+  background-color: #F2F5F4 !important;
+  background-image: radial-gradient(circle at 15% 20%, rgba(13, 148, 136, 0.08) 0%, transparent 45%),
+                    url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 0C40 22.0914 22.0914 40 0 40C22.0914 40 40 57.9086 40 80C40 57.9086 57.9086 40 80 40C57.9086 40 40 22.0914 40 0Z' fill='%230F2923' fill-opacity='0.025'/%3E%3C/svg%3E") !important;
+  background-attachment: fixed !important;
+}
+
+#process { 
+  background-color: #FFFFFF !important; 
+  background-image: none !important;
+}
+
+#contact { 
+  background-color: #F2F5F4 !important;
+  background-image: radial-gradient(circle at 85% 15%, rgba(13, 148, 136, 0.08) 0%, transparent 45%),
+                    url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 0C40 22.0914 22.0914 40 0 40C22.0914 40 40 57.9086 40 80C40 57.9086 57.9086 40 80 40C57.9086 40 40 22.0914 40 0Z' fill='%230F2923' fill-opacity='0.025'/%3E%3C/svg%3E") !important;
+  background-attachment: fixed !important;
+}
+
+/* Tối ưu hiệu năng cuộn trên thiết bị di động & máy tính bảng */
+@media (max-width: 1024px) {
+  .bg-pattern-sage, 
+  #hero, 
+  #experience, 
+  #projects, 
+  #contact {
+    background-attachment: scroll !important;
+  }
+}
+
+/* Giữ mặt thẻ Bento Trắng nổi rực rỡ trên nền xen kẽ */
+.bento-card, 
+.skill-bento-card, 
+.project-card, 
+.contact-card-box,
+.contact-method-card,
+.contact-form-panel {
+  background: #FFFFFF !important;
+  box-shadow: 0 10px 30px -5px rgba(15, 41, 35, 0.05) !important;
+  border: 1px solid rgba(15, 41, 35, 0.08) !important;
+}
+
+/* Ngoại lệ quan trọng: Giữ nguyên thẻ Quote Rêu Đêm #0F2923 */
+.bento-card.bento-quote-card,
+.bento-card.bento-quote-vertical,
+.about-section .bento-quote-card,
+.bento-quote-card {
+  background: #0F2923 !important;
+  background-color: #0F2923 !important;
+  color: var(--color-text-on-dark) !important;
+}
+
+/* Giữ nguyên thẻ Quote trong Quy trình làm việc (#process) */
+.process-quote-card {
+  background: var(--color-card-dark) !important;
+  color: var(--color-text-on-dark) !important;
 }
 
 /* --------------------------------------------------------------------------
