@@ -29,7 +29,6 @@ const translations = {
     nav_skills: "Kỹ năng",
     nav_projects: "Dự án",
     nav_process: "Quy trình",
-    nav_team: "Nhóm",
     nav_contact: "Liên hệ",
     group_portal: "Trang nhóm",
     tag_soon: "Sắp có",
@@ -129,16 +128,9 @@ const translations = {
     step_5_desc: "Đóng gói container Docker, cấu hình web server, tự động hóa build/deploy tĩnh trên GitHub Pages và theo dõi hiệu năng hệ thống.",
     process_quote_text: "Phát triển phần mềm chuẩn mực là tuân thủ chặt chẽ quy trình từ Đặc tả, Thiết kế, Lập trình đến Kiểm thử và Triển khai.",
 
-    // Team Hub Section
-    team_tag: "05 / Không gian kết nối",
-    team_title: "Thành viên Nhóm Phát triển",
-    team_subtitle: "Liên kết tới trang portfolio cá nhân của các thành viên trong nhóm dự án Lập trình Web.",
-    badge_current_page: "Trang hiện tại",
-    btn_view_top: "Lên đầu trang",
-    btn_view_portfolio: "Xem Portfolio",
 
     // Contact Section
-    contact_tag: "06 / Trao đổi & Kết nối",
+    contact_tag: "05 / Trao đổi & Kết nối",
     contact_title: "Liên hệ hợp tác",
     contact_subtitle: "Sẵn sàng trao đổi về các bài toán kiến trúc backend, kỹ thuật hệ thống và các dự án phát triển phần mềm.",
     contact_info_title: "Kênh kết nối chính thức",
@@ -194,7 +186,6 @@ const translations = {
     nav_skills: "Skills",
     nav_projects: "Projects",
     nav_process: "Process",
-    nav_team: "Team",
     nav_contact: "Contact",
     group_portal: "Group Portal",
     tag_soon: "Coming Soon",
@@ -294,16 +285,9 @@ const translations = {
     step_5_desc: "Docker containerization, web server configuration, GitHub Pages static builds automation, and runtime observability.",
     process_quote_text: "Disciplined software engineering means strictly adhering to standard processes: Specification, Design, Development, Testing, and Deployment.",
 
-    // Team Hub Section
-    team_tag: "05 / Team Hub",
-    team_title: "Engineering Team Members",
-    team_subtitle: "Direct navigation to individual portfolios of our Web Programming group project.",
-    badge_current_page: "Current Page",
-    btn_view_top: "Back to Top",
-    btn_view_portfolio: "View Portfolio",
 
     // Contact Section
-    contact_tag: "06 / Contact & Connect",
+    contact_tag: "05 / Contact & Connect",
     contact_title: "Get In Touch",
     contact_subtitle: "Always open to discussing backend architectures, systems engineering, and collaborative software projects.",
     contact_info_title: "Official Channels",
