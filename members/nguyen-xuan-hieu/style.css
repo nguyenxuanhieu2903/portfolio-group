@@ -3214,7 +3214,118 @@ main:focus {
 }
 
 @media (max-width: 768px) {
-  /* Floating & Mobile UX Fixes */
+  /* ==========================================================================
+     MOBILE BENTO GRID (#ABOUT & FULL SITE) - 100% 1-COLUMN COLLAPSE
+     ========================================================================== */
+  .about-bento-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: var(--space-lg) !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+
+  .about-portrait-card,
+  .about-bio-card,
+  .about-quote-card,
+  .about-specs-card,
+  .bento-portrait-card,
+  .bento-story-card,
+  .bento-quote-card,
+  .bento-specs-card {
+    grid-column: span 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Khối Chân dung */
+  .bento-portrait-card .portrait-img-wrapper {
+    min-height: 280px !important;
+    max-height: 360px !important;
+    width: 100% !important;
+  }
+
+  .about-portrait-img {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 360px !important;
+    object-fit: cover !important;
+  }
+
+  /* Khối Câu chuyện */
+  .bento-story-card {
+    padding: 24px 20px !important;
+  }
+
+  .bento-text-lg {
+    font-size: 1rem !important;
+    line-height: 1.65 !important;
+  }
+
+  /* Khối Quote Card màu Rêu tối - Chống tràn viền & cắt chữ */
+  .bento-quote-card {
+    min-height: auto !important;
+    padding: 26px 20px !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    overflow: hidden !important;
+  }
+
+  .bento-quote-card .quote-body {
+    padding-top: 8px !important;
+  }
+
+  .bento-quote-card .quote-content {
+    font-size: clamp(1rem, 3.8vw, 1.22rem) !important;
+    line-height: 1.55 !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    font-style: italic !important;
+  }
+
+  .bento-quote-card .quote-symbol-bg {
+    font-size: 3.5rem !important;
+    top: -8px !important;
+    left: 8px !important;
+    opacity: 0.18 !important;
+  }
+
+  .bento-quote-card .quote-author {
+    margin-top: 14px !important;
+    font-size: 0.72rem !important;
+    letter-spacing: 0.1em !important;
+  }
+
+  /* Khối Specs Card */
+  .bento-specs-card {
+    padding: 24px 20px !important;
+  }
+
+  .specs-cards-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .spec-mini-card {
+    padding: 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Các Section khác */
+  .skills-bento-grid,
+  .skills-categories-grid,
+  .projects-grid,
+  .process-grid,
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+  }
+
+  /* Floating controls */
   .dev-terminal-toggle-btn {
     display: none !important;
   }
@@ -3223,12 +3334,6 @@ main:focus {
     right: 1rem !important;
     bottom: 1rem !important;
     z-index: 99 !important;
-  }
-
-  .about-bento-grid,
-  .skills-bento-grid,
-  .skills-categories-grid {
-    grid-template-columns: 1fr !important;
   }
 
   .specs-cards-grid,

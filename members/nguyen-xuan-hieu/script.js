@@ -1,14 +1,14 @@
-import imgThoiVu from './images/thoi-vu-tc.jpg';
-import imgCafe from './images/phuc-vu-cafe.jpg';
-import imgLab from './images/thuc-hanh-lab.jpg';
-import imgThi from './images/thuc-hanh-thi.jpg';
-import imgMang from './images/thuc-hanh-mang.jpg';
-import imgMangXong from './images/thuc-hanh-mang-xong.jpg';
-import imgServer from './images/thuc-hanh-server.jpg';
-import imgServerXong from './images/thuc-hanh-server-xong.jpg';
-import imgCam from './images/thuc-hanh-cam.jpg';
-import imgCamCheck from './images/thuc-hanh-cam-check.jpg';
-import imgBanLamViec from './images/ban-lam-viec.jpg';
+const imgThoiVu = new URL('./images/thoi-vu-tc.jpg', import.meta.url).href;
+const imgCafe = new URL('./images/phuc-vu-cafe.jpg', import.meta.url).href;
+const imgLab = new URL('./images/thuc-hanh-lab.jpg', import.meta.url).href;
+const imgThi = new URL('./images/thuc-hanh-thi.jpg', import.meta.url).href;
+const imgMang = new URL('./images/thuc-hanh-mang.jpg', import.meta.url).href;
+const imgMangXong = new URL('./images/thuc-hanh-mang-xong.jpg', import.meta.url).href;
+const imgServer = new URL('./images/thuc-hanh-server.jpg', import.meta.url).href;
+const imgServerXong = new URL('./images/thuc-hanh-server-xong.jpg', import.meta.url).href;
+const imgCam = new URL('./images/thuc-hanh-cam.jpg', import.meta.url).href;
+const imgCamCheck = new URL('./images/thuc-hanh-cam-check.jpg', import.meta.url).href;
+const imgBanLamViec = new URL('./images/ban-lam-viec.jpg', import.meta.url).href;
 
 /**
  * ==============================================================================
@@ -18,16 +18,16 @@ import imgBanLamViec from './images/ban-lam-viec.jpg';
  */
 
 // Static Diagram Asset Imports for Vite Build Optimization
-import hiunxstarArchSvg from './images/hiunxstar-architecture.svg';
-import hiunxstarErdSvg from './images/hiunxstar-erd.svg';
-import vetArchSvg from './images/veterinary-architecture.svg';
-import vetErdSvg from './images/veterinary-erd.svg';
+const hiunxstarArchSvg = new URL('./images/hiunxstar-architecture.svg', import.meta.url).href;
+const hiunxstarErdSvg = new URL('./images/hiunxstar-erd.svg', import.meta.url).href;
+const vetArchSvg = new URL('./images/veterinary-architecture.svg', import.meta.url).href;
+const vetErdSvg = new URL('./images/veterinary-erd.svg', import.meta.url).href;
 
 // HIUNXSTAR UI Showcase Screenshots
-import hiunxHeroJpg from './images/hiunxstar-hero.jpg';
-import hiunxSeatsJpg from './images/hiunxstar-seats.jpg';
-import hiunxCheckoutJpg from './images/hiunxstar-checkout.jpg';
-import hiunxAdminJpg from './images/hiunxstar-admin.jpg';
+const hiunxHeroJpg = new URL('./images/hiunxstar-hero.jpg', import.meta.url).href;
+const hiunxSeatsJpg = new URL('./images/hiunxstar-seats.jpg', import.meta.url).href;
+const hiunxCheckoutJpg = new URL('./images/hiunxstar-checkout.jpg', import.meta.url).href;
+const hiunxAdminJpg = new URL('./images/hiunxstar-admin.jpg', import.meta.url).href;
 
 // ------------------------------------------------------------------------------
 // 1. BILINGUAL DICTIONARY (VI / EN)
