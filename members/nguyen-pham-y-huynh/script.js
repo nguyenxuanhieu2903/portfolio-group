@@ -1437,15 +1437,15 @@ marqueeItems.forEach(item => {
   ====================================== */
   const photos = [
     {
-      src: "img/avatar.jpg",
+      src: "images/hobby-11.jpg",
       title: "Memory 01"
     },
     {
-      src: "img/avatar1.jpg",
+      src: "images/avatar1.jpg",
       title: "Memory 02"
     },
     {
-      src: "img/avatar2.jpg",
+      src: "images/avatar2.jpg",
       title: "Memory 03"
     }
   ];

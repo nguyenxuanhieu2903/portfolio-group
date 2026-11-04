@@ -277,6 +277,83 @@ header {
 .top-right{position:fixed;right:24px;top:16px;z-index:60;display:flex;align-items:center;gap:10px}
 .top-right .tools{margin-left:0}
 .top-right .tool,.burger{-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+
+/* NÚT TẢI CV ĐỒNG BỘ THANH CÔNG CỤ */
+.cv-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  height: 38px;
+  padding: 0 18px;
+  min-width: 110px;
+
+  background: linear-gradient(100deg, #9be4ff, #66b7e8);
+  color: #06182b;
+
+  border: none;
+  border-radius: 999px;
+
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
+  text-decoration: none;
+
+  box-shadow: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cv-download:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(93, 195, 255, 0.3);
+}
+
+.cv-icon {
+  font-size: 1rem;
+}
+
+.cv-text {
+  font-size: inherit;
+}
+
+@media (max-width: 480px) {
+  .cv-download {
+    min-width: 38px;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+  }
+
+  .cv-text {
+    display: none;
+  }
+}
+/* Responsive điện thoại */
+@media (max-width: 480px) {
+  .cv-download {
+    min-width: 38px;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+  }
+
+  .cv-text {
+    display: none;
+  }
+
+  .cv-icon {
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 480px) {
+  .cv-download {
+    padding: 0 10px;
+    font-size: 12px;
+  }
+}
 /* ---- MENU ỐNG NGHIỆM ĐO MỰC NƯỚC: mực nước dâng dần khi bạn cuộn xuống; mỗi mục là một bong bóng trong ống + nhãn kính trong suốt ---- */
 /* Font "Hey Poster": tự thêm file vào fonts/HeyPoster.woff2 (hoặc .ttf). Chưa có thì dùng Oswald. */
 @font-face{font-family:'Hey Poster';src:local('Hey Poster'),local('HeyPoster'),url('fonts/HeyPoster.woff2') format('woff2'),url('fonts/HeyPoster.ttf') format('truetype');font-display:swap}
@@ -740,7 +817,7 @@ header {
   top: 0;
   left: 50%;
   transform: translateX(-50%) scale(0.85);
-  width: 280px;
+  width: 100;
   height: 120px;
   z-index: 20;
   pointer-events: auto;
@@ -4788,17 +4865,17 @@ footer {
   height: auto;
   overflow: visible !important;
 }
-
-/* Định dạng phông chữ, màu sắc và độ sáng theo đúng mẫu */
+/* Định dạng phông chữ, màu sắc và độ sáng */
 .curved-portfolio-text {
   font-family: 'Cinzel Decorative', 'Playfair Display', serif;
-  font-size: 150px;        /* Chỉnh cỡ chữ  */
+  font-size: 150px;
   font-weight: 900;
   fill: url(#oceanGrad);
-  letter-spacing: 9px;
+  letter-spacing: 3px;
   filter: drop-shadow(0 0 15px rgba(122, 224, 255, 0.9))
           drop-shadow(0 0 30px rgba(115, 170, 255, 0.7));
 }
+
 /* Điều chỉnh lại vị trí khối Rubik nằm ngay dưới chữ */
 .rubik-hero-card {
   display: flex;

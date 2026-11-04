@@ -41,22 +41,43 @@
 
 <!-- ======================= 3. HEADER ======================= -->
 <header>
+<div class="top-right">
+  <div class="tools">
+    <button class="tool" id="theme-btn" type="button"></button>
 
-  <!-- Góc TRÊN CÙNG BÊN PHẢI: đổi theme + đổi ngôn ngữ (+ nút ☰ chỉ hiện trên màn hình hẹp) -->
-  <div class="top-right">
-    <div class="tools">
-      <button class="tool" id="theme-btn" type="button"></button>
-      <div class="lang" id="lang">
-        <button class="tool lang-btn" id="lang-btn" type="button" aria-haspopup="listbox" aria-expanded="false"><span class="flag" id="lang-flag"></span> <span class="nm" id="lang-name">Tiếng Việt</span> <span class="caret">▾</span></button>
-        <ul class="lang-list" role="listbox" hidden>
-          <li role="option" tabindex="0" data-lang="vi"><span class="flag" data-flag="vi"></span>Tiếng Việt</li>
-          <li role="option" tabindex="0" data-lang="en"><span class="flag" data-flag="en"></span>English</li>
-        </ul>
-      </div>
+    <div class="lang" id="lang">
+      <button class="tool lang-btn" id="lang-btn"
+              type="button"
+              aria-haspopup="listbox"
+              aria-expanded="false">
+        <span class="flag" id="lang-flag"></span>
+        <span class="nm" id="lang-name">Tiếng Việt</span>
+        <span class="caret">▾</span>
+      </button>
+
+      <ul class="lang-list" role="listbox" hidden>
+        <li role="option" tabindex="0" data-lang="vi">
+          <span class="flag" data-flag="vi"></span>Tiếng Việt
+        </li>
+        <li role="option" tabindex="0" data-lang="en">
+          <span class="flag" data-flag="en"></span>English
+        </li>
+      </ul>
     </div>
-    <button class="burger" aria-label="Mở menu" aria-expanded="false">☰</button>
+
+    <a class="tool cv-download"
+       href="images/cv.pdf"
+       download="Nguyen_Pham_Y_Huynh_CV.pdf"
+       title="Tải CV (PDF)">
+        <span class="cv-icon">⬇</span>
+        <span class="cv-text">Tải CV</span>
+    </a>
   </div>
 
+  <button class="burger"
+          aria-label="Mở menu"
+          aria-expanded="false">☰</button>
+</div>
   <!-- Menu dạng CỘT BIỂN CHỈ ĐƯỜNG (cố định bên trái) -->
 <ul class="menu" aria-label="Điều hướng chính">
   <li><a href="#home" class="active">Trang chủ</a></li>
@@ -141,7 +162,7 @@
     <path id="archPath" d="M 50,220 Q 500,20 950,220" fill="transparent"/>
     <text class="curved-portfolio-text">
       <textPath href="#archPath" startOffset="50%" text-anchor="middle">
-        PORFIO
+      PORTFOLIO
       </textPath>
     </text>
   </svg>
@@ -273,7 +294,7 @@
               </div>
 
               <div class="screen-on" id="screenOn">
-                <img id="screenPhoto" src="images/avatar.jpg" alt="Portfolio photo"/>
+                <img id="screenPhoto" src="images/hobby-11.jpg" alt="Portfolio photo"/>
                 <span class="screen-label">MEMORIES.exe</span>
               </div>
             </div>
@@ -306,7 +327,7 @@
 
           <!-- Ảnh Polaroid phóng to khi mở -->
           <div class="memory-photo" id="memoryPhoto">
-            <img id="memoryImage" src="images/avatar.jpg" alt="Memory photo"/>
+            <img id="memoryImage" src="images/hobby-11.jpg" alt="Memory photo"/>
             <span class="memory-caption" id="memoryCaption">Memory 01</span>
           </div>
 
@@ -491,7 +512,7 @@
 
       <!-- CỘT TRÁI: TRÁI TIM ẢNH -->
       <div class="about-visual hobby-visual">
-          <!-- Thay ô trống bằng ảnh: <div class="hobby-tile" style="..."><img src="img/hobby-1.jpg" alt="Đi biển"></div> -->
+          <!-- Thay ô trống bằng ảnh: <div class="hobby-tile" style="..."><img src="images/hobby-1.jpg" alt="Đi biển"></div> -->
     <div class="hobby-heart" aria-label="Bộ sưu tập ảnh hình trái tim">
       <div class="hobby-tile" style="--l:15.6;--t:9.3;--w:12.9;--h:12"><img src="images/hobby-1.jpg" alt="Sở thích 1"></div>
       <div class="hobby-tile" style="--l:29.7;--t:9.3;--w:12.9;--h:12"><img src="images/hobby-2.jpg" alt="Sở thích 2"></div>
@@ -632,7 +653,6 @@
       <!-- 4.6  KINH NGHIỆM -->
       <section id="experience">
         <div class="wrap">
-          <h2>Kinh nghiệm</h2>
           <p class="lead">Hoạt động nhóm, nghiên cứu và đồ án đã hoàn thành.</p>
 
           <div class="timeline">
@@ -665,7 +685,7 @@
         <symbol id="i-plane" viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></symbol>
         <symbol id="i-shell" viewBox="0 0 40 36"><path d="M20 2C10 2 3 12 2 24c4 3 9 5 18 5s14-2 18-5C37 12 30 2 20 2z"/><rect x="14" y="29" width="12" height="5" rx="2"/><path d="M20 6v22M12 8l5 20M28 8l-5 20M6 14l10 14M34 14L24 28" fill="none" stroke="#06142c" stroke-width="1.4"/></symbol>
       </svg>
-<!-- 4.3 PROJECTS -->
+       4.3 PROJECTS -->
       <section id="projects">
         <div class="wrap">
         
@@ -787,10 +807,11 @@
           </div>
         </div>
       </section>
-      <!-- 4.5 CONTACT -->
+<!--  ==========================================
+     4.4 PORTFOLIO – DỰ ÁN ĐÃ THỰC
+========================================== -->
       <section id="contact" class="contact-section">
         <div class="wrap">
-          <h2>Liên hệ</h2>
           <div class="contact-grid">
             <div class="contact-left">
               <svg class="helm" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
