@@ -124,6 +124,60 @@ const translations = {
     skill_group_network: "Hạ tầng mạng & Hệ điều hành máy chủ",
     tooltip_role_tag: "Vai trò ứng dụng",
 
+    // Career Direction Section
+    nav_career: "Định hướng",
+    career_tag: "06 / Định hướng",
+    career_title: "Mục tiêu phát triển nghề nghiệp",
+    career_short_badge: "NGẮN HẠN (1 - 2 NĂM)",
+    career_short_title: "Backend Specialist & System Mastery",
+    career_short_item1: "Tốt nghiệp loại Ưu chuyên ngành Công nghệ Thông tin tại Đại học Giao thông Vận tải TP.HCM (UTH).",
+    career_short_item2: "Làm chủ kỹ thuật thiết kế Microservices, tối ưu hóa CSDL chuẩn 3NF, ACID và caching với Redis.",
+    career_short_item3: "Đạt các chứng chỉ chuyên môn về Quản trị mạng & Hệ điều hành máy chủ (Cisco / Linux Administration).",
+    career_long_badge: "DÀI HẠN (3 - 5 NĂM)",
+    career_long_title: "Senior Software & Infrastructure Architect",
+    career_long_item1: "Đảm nhận vai trò Key Backend Engineer / System Architect trong các dự án phần mềm quy mô lớn.",
+    career_long_item2: "Xây dựng hạ tầng Cloud/On-Premise bền vững có khả năng chịu tải cao, mở rộng linh hoạt và bảo mật cao.",
+    career_long_item3: "Dẫn dắt và định hướng kỹ thuật cho các kĩ sư trẻ, lan tỏa tư duy \"Think in systems. Build with purpose\".",
+
+    // Interests Section
+    interests_tag: "07 / Sở thích",
+    interests_title: "Góc cá nhân & Niềm cảm hứng",
+    interest_item1_title: "Homelab & Docker",
+    interest_item1_desc: "Thử nghiệm deploy server cá nhân và containerize các ứng dụng nhỏ.",
+    interest_item2_title: "Sách Kiến trúc Hệ thống",
+    interest_item2_desc: "Đọc tài liệu về Clean Architecture, Database Internals và System Design.",
+    interest_item3_title: "Chạy bộ & Rèn sức bền",
+    interest_item3_desc: "Duy trì tính kỷ luật và sự dẻo dai tinh thần qua các buổi chạy bộ.",
+    interest_item4_title: "Cafe Lập trình",
+    interest_item4_desc: "Thưởng thức cafe ngon và brainstorm các ý tưởng dự án cuối tuần.",
+
+    // Career Direction Section
+    nav_career: "Career",
+    career_tag: "06 / Career Goals",
+    career_title: "Professional Development Goals",
+    career_short_badge: "SHORT-TERM (1 - 2 YEARS)",
+    career_short_title: "Backend Specialist & System Mastery",
+    career_short_item1: "Graduate with Honors in Information Technology from Ho Chi Minh City University of Transport (UTH).",
+    career_short_item2: "Master Microservices design, 3NF database normalization, ACID transactions, and Redis caching.",
+    career_short_item3: "Earn professional certifications in Network Administration & Server Operating Systems (Cisco / Linux).",
+    career_long_badge: "LONG-TERM (3 - 5 YEARS)",
+    career_long_title: "Senior Software & Infrastructure Architect",
+    career_long_item1: "Serve as Key Backend Engineer / System Architect for enterprise-scale software projects.",
+    career_long_item2: "Architect resilient Cloud/On-Premise infrastructure with high throughput, scalability, and security.",
+    career_long_item3: "Mentor and provide technical leadership to young engineers, championing the mindset: 'Think in systems. Build with purpose'.",
+
+    // Interests Section
+    interests_tag: "07 / Interests",
+    interests_title: "Personal Interests & Inspiration",
+    interest_item1_title: "Homelab & Docker",
+    interest_item1_desc: "Experimenting with personal home server deployment and containerizing mini services.",
+    interest_item2_title: "System Architecture Books",
+    interest_item2_desc: "Reading deep literature on Clean Architecture, Database Internals, and High-Scale System Design.",
+    interest_item3_title: "Running & Endurance",
+    interest_item3_desc: "Maintaining focus, discipline, and mental grit through regular running sessions.",
+    interest_item4_title: "Tech Coffee & Brainstorming",
+    interest_item4_desc: "Savoring specialty coffee while brainstorming weekend software prototypes.",
+
     // Projects Section
     projects_tag: "04 / Dự án thực tế",
     projects_title: "Sản phẩm kỹ thuật tiêu biểu",
@@ -164,7 +218,8 @@ const translations = {
 
 
     // Contact Section
-    contact_tag: "06 / Trao đổi & Kết nối",
+    contact_tag: "08 / Trao đổi & Kết nối",
+    btn_copy_phone: "Sao chép",
     contact_title: "Liên hệ hợp tác",
     contact_subtitle: "Sẵn sàng trao đổi về các bài toán kiến trúc backend, kỹ thuật hệ thống và các dự án phát triển phần mềm.",
     contact_info_title: "Kênh kết nối chính thức",
@@ -303,6 +358,33 @@ const translations = {
     skill_group_network: "Network Infrastructure & Server OS",
     tooltip_role_tag: "Practical Role",
 
+    // Career Direction Section
+    nav_career: "Career",
+    career_tag: "06 / Career Goals",
+    career_title: "Professional Development Goals",
+    career_short_badge: "SHORT-TERM (1 - 2 YEARS)",
+    career_short_title: "Backend Specialist & System Mastery",
+    career_short_item1: "Graduate with Honors in Information Technology from Ho Chi Minh City University of Transport (UTH).",
+    career_short_item2: "Master Microservices design, 3NF database normalization, ACID transactions, and Redis caching.",
+    career_short_item3: "Earn professional certifications in Network Administration & Server Operating Systems (Cisco / Linux).",
+    career_long_badge: "LONG-TERM (3 - 5 YEARS)",
+    career_long_title: "Senior Software & Infrastructure Architect",
+    career_long_item1: "Serve as Key Backend Engineer / System Architect for enterprise-scale software projects.",
+    career_long_item2: "Architect resilient Cloud/On-Premise infrastructure with high throughput, scalability, and security.",
+    career_long_item3: "Mentor and provide technical leadership to young engineers, championing the mindset: 'Think in systems. Build with purpose'.",
+
+    // Interests Section
+    interests_tag: "07 / Interests",
+    interests_title: "Personal Interests & Inspiration",
+    interest_item1_title: "Homelab & Docker",
+    interest_item1_desc: "Experimenting with personal home server deployment and containerizing mini services.",
+    interest_item2_title: "System Architecture Books",
+    interest_item2_desc: "Reading deep literature on Clean Architecture, Database Internals, and High-Scale System Design.",
+    interest_item3_title: "Running & Endurance",
+    interest_item3_desc: "Maintaining focus, discipline, and mental grit through regular running sessions.",
+    interest_item4_title: "Tech Coffee & Brainstorming",
+    interest_item4_desc: "Savoring specialty coffee while brainstorming weekend software prototypes.",
+
     // Projects Section
     projects_tag: "04 / Featured Projects",
     projects_title: "Selected Technical Projects",
@@ -343,7 +425,8 @@ const translations = {
 
 
     // Contact Section
-    contact_tag: "06 / Contact & Connect",
+    contact_tag: "08 / Contact & Connect",
+    btn_copy_phone: "Copy",
     contact_title: "Get In Touch",
     contact_subtitle: "Always open to discussing backend architectures, systems engineering, and collaborative software projects.",
     contact_info_title: "Official Channels",
@@ -591,6 +674,11 @@ export function setLanguage(lang) {
   const copyEmailBtn = document.getElementById('copy-email-btn');
   if (copyEmailBtn) {
     copyEmailBtn.setAttribute('aria-label', lang === 'vi' ? 'Sao chép địa chỉ email vào bộ nhớ tạm' : 'Copy email address to clipboard');
+  }
+
+  const copyPhoneBtn = document.getElementById('copy-phone-btn');
+  if (copyPhoneBtn) {
+    copyPhoneBtn.setAttribute('aria-label', lang === 'vi' ? 'Sao chép số điện thoại vào bộ nhớ tạm' : 'Copy phone number to clipboard');
   }
 
   const scrollTopBtn = document.getElementById('scroll-top-btn');
@@ -1923,33 +2011,59 @@ function showToast(message) {
 }
 
 function initCopyEmail() {
-  const copyBtn = document.getElementById('copy-email-btn');
-  if (!copyBtn) return;
-
-  copyBtn.addEventListener('click', async () => {
-    const email = 'nguyenxuanhieu2903@gmail.com';
-    try {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        await navigator.clipboard.writeText(email);
-      } else {
-        const textarea = document.createElement('textarea');
-        textarea.value = email;
-        textarea.style.position = 'fixed';
-        textarea.style.opacity = '0';
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textarea);
+  const copyEmailBtn = document.getElementById('copy-email-btn');
+  if (copyEmailBtn) {
+    copyEmailBtn.addEventListener('click', async () => {
+      const email = 'nguyenxuanhieu2903@gmail.com';
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(email);
+        } else {
+          const textarea = document.createElement('textarea');
+          textarea.value = email;
+          textarea.style.position = 'fixed';
+          textarea.style.opacity = '0';
+          document.body.appendChild(textarea);
+          textarea.select();
+          document.execCommand('copy');
+          document.body.removeChild(textarea);
+        }
+        const msg = currentLang === 'vi'
+          ? 'Đã sao chép địa chỉ email vào bộ nhớ tạm!'
+          : 'Email address copied to clipboard!';
+        showToast(msg);
+      } catch {
+        showToast(email);
       }
-      const msg = currentLang === 'vi'
-        ? 'Đã sao chép địa chỉ email vào bộ nhớ tạm!'
-        : 'Email address copied to clipboard!';
-      showToast(msg);
-    } catch {
-      /* Fallback if clipboard permission is denied */
-      showToast(email);
-    }
-  });
+    });
+  }
+
+  const copyPhoneBtn = document.getElementById('copy-phone-btn');
+  if (copyPhoneBtn) {
+    copyPhoneBtn.addEventListener('click', async () => {
+      const phone = '0933872761';
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(phone);
+        } else {
+          const textarea = document.createElement('textarea');
+          textarea.value = phone;
+          textarea.style.position = 'fixed';
+          textarea.style.opacity = '0';
+          document.body.appendChild(textarea);
+          textarea.select();
+          document.execCommand('copy');
+          document.body.removeChild(textarea);
+        }
+        const msg = currentLang === 'vi'
+          ? 'Đã sao chép số điện thoại / Zalo vào bộ nhớ tạm!'
+          : 'Phone number / Zalo copied to clipboard!';
+        showToast(msg);
+      } catch {
+        showToast(phone);
+      }
+    });
+  }
 }
 
 function initCvDownloadToast() {
