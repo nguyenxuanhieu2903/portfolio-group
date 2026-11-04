@@ -29,16 +29,17 @@
   <header class="site-header navbar" id="header">
     <nav class="nav-container" aria-label="Điều hướng chính">
       <!-- Desktop Navigation Menu -->
-      <ul class="nav-menu" id="nav-menu">
-        <li><a href="#hero" class="nav-link active" data-i18n="nav_home">Trang chủ</a></li>
-        <li><a href="#about" class="nav-link" data-i18n="nav_about">Giới thiệu</a></li>
-        <li><a href="#experience" class="nav-link" data-i18n="nav_experience">Trải nghiệm</a></li>
-        <li><a href="#skills" class="nav-link" data-i18n="nav_skills">Kỹ năng</a></li>
-        <li><a href="#projects" class="nav-link" data-i18n="nav_projects">Dự án</a></li>
-        <li><a href="#process" class="nav-link" data-i18n="nav_process">Quy trình</a></li>
-        <li><a href="#career" class="nav-link" data-i18n="nav_career">Định hướng</a></li>
-        <li><a href="#contact" class="nav-link" data-i18n="nav_contact">Liên hệ</a></li>
-      </ul>
+      <nav class="nav-menu" id="nav-menu" aria-label="Menu chính">
+        <ul class="nav-list">
+          <li><a href="#hero" class="nav-link active" data-i18n="nav_home">Trang chủ</a></li>
+          <li><a href="#about" class="nav-link" data-i18n="nav_about">Giới thiệu</a></li>
+          <li><a href="#experience" class="nav-link" data-i18n="nav_experience">Trải nghiệm</a></li>
+          <li><a href="#skills" class="nav-link" data-i18n="nav_skills">Kỹ năng</a></li>
+          <li><a href="#projects" class="nav-link" data-i18n="nav_projects">Dự án</a></li>
+          <li><a href="#process" class="nav-link" data-i18n="nav_process">Quy trình</a></li>
+          <li><a href="#contact" class="nav-link" data-i18n="nav_contact">Liên hệ</a></li>
+        </ul>
+      </nav>
 
       <!-- Action Group: Language Switcher, Group Return & Mobile Menu Toggle -->
       <div class="nav-actions">
@@ -1158,100 +1159,12 @@
     </section>
 
     <!-- ========================================================================= -->
-    <!-- 6. CAREER DIRECTION SECTION (#career)                                     -->
-    <!-- ========================================================================= -->
-    <section class="section career-section" id="career" aria-labelledby="career-title">
-      <div class="container">
-        <header class="section-header">
-          <span class="section-tag" data-i18n="career_tag">06 / Định hướng</span>
-          <h2 class="section-title" id="career-title" data-i18n="career_title">Mục tiêu phát triển nghề nghiệp</h2>
-          <div class="section-divider" aria-hidden="true"></div>
-        </header>
-
-        <div class="career-bento-grid">
-          <!-- Mục tiêu ngắn hạn -->
-          <div class="bento-card career-card">
-            <div class="career-card-header">
-              <span class="career-badge" data-i18n="career_short_badge">NGẮN HẠN (1 - 2 NĂM)</span>
-              <h3 class="career-card-title" data-i18n="career_short_title">Backend Specialist &amp; System Mastery</h3>
-            </div>
-            <ul class="career-list">
-              <li data-i18n="career_short_1">Tốt nghiệp loại Ưu chuyên ngành Công nghệ Thông tin tại Đại học Giao thông Vận tải TP.HCM (UTH).</li>
-              <li data-i18n="career_short_2">Làm chủ kỹ thuật thiết kế Microservices, tối ưu hóa CSDL chuẩn 3NF, ACID và caching với Redis.</li>
-              <li data-i18n="career_short_3">Đạt các chứng chỉ chuyên môn về Quản trị mạng &amp; Hệ điều hành máy chủ (Cisco / Linux Administration).</li>
-            </ul>
-          </div>
-
-          <!-- Mục tiêu dài hạn -->
-          <div class="bento-card career-card">
-            <div class="career-card-header">
-              <span class="career-badge feature-badge" data-i18n="career_long_badge">DÀI HẠN (3 - 5 NĂM)</span>
-              <h3 class="career-card-title" data-i18n="career_long_title">Senior Software &amp; Infrastructure Architect</h3>
-            </div>
-            <ul class="career-list">
-              <li data-i18n="career_long_1">Đảm nhận vai trò Key Backend Engineer / System Architect trong các dự án phần mềm quy mô lớn.</li>
-              <li data-i18n="career_long_2">Xây dựng hạ tầng Cloud/On-Premise bền vững có khả năng chịu tải cao, mở rộng linh hoạt và bảo mật cao.</li>
-              <li data-i18n="career_long_3">Dẫn dắt và định hướng kỹ thuật cho các kĩ sư trẻ, lan tỏa tư duy "Think in systems. Build with purpose".</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================================================= -->
-    <!-- 7. PERSONAL INTERESTS SECTION (#interests)                                -->
-    <!-- ========================================================================= -->
-    <section class="section interests-section" id="interests" aria-labelledby="interests-title">
-      <div class="container">
-        <header class="section-header">
-          <span class="section-tag" data-i18n="interests_tag">07 / Sở thích</span>
-          <h2 class="section-title" id="interests-title" data-i18n="interests_title">Góc cá nhân &amp; Niềm cảm hứng</h2>
-          <div class="section-divider" aria-hidden="true"></div>
-        </header>
-
-        <div class="interests-grid">
-          <div class="interest-pill-card">
-            <span class="interest-icon">🖥️</span>
-            <div class="interest-info">
-              <h4 data-i18n="interest_1_title">Homelab &amp; Docker</h4>
-              <p data-i18n="interest_1_desc">Thử nghiệm deploy server cá nhân và containerize các ứng dụng nhỏ.</p>
-            </div>
-          </div>
-
-          <div class="interest-pill-card">
-            <span class="interest-icon">📚</span>
-            <div class="interest-info">
-              <h4 data-i18n="interest_2_title">Sách Kiến trúc Hệ thống</h4>
-              <p data-i18n="interest_2_desc">Đọc tài liệu về Clean Architecture, Database Internals và System Design.</p>
-            </div>
-          </div>
-
-          <div class="interest-pill-card">
-            <span class="interest-icon">🏃‍♂️</span>
-            <div class="interest-info">
-              <h4 data-i18n="interest_3_title">Chạy bộ &amp; Rèn sức bền</h4>
-              <p data-i18n="interest_3_desc">Duy trì tính kỷ luật và sự dẻo dai tinh thần qua các buổi chạy bộ.</p>
-            </div>
-          </div>
-
-          <div class="interest-pill-card">
-            <span class="interest-icon">☕</span>
-            <div class="interest-info">
-              <h4 data-i18n="interest_4_title">Cafe Lập trình</h4>
-              <p data-i18n="interest_4_desc">Thưởng thức cafe ngon và brainstorm các ý tưởng dự án cuối tuần.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================================================= -->
     <!-- 8. CONTACT SECTION                                                       -->
     <!-- ========================================================================= -->
     <section class="section contact-section" id="contact" aria-labelledby="contact-title">
       <div class="container">
         <header class="section-header">
-          <span class="section-tag" data-i18n="contact_tag">08 / Trao đổi &amp; Kết nối</span>
+          <span class="section-tag" data-i18n="contact_tag">06 / Trao đổi &amp; Kết nối</span>
           <h2 class="section-title" id="contact-title" data-i18n="contact_title">Liên hệ hợp tác</h2>
           <p class="section-subtitle" data-i18n="contact_desc">Sẵn sàng trao đổi về các bài toán kiến trúc backend,
             kỹ thuật hệ thống và các dự án phát triển phần mềm.</p>
@@ -1277,7 +1190,7 @@
                   </svg>
                 </div>
                 <div class="method-details">
-                  <span class="method-label">Email chính thức</span>
+                  <span class="method-label" data-i18n="contact_email_label">Email chính thức</span>
                   <a href="mailto:nguyenxuanhieu2903@gmail.com" class="method-value"
                     id="official-email">nguyenxuanhieu2903@gmail.com</a>
                 </div>
@@ -1296,7 +1209,7 @@
                   </svg>
                 </div>
                 <div class="method-details">
-                  <span class="method-label">Zalo / Hotline</span>
+                  <span class="method-label" data-i18n="contact_phone_label">Zalo / Hotline</span>
                   <a href="tel:0933872761" class="method-value" id="official-phone">0933872761</a>
                 </div>
                 <button type="button" class="btn btn-sm btn-outline copy-btn" id="copy-phone-btn"
@@ -1316,7 +1229,7 @@
                   </svg>
                 </div>
                 <div class="method-details">
-                  <span class="method-label">GitHub Repository</span>
+                  <span class="method-label" data-i18n="contact_github_label">GitHub Repository</span>
                   <a href="https://github.com/nguyenxuanhieu2903" target="_blank" rel="noopener noreferrer"
                     class="method-value">github.com/nguyenxuanhieu2903</a>
                 </div>
@@ -1335,7 +1248,7 @@
                   </svg>
                 </div>
                 <div class="method-details">
-                  <span class="method-label">Facebook cá nhân</span>
+                  <span class="method-label" data-i18n="contact_facebook_label">Facebook cá nhân</span>
                   <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
                     class="method-value">facebook.com</a>
                 </div>

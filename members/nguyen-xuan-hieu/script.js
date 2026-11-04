@@ -205,13 +205,17 @@ const translations = {
 
 
     // Contact Section
-    contact_tag: "08 / Trao đổi & Kết nối",
+    contact_tag: "06 / Trao đổi & Kết nối",
     btn_copy_phone: "Sao chép",
     contact_title: "Liên hệ hợp tác",
     contact_desc: "Sẵn sàng trao đổi về các bài toán kiến trúc backend, kỹ thuật hệ thống và các cơ hội nghề nghiệp.",
     contact_subtitle: "Sẵn sàng trao đổi về các bài toán kiến trúc backend, kỹ thuật hệ thống và các dự án phát triển phần mềm.",
     contact_info_title: "Kênh kết nối chính thức",
-    contact_info_desc: "Bạn có thể gửi thư trực tiếp qua email hoặc theo dõi các kho mã nguồn dự án công khai trên GitHub.",
+    contact_info_desc: "Bạn có thể gửi thư trực tiếp qua email, kết nối Zalo, Facebook hoặc theo dõi các kho mã nguồn dự án công khai trên GitHub.",
+    contact_email_label: "Email chính thức",
+    contact_phone_label: "Zalo / Hotline",
+    contact_github_label: "GitHub Repository",
+    contact_facebook_label: "Facebook cá nhân",
     btn_copy_email: "Sao chép",
     btn_visit: "Truy cập",
     linkedin_soon: "Chưa liên kết hồ sơ",
@@ -427,13 +431,17 @@ const translations = {
 
 
     // Contact Section
-    contact_tag: "08 / Contact",
+    contact_tag: "06 / Contact",
     btn_copy_phone: "Copy",
     contact_title: "Let's Connect",
     contact_desc: "Open to discussions regarding backend architecture, system engineering, and software development projects.",
     contact_subtitle: "Always open to discussing backend architectures, systems engineering, and collaborative software projects.",
     contact_info_title: "Official Channels",
-    contact_info_desc: "Feel free to reach out directly via email or explore my public repositories on GitHub.",
+    contact_info_desc: "Feel free to reach out via email, connect on Zalo and Facebook, or explore my public repositories on GitHub.",
+    contact_email_label: "Official Email",
+    contact_phone_label: "Zalo / Hotline",
+    contact_github_label: "GitHub Repository",
+    contact_facebook_label: "Personal Facebook",
     btn_copy_email: "Copy",
     btn_visit: "Visit",
     linkedin_soon: "Profile Not Linked Yet",

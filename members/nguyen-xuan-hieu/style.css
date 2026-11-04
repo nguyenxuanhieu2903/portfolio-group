@@ -428,6 +428,15 @@ main:focus {
   letter-spacing: -0.01em;
 }
 
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 .nav-menu {
   display: flex;
   align-items: center;
@@ -3431,6 +3440,16 @@ main:focus {
     border-bottom: 1px solid var(--color-border-subtle);
     display: none;
     box-shadow: var(--shadow-card);
+  }
+
+  .nav-menu .nav-list {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-xs);
+    width: 100%;
+    margin: 0;
+    padding: 0;
   }
 
   .nav-menu.open {
