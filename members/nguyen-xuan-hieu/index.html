@@ -43,8 +43,7 @@
       <!-- Action Group: Language Switcher, Group Return & Mobile Menu Toggle -->
       <div class="nav-actions">
         <!-- Language Switcher Button -->
-        <button type="button" class="lang-toggle-btn" id="lang-toggle" aria-label="Chuyển sang tiếng Anh"
-          title="Chuyển đổi ngôn ngữ / Switch language">
+        <button type="button" class="lang-toggle-btn lang-switch-btn" id="lang-toggle-btn" aria-label="Chuyển sang tiếng Anh" title="Chuyển đổi ngôn ngữ / Switch language" onclick="if(typeof setLanguage==='function'){setLanguage(currentLang==='vi'?'en':'vi');}else if(typeof window.setLanguage==='function'){window.setLanguage((window.currentLang||'vi')==='vi'?'en':'vi');}">
           <span class="lang-text lang-vi active" aria-hidden="true">VI</span>
           <span class="lang-divider" aria-hidden="true">/</span>
           <span class="lang-text lang-en" aria-hidden="true">EN</span>
@@ -1177,9 +1176,9 @@
               <h3 class="career-card-title" data-i18n="career_short_title">Backend Specialist &amp; System Mastery</h3>
             </div>
             <ul class="career-list">
-              <li data-i18n="career_short_item1">Tốt nghiệp loại Ưu chuyên ngành Công nghệ Thông tin tại Đại học Giao thông Vận tải TP.HCM (UTH).</li>
-              <li data-i18n="career_short_item2">Làm chủ kỹ thuật thiết kế Microservices, tối ưu hóa CSDL chuẩn 3NF, ACID và caching với Redis.</li>
-              <li data-i18n="career_short_item3">Đạt các chứng chỉ chuyên môn về Quản trị mạng &amp; Hệ điều hành máy chủ (Cisco / Linux Administration).</li>
+              <li data-i18n="career_short_1">Tốt nghiệp loại Ưu chuyên ngành Công nghệ Thông tin tại Đại học Giao thông Vận tải TP.HCM (UTH).</li>
+              <li data-i18n="career_short_2">Làm chủ kỹ thuật thiết kế Microservices, tối ưu hóa CSDL chuẩn 3NF, ACID và caching với Redis.</li>
+              <li data-i18n="career_short_3">Đạt các chứng chỉ chuyên môn về Quản trị mạng &amp; Hệ điều hành máy chủ (Cisco / Linux Administration).</li>
             </ul>
           </div>
 
@@ -1190,9 +1189,9 @@
               <h3 class="career-card-title" data-i18n="career_long_title">Senior Software &amp; Infrastructure Architect</h3>
             </div>
             <ul class="career-list">
-              <li data-i18n="career_long_item1">Đảm nhận vai trò Key Backend Engineer / System Architect trong các dự án phần mềm quy mô lớn.</li>
-              <li data-i18n="career_long_item2">Xây dựng hạ tầng Cloud/On-Premise bền vững có khả năng chịu tải cao, mở rộng linh hoạt và bảo mật cao.</li>
-              <li data-i18n="career_long_item3">Dẫn dắt và định hướng kỹ thuật cho các kĩ sư trẻ, lan tỏa tư duy "Think in systems. Build with purpose".</li>
+              <li data-i18n="career_long_1">Đảm nhận vai trò Key Backend Engineer / System Architect trong các dự án phần mềm quy mô lớn.</li>
+              <li data-i18n="career_long_2">Xây dựng hạ tầng Cloud/On-Premise bền vững có khả năng chịu tải cao, mở rộng linh hoạt và bảo mật cao.</li>
+              <li data-i18n="career_long_3">Dẫn dắt và định hướng kỹ thuật cho các kĩ sư trẻ, lan tỏa tư duy "Think in systems. Build with purpose".</li>
             </ul>
           </div>
         </div>
@@ -1214,32 +1213,32 @@
           <div class="interest-pill-card">
             <span class="interest-icon">🖥️</span>
             <div class="interest-info">
-              <h4 data-i18n="interest_item1_title">Homelab &amp; Docker</h4>
-              <p data-i18n="interest_item1_desc">Thử nghiệm deploy server cá nhân và containerize các ứng dụng nhỏ.</p>
+              <h4 data-i18n="interest_1_title">Homelab &amp; Docker</h4>
+              <p data-i18n="interest_1_desc">Thử nghiệm deploy server cá nhân và containerize các ứng dụng nhỏ.</p>
             </div>
           </div>
 
           <div class="interest-pill-card">
             <span class="interest-icon">📚</span>
             <div class="interest-info">
-              <h4 data-i18n="interest_item2_title">Sách Kiến trúc Hệ thống</h4>
-              <p data-i18n="interest_item2_desc">Đọc tài liệu về Clean Architecture, Database Internals và System Design.</p>
+              <h4 data-i18n="interest_2_title">Sách Kiến trúc Hệ thống</h4>
+              <p data-i18n="interest_2_desc">Đọc tài liệu về Clean Architecture, Database Internals và System Design.</p>
             </div>
           </div>
 
           <div class="interest-pill-card">
             <span class="interest-icon">🏃‍♂️</span>
             <div class="interest-info">
-              <h4 data-i18n="interest_item3_title">Chạy bộ &amp; Rèn sức bền</h4>
-              <p data-i18n="interest_item3_desc">Duy trì tính kỷ luật và sự dẻo dai tinh thần qua các buổi chạy bộ.</p>
+              <h4 data-i18n="interest_3_title">Chạy bộ &amp; Rèn sức bền</h4>
+              <p data-i18n="interest_3_desc">Duy trì tính kỷ luật và sự dẻo dai tinh thần qua các buổi chạy bộ.</p>
             </div>
           </div>
 
           <div class="interest-pill-card">
             <span class="interest-icon">☕</span>
             <div class="interest-info">
-              <h4 data-i18n="interest_item4_title">Cafe Lập trình</h4>
-              <p data-i18n="interest_item4_desc">Thưởng thức cafe ngon và brainstorm các ý tưởng dự án cuối tuần.</p>
+              <h4 data-i18n="interest_4_title">Cafe Lập trình</h4>
+              <p data-i18n="interest_4_desc">Thưởng thức cafe ngon và brainstorm các ý tưởng dự án cuối tuần.</p>
             </div>
           </div>
         </div>
@@ -1254,7 +1253,7 @@
         <header class="section-header">
           <span class="section-tag" data-i18n="contact_tag">08 / Trao đổi &amp; Kết nối</span>
           <h2 class="section-title" id="contact-title" data-i18n="contact_title">Liên hệ hợp tác</h2>
-          <p class="section-subtitle" data-i18n="contact_subtitle">Sẵn sàng trao đổi về các bài toán kiến trúc backend,
+          <p class="section-subtitle" data-i18n="contact_desc">Sẵn sàng trao đổi về các bài toán kiến trúc backend,
             kỹ thuật hệ thống và các dự án phát triển phần mềm.</p>
           <div class="section-divider" aria-hidden="true"></div>
         </header>

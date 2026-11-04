@@ -126,22 +126,37 @@ const translations = {
 
     // Career Direction Section
     nav_career: "Định hướng",
+    nav_interests: "Sở thích",
     career_tag: "06 / Định hướng",
     career_title: "Mục tiêu phát triển nghề nghiệp",
     career_short_badge: "NGẮN HẠN (1 - 2 NĂM)",
     career_short_title: "Backend Specialist & System Mastery",
-    career_short_item1: "Tốt nghiệp loại Ưu chuyên ngành Công nghệ Thông tin tại Đại học Giao thông Vận tải TP.HCM (UTH).",
-    career_short_item2: "Làm chủ kỹ thuật thiết kế Microservices, tối ưu hóa CSDL chuẩn 3NF, ACID và caching với Redis.",
-    career_short_item3: "Đạt các chứng chỉ chuyên môn về Quản trị mạng & Hệ điều hành máy chủ (Cisco / Linux Administration).",
+    career_short_1: "Tốt nghiệp loại Ưu chuyên ngành CNTT tại ĐH Giao thông Vận tải TP.HCM (UTH).",
+    career_short_2: "Làm chủ kiến trúc Microservices, tối ưu CSDL chuẩn 3NF, ACID và caching Redis.",
+    career_short_3: "Đạt các chứng chỉ chuyên môn Quản trị mạng & Server (Cisco / Linux Admin).",
+    career_short_item1: "Tốt nghiệp loại Ưu chuyên ngành CNTT tại ĐH Giao thông Vận tải TP.HCM (UTH).",
+    career_short_item2: "Làm chủ kiến trúc Microservices, tối ưu CSDL chuẩn 3NF, ACID và caching Redis.",
+    career_short_item3: "Đạt các chứng chỉ chuyên môn Quản trị mạng & Server (Cisco / Linux Admin).",
     career_long_badge: "DÀI HẠN (3 - 5 NĂM)",
     career_long_title: "Senior Software & Infrastructure Architect",
-    career_long_item1: "Đảm nhận vai trò Key Backend Engineer / System Architect trong các dự án phần mềm quy mô lớn.",
-    career_long_item2: "Xây dựng hạ tầng Cloud/On-Premise bền vững có khả năng chịu tải cao, mở rộng linh hoạt và bảo mật cao.",
-    career_long_item3: "Dẫn dắt và định hướng kỹ thuật cho các kĩ sư trẻ, lan tỏa tư duy \"Think in systems. Build with purpose\".",
+    career_long_1: "Đảm nhận vai trò Key Backend Engineer / System Architect trong dự án lớn.",
+    career_long_2: "Xây dựng hạ tầng Cloud/On-Premise bền vững, chịu tải cao và bảo mật.",
+    career_long_3: "Dẫn dắt kỹ thuật cho kĩ sư trẻ với tư duy 'Think in systems. Build with purpose'.",
+    career_long_item1: "Đảm nhận vai trò Key Backend Engineer / System Architect trong dự án lớn.",
+    career_long_item2: "Xây dựng hạ tầng Cloud/On-Premise bền vững, chịu tải cao và bảo mật.",
+    career_long_item3: "Dẫn dắt kỹ thuật cho kĩ sư trẻ với tư duy 'Think in systems. Build with purpose'.",
 
     // Interests Section
     interests_tag: "07 / Sở thích",
     interests_title: "Góc cá nhân & Niềm cảm hứng",
+    interest_1_title: "Homelab & Docker",
+    interest_1_desc: "Thử nghiệm deploy server cá nhân và containerize các ứng dụng nhỏ.",
+    interest_2_title: "Sách Kiến trúc Hệ thống",
+    interest_2_desc: "Đọc tài liệu về Clean Architecture, Database Internals và System Design.",
+    interest_3_title: "Chạy bộ & Rèn sức bền",
+    interest_3_desc: "Duy trì tính kỷ luật và sự dẻo dai tinh thần qua các buổi chạy bộ.",
+    interest_4_title: "Cafe Lập trình",
+    interest_4_desc: "Thưởng thức cafe ngon và brainstorm các ý tưởng dự án cuối tuần.",
     interest_item1_title: "Homelab & Docker",
     interest_item1_desc: "Thử nghiệm deploy server cá nhân và containerize các ứng dụng nhỏ.",
     interest_item2_title: "Sách Kiến trúc Hệ thống",
@@ -150,34 +165,6 @@ const translations = {
     interest_item3_desc: "Duy trì tính kỷ luật và sự dẻo dai tinh thần qua các buổi chạy bộ.",
     interest_item4_title: "Cafe Lập trình",
     interest_item4_desc: "Thưởng thức cafe ngon và brainstorm các ý tưởng dự án cuối tuần.",
-
-    // Career Direction Section
-    nav_career: "Career",
-    career_tag: "06 / Career Goals",
-    career_title: "Professional Development Goals",
-    career_short_badge: "SHORT-TERM (1 - 2 YEARS)",
-    career_short_title: "Backend Specialist & System Mastery",
-    career_short_item1: "Graduate with Honors in Information Technology from Ho Chi Minh City University of Transport (UTH).",
-    career_short_item2: "Master Microservices design, 3NF database normalization, ACID transactions, and Redis caching.",
-    career_short_item3: "Earn professional certifications in Network Administration & Server Operating Systems (Cisco / Linux).",
-    career_long_badge: "LONG-TERM (3 - 5 YEARS)",
-    career_long_title: "Senior Software & Infrastructure Architect",
-    career_long_item1: "Serve as Key Backend Engineer / System Architect for enterprise-scale software projects.",
-    career_long_item2: "Architect resilient Cloud/On-Premise infrastructure with high throughput, scalability, and security.",
-    career_long_item3: "Mentor and provide technical leadership to young engineers, championing the mindset: 'Think in systems. Build with purpose'.",
-
-    // Interests Section
-    interests_tag: "07 / Interests",
-    interests_title: "Personal Interests & Inspiration",
-    interest_item1_title: "Homelab & Docker",
-    interest_item1_desc: "Experimenting with personal home server deployment and containerizing mini services.",
-    interest_item2_title: "System Architecture Books",
-    interest_item2_desc: "Reading deep literature on Clean Architecture, Database Internals, and High-Scale System Design.",
-    interest_item3_title: "Running & Endurance",
-    interest_item3_desc: "Maintaining focus, discipline, and mental grit through regular running sessions.",
-    interest_item4_title: "Tech Coffee & Brainstorming",
-    interest_item4_desc: "Savoring specialty coffee while brainstorming weekend software prototypes.",
-
     // Projects Section
     projects_tag: "04 / Dự án thực tế",
     projects_title: "Sản phẩm kỹ thuật tiêu biểu",
@@ -221,6 +208,7 @@ const translations = {
     contact_tag: "08 / Trao đổi & Kết nối",
     btn_copy_phone: "Sao chép",
     contact_title: "Liên hệ hợp tác",
+    contact_desc: "Sẵn sàng trao đổi về các bài toán kiến trúc backend, kỹ thuật hệ thống và các cơ hội nghề nghiệp.",
     contact_subtitle: "Sẵn sàng trao đổi về các bài toán kiến trúc backend, kỹ thuật hệ thống và các dự án phát triển phần mềm.",
     contact_info_title: "Kênh kết nối chính thức",
     contact_info_desc: "Bạn có thể gửi thư trực tiếp qua email hoặc theo dõi các kho mã nguồn dự án công khai trên GitHub.",
@@ -360,15 +348,22 @@ const translations = {
 
     // Career Direction Section
     nav_career: "Career",
-    career_tag: "06 / Career Goals",
-    career_title: "Professional Development Goals",
+    nav_interests: "Interests",
+    career_tag: "06 / Career",
+    career_title: "Career Objectives & Roadmap",
     career_short_badge: "SHORT-TERM (1 - 2 YEARS)",
     career_short_title: "Backend Specialist & System Mastery",
-    career_short_item1: "Graduate with Honors in Information Technology from Ho Chi Minh City University of Transport (UTH).",
-    career_short_item2: "Master Microservices design, 3NF database normalization, ACID transactions, and Redis caching.",
-    career_short_item3: "Earn professional certifications in Network Administration & Server Operating Systems (Cisco / Linux).",
+    career_short_1: "Graduate with Honors in IT from Ho Chi Minh City University of Transport (UTH).",
+    career_short_2: "Master Microservices architecture, 3NF database normalization, ACID transactions, and Redis caching.",
+    career_short_3: "Earn professional certifications in Network Administration & Server OS (Cisco / Linux Admin).",
+    career_short_item1: "Graduate with Honors in IT from Ho Chi Minh City University of Transport (UTH).",
+    career_short_item2: "Master Microservices architecture, 3NF database normalization, ACID transactions, and Redis caching.",
+    career_short_item3: "Earn professional certifications in Network Administration & Server OS (Cisco / Linux Admin).",
     career_long_badge: "LONG-TERM (3 - 5 YEARS)",
     career_long_title: "Senior Software & Infrastructure Architect",
+    career_long_1: "Serve as Key Backend Engineer / System Architect for enterprise-scale software projects.",
+    career_long_2: "Architect resilient Cloud/On-Premise infrastructure with high throughput, scalability, and security.",
+    career_long_3: "Mentor and provide technical leadership to young engineers, championing the mindset: 'Think in systems. Build with purpose'.",
     career_long_item1: "Serve as Key Backend Engineer / System Architect for enterprise-scale software projects.",
     career_long_item2: "Architect resilient Cloud/On-Premise infrastructure with high throughput, scalability, and security.",
     career_long_item3: "Mentor and provide technical leadership to young engineers, championing the mindset: 'Think in systems. Build with purpose'.",
@@ -376,6 +371,14 @@ const translations = {
     // Interests Section
     interests_tag: "07 / Interests",
     interests_title: "Personal Interests & Inspiration",
+    interest_1_title: "Homelab & Docker",
+    interest_1_desc: "Experimenting with personal home server deployment and containerizing mini services.",
+    interest_2_title: "System Architecture Books",
+    interest_2_desc: "Reading deep literature on Clean Architecture, Database Internals, and High-Scale System Design.",
+    interest_3_title: "Running & Endurance",
+    interest_3_desc: "Maintaining focus, discipline, and mental grit through regular running sessions.",
+    interest_4_title: "Tech Coffee & Brainstorming",
+    interest_4_desc: "Savoring specialty coffee while brainstorming weekend software prototypes.",
     interest_item1_title: "Homelab & Docker",
     interest_item1_desc: "Experimenting with personal home server deployment and containerizing mini services.",
     interest_item2_title: "System Architecture Books",
@@ -384,7 +387,6 @@ const translations = {
     interest_item3_desc: "Maintaining focus, discipline, and mental grit through regular running sessions.",
     interest_item4_title: "Tech Coffee & Brainstorming",
     interest_item4_desc: "Savoring specialty coffee while brainstorming weekend software prototypes.",
-
     // Projects Section
     projects_tag: "04 / Featured Projects",
     projects_title: "Selected Technical Projects",
@@ -425,9 +427,10 @@ const translations = {
 
 
     // Contact Section
-    contact_tag: "08 / Contact & Connect",
+    contact_tag: "08 / Contact",
     btn_copy_phone: "Copy",
-    contact_title: "Get In Touch",
+    contact_title: "Let's Connect",
+    contact_desc: "Open to discussions regarding backend architecture, system engineering, and software development projects.",
     contact_subtitle: "Always open to discussing backend architectures, systems engineering, and collaborative software projects.",
     contact_info_title: "Official Channels",
     contact_info_desc: "Feel free to reach out directly via email or explore my public repositories on GitHub.",
@@ -543,7 +546,10 @@ const skillTooltips = {
   }
 };
 
-let currentLang = 'vi';
+export let currentLang = 'vi';
+if (typeof window !== 'undefined') {
+  window.currentLang = currentLang;
+}
 let updateActiveSkillTooltipFn = null;
 let renderActiveCliWelcomeFn = null;
 
@@ -587,11 +593,14 @@ function updateActiveFormErrors(lang) {
 export function setLanguage(lang) {
   if (!translations[lang]) return;
   currentLang = lang;
+  if (typeof window !== 'undefined') {
+    window.currentLang = lang;
+  }
 
-  // 1. Update HTML lang attribute
+  // 1. Cập nhật thuộc tính lang cho HTML
   document.documentElement.lang = lang;
 
-  // 2. Update document title & meta description
+  // 2. Cập nhật Title & Meta Description
   const metaDesc = document.querySelector('meta[name="description"]');
   if (lang === 'vi') {
     document.title = "Nguyễn Xuân Hiếu | Full-Stack Web Developer & Network Administrator";
@@ -605,16 +614,13 @@ export function setLanguage(lang) {
     }
   }
 
-  // 3. Update text content for elements with data-i18n
+  // 3. Cập nhật tất cả DOM elements có data-i18n
   const translatableElements = document.querySelectorAll('[data-i18n]');
   translatableElements.forEach((el) => {
-    // If element is typewriter target, let the typewriter engine manage its text
-    if (el.id === 'hero-typewriter') {
-      return;
-    }
+    if (el.id === 'hero-typewriter') return;
     const key = el.getAttribute('data-i18n');
-    if (translations[lang][key]) {
-      if (translations[lang][key].includes('<')) {
+    if (translations[lang] && translations[lang][key] !== undefined) {
+      if (typeof translations[lang][key] === 'string' && translations[lang][key].includes('<')) {
         el.innerHTML = translations[lang][key];
       } else {
         el.textContent = translations[lang][key];
@@ -622,44 +628,46 @@ export function setLanguage(lang) {
     }
   });
 
-  // 3b. Update accessible attributes (aria-label) with data-i18n-aria-label
+  // 3b. Cập nhật data-i18n-aria-label
   const ariaLabelElements = document.querySelectorAll('[data-i18n-aria-label]');
   ariaLabelElements.forEach((el) => {
     const key = el.getAttribute('data-i18n-aria-label');
-    if (translations[lang][key]) {
+    if (translations[lang] && translations[lang][key] !== undefined) {
       el.setAttribute('aria-label', translations[lang][key]);
     }
   });
 
-  // 4. Update input placeholders
+  // 4. Cập nhật data-i18n-placeholder
   const placeholderElements = document.querySelectorAll('[data-i18n-placeholder]');
   placeholderElements.forEach((el) => {
     const key = el.getAttribute('data-i18n-placeholder');
-    if (translations[lang][key]) {
+    if (translations[lang] && translations[lang][key] !== undefined) {
       el.placeholder = translations[lang][key];
     }
   });
 
-  // 5. Update Language Toggle UI & accessible attributes
-  const langToggleBtn = document.getElementById('lang-toggle');
-  if (langToggleBtn) {
-    const viText = langToggleBtn.querySelector('.lang-vi');
-    const enText = langToggleBtn.querySelector('.lang-en');
+  // 5. Cập nhật giao diện nút Toggle (hỗ trợ cả dạng span active và dạng text VI/EN)
+  const langToggleBtns = document.querySelectorAll('#lang-toggle, #lang-toggle-btn, .lang-toggle-btn, .lang-switch-btn');
+  langToggleBtns.forEach((btn) => {
+    const viText = btn.querySelector('.lang-vi');
+    const enText = btn.querySelector('.lang-en');
     
-    if (lang === 'vi') {
-      viText?.classList.add('active');
-      enText?.classList.remove('active');
-      langToggleBtn.setAttribute('aria-label', 'Chuyển sang tiếng Anh');
-      langToggleBtn.setAttribute('title', 'Chuyển đổi ngôn ngữ / Switch language');
+    if (viText && enText) {
+      if (lang === 'vi') {
+        viText.classList.add('active');
+        enText.classList.remove('active');
+      } else {
+        enText.classList.add('active');
+        viText.classList.remove('active');
+      }
     } else {
-      enText?.classList.add('active');
-      viText?.classList.remove('active');
-      langToggleBtn.setAttribute('aria-label', 'Switch to Vietnamese');
-      langToggleBtn.setAttribute('title', 'Switch language / Chuyển đổi ngôn ngữ');
+      btn.textContent = lang === 'vi' ? 'VI / EN' : 'EN / VI';
     }
-  }
+    btn.setAttribute('aria-label', lang === 'vi' ? 'Chuyển sang tiếng Anh' : 'Switch to Vietnamese');
+    btn.setAttribute('title', lang === 'vi' ? 'Chuyển đổi ngôn ngữ / Switch language' : 'Switch language / Chuyển đổi ngôn ngữ');
+  });
 
-  // 6. Update interactive buttons titles & aria-labels
+  // 6. Cập nhật các nút tương tác
   const mobileToggleBtn = document.getElementById('mobile-toggle');
   if (mobileToggleBtn) {
     mobileToggleBtn.setAttribute('aria-label', lang === 'vi' ? 'Mở menu điều hướng' : 'Toggle navigation menu');
@@ -697,19 +705,30 @@ export function setLanguage(lang) {
     groupBackBtn.setAttribute('title', lang === 'vi' ? 'Quay lại trang chủ nhóm' : 'Back to group home portal');
   }
 
-  // 7. Update Typewriter with new language strings
-  initTypewriter(lang);
+  // 7. Render lại Flipbook nếu đang ở trang đó
+  if (typeof updatePageContent === 'function' && typeof currentFlipIndex !== 'undefined') {
+    updatePageContent(currentFlipIndex);
+  } else if (typeof renderFlipbook === 'function' && typeof currentFlipIndex !== 'undefined') {
+    renderFlipbook(currentFlipIndex);
+  }
 
-  // 8. Update active modal content if open (preserves active tab)
+  // 8. Cập nhật Typewriter
+  if (typeof initTypewriter === 'function') {
+    initTypewriter(lang);
+  }
+
+  // 9. Cập nhật Modal nếu đang mở
   const modal = document.getElementById('project-modal');
   if (modal?.open && currentModalProject && typeof renderModalData === 'function') {
     renderModalData(currentModalProject, lang);
   }
 
-  // 9. Update active form validation messages & status
-  updateActiveFormErrors(lang);
+  // 10. Cập nhật thông báo lỗi form nếu đang hiển thị
+  if (typeof updateActiveFormErrors === 'function') {
+    updateActiveFormErrors(lang);
+  }
 
-  // 10. Update skill badge aria-labels and active tooltip
+  // 11. Cập nhật tooltip kỹ năng
   document.querySelectorAll('.skill-badge').forEach((badge) => {
     const skillId = badge.getAttribute('data-skill');
     const badgeName = badge.querySelector('.skill-badge-name')?.textContent.trim() || badge.textContent.trim();
@@ -726,15 +745,17 @@ export function setLanguage(lang) {
     devToggleBtn.setAttribute('title', lang === 'vi' ? 'Developer Mode CLI Terminal (>_)' : 'Developer Mode CLI Terminal (>_)');
   }
 
-  // 11. Update active CLI terminal banner if open
+  // 12. Cập nhật CLI terminal banner nếu đang mở
   renderActiveCliWelcomeFn?.();
 
-  // 12. Persist user selection
+  // 13. Lưu ngôn ngữ đã chọn vào LocalStorage
   try {
     localStorage.setItem('portfolio_user_lang', lang);
-  } catch {
-    /* Silent catch for storage quota or restricted environments */
-  }
+  } catch {}
+}
+
+if (typeof window !== 'undefined') {
+  window.setLanguage = setLanguage;
 }
 
 // ------------------------------------------------------------------------------
@@ -3437,6 +3458,7 @@ export function initFlipbook() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  if (typeof bindLanguageSwitcher === 'function') bindLanguageSwitcher();
   // Initialize Language from LocalStorage or default to 'vi'
   let savedLang = 'vi';
   try {
@@ -3505,3 +3527,39 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }, { passive: true });
 });
+
+export function updatePageContent(index) {
+  if (typeof renderFlipbook === 'function') {
+    renderFlipbook(index);
+  }
+}
+if (typeof window !== 'undefined') {
+  window.updatePageContent = updatePageContent;
+}
+
+export function bindLanguageSwitcher() {
+  const langBtns = document.querySelectorAll('#lang-toggle, #lang-toggle-btn, .lang-toggle-btn, .lang-switch-btn');
+  langBtns.forEach((btn) => {
+    btn.onclick = (e) => {
+      e.preventDefault();
+      const current = (typeof window !== 'undefined' && window.currentLang) ? window.currentLang : currentLang;
+      const nextLang = current === 'vi' ? 'en' : 'vi';
+      setLanguage(nextLang);
+    };
+  });
+}
+if (typeof window !== 'undefined') {
+  window.bindLanguageSwitcher = bindLanguageSwitcher;
+}
+
+// Immediate binding if DOM is already ready
+if (typeof document !== 'undefined') {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+  if (typeof bindLanguageSwitcher === 'function') bindLanguageSwitcher();
+      bindLanguageSwitcher();
+    });
+  } else {
+    bindLanguageSwitcher();
+  }
+}
