@@ -33,27 +33,27 @@
 Dự án được xây dựng và triển khai tự động qua **GitHub Actions** lên **GitHub Pages**:
 
 * 🌌 **Trang Chủ Cổng Không Gian 3D (Cosmic 3D Solar System):**  
-  👉 **[https://lenguyennhattruongg.github.io/Portfolio/](https://lenguyennhattruongg.github.io/Portfolio/)**  
+  👉 **[https://nguyenxuanhieu2903.github.io/portfolio-group/](https://nguyenxuanhieu2903.github.io/portfolio-group/)**  
   *(Không gian WebGL 3D tương tác toàn diện, vật liệu PBR 2K, hậu kỳ Unreal Bloom, âm thanh synthesizer không gian và bộ điều khiển HUD viễn tưởng).*
 
 * 🚀 **Truy Cập Nhanh Portfolio Thành Viên Nhóm 02 (Bản Triển Khai Hoàn Chỉnh):**
-  * 🌍 **Lê Nguyễn Nhật Trường** *(Trái Đất — Earth):*  
-    👉 **[Xem Portfolio Tuyến Metro K24 ↗](https://lenguyennhattruongg.github.io/Portfolio/members/le-nguyen-nhat-truong/)** • **[Bản CV Web ↗](https://lenguyennhattruongg.github.io/Portfolio/members/le-nguyen-nhat-truong/cv.html)**  
-    *(Chủ đề UTH Metro Bespoke, chuyển ga tàu động GA 01 - GA 06, giả lập Terminal CLI, 4 vé đồ án thực chiến chuẩn 4 khối, đo lường chỉ số động và bộ CV đa nền tảng).*
   * 🔴 **Nguyễn Xuân Hiếu** *(Sao Hỏa — Mars):*  
-    👉 **[Xem Portfolio UTH Lanyard Badge ↗](https://lenguyennhattruongg.github.io/Portfolio/members/nguyen-xuan-hieu/)**  
+    👉 **[Xem Portfolio UTH Lanyard Badge ↗](https://nguyenxuanhieu2903.github.io/portfolio-group/members/nguyen-xuan-hieu/index.html)**  
     *(Điểm nhấn Thẻ sinh viên UTH treo dây đàn hồi tương tác vật lý, hệ màu Jade Pebble Morning, sơ đồ kiến trúc hệ thống SVG và Metrics Dashboard).*
+  * 🌍 **Lê Nguyễn Nhật Trường** *(Trái Đất — Earth):*  
+    👉 **[Xem Portfolio Tuyến Metro K24 ↗](https://nguyenxuanhieu2903.github.io/portfolio-group/members/le-nguyen-nhat-truong/index.html)** • **[Bản CV Web ↗](https://nguyenxuanhieu2903.github.io/portfolio-group/members/le-nguyen-nhat-truong/cv.html)**  
+    *(Chủ đề UTH Metro Bespoke, chuyển ga tàu động GA 01 - GA 06, giả lập Terminal CLI, 4 vé đồ án thực chiến chuẩn 4 khối, đo lường chỉ số động và bộ CV đa nền tảng).*
   * ♃ **Lê Hữu Châu** *(Sao Mộc — Jupiter):*  
-    👉 **[Xem Portfolio Khung Tranh Nghệ Thuật ↗](https://lenguyennhattruongg.github.io/Portfolio/members/le-huu-chau/)**  
+    👉 **[Xem Portfolio Khung Tranh Nghệ Thuật ↗](https://nguyenxuanhieu2903.github.io/portfolio-group/members/le-huu-chau/index.html)**  
     *(Ý tưởng phòng trưng bày mỹ thuật số, khung tranh tương tác vật lý kéo thả, nền WebGL Canvas nghệ thuật và typography Playfair Display).*
   * ♀️ **Nguyễn Thị Thảo Như** *(Sao Kim — Venus):*  
-    👉 **[Xem Portfolio Backend & UI Interaction ↗](https://lenguyennhattruongg.github.io/Portfolio/members/nguyen-thi-thao-nhu/)**  
+    👉 **[Xem Portfolio Backend & UI Interaction ↗](https://nguyenxuanhieu2903.github.io/portfolio-group/members/nguyen-thi-thao-nhu/index.html)**  
     *(Giao diện hiện đại, modal chi tiết dự án, hiệu ứng card tương tác và điều khiển âm thanh).*
   * ♄ **Nguyễn Anh Thư** *(Sao Thổ — Saturn):*  
-    👉 **[Xem Portfolio Business Analyst & Web Designer ↗](https://lenguyennhattruongg.github.io/Portfolio/members/nguyen-anh-thu/)**  
+    👉 **[Xem Portfolio Business Analyst & Web Designer ↗](https://nguyenxuanhieu2903.github.io/portfolio-group/members/nguyen-anh-thu/index.html)**  
     *(Dây phơi kỹ năng đung đưa vật lý, thẻ sinh viên lắc lư, timeline học vấn tương tác và vòng xoay sở thích 3D lượn sóng).*
   * ☿️ **Nguyễn Phạm Ý Huỳnh** *(Sao Thủy — Mercury):*  
-    👉 **[Xem Portfolio Frontend & Data Processing ↗](https://lenguyennhattruongg.github.io/Portfolio/members/nguyen-pham-y-huynh/)**  
+    👉 **[Xem Portfolio Frontend & Data Processing ↗](https://nguyenxuanhieu2903.github.io/portfolio-group/members/nguyen-pham-y-huynh/index.html)**  
     *(Giao diện tối giản hiện đại, xử lý dữ liệu trực quan và song ngữ Anh - Việt).*
 
 ---
@@ -83,13 +83,13 @@ Thay vì đi theo khuôn mẫu danh sách thẻ thành viên 2D truyền thống
 * **Thanh tìm kiếm tọa độ thông minh:** Tra cứu tức thì thiên thể hoặc thành viên với thuật toán chuẩn hóa tiếng Việt không phân biệt dấu.
 * **Thanh trượt điều hướng quỹ đạo (Orbit Pills Navigation):** Thanh cuộn ngang hiển thị ký hiệu chiêm tinh học và tên hành tinh, cho phép dịch chuyển camera tức thời.
 * **Trạm quan sát thiên thể AR (Spatial Detail Drawer):** Bảng trượt hiển thị chi tiết thông số viễn trắc NASA (bán trục lớn AU, vận tốc quỹ đạo, chu kỳ quay, độ lệch tâm, số lượng vệ tinh) cùng hồ sơ năng lực thành viên và nút tiến vào Portfolio cá nhân.
-* **Bộ điều khiển dòng thời gian (Time Scrubbing):** Tạm dừng chuyển động quỹ đạo bằng phím `[Space]`, tua nhanh tốc độ từ `0.25x` đến `4.0x`, hoặc đảo chiều quỹ đạo thời gian thực.
+* **Bộ điều khiển dòng thời gian (Time Scrubbing):** Tạm dừng chuyển động quỹ đạo bằng phím `[Space]`, tua nhanh tốc độ từ `0.2x` đến `8.0x`.
 * **Cụm nút thu phóng chuyên dụng:** Thu phóng nhanh với nút `+`, `-` và phím tắt `[Esc]` để khôi phục góc nhìn toàn cảnh.
 
 ### 3. 📑 Kiến Trúc Đa Trang Độc Lập (Multi-Page Application — MPA)
 * **Tách biệt tuyệt đối:** Mỗi thành viên toàn quyền quản lý mã nguồn HTML/CSS/JS và tài nguyên trong thư mục riêng `members/<slug>/`.
-* **Cơ chế quét động tự động (Dynamic Entry Detection):** File `vite.config.js` sử dụng Node.js `fs.existsSync` để tự động dò quét các trang HTML thực tế có trong dự án, ngăn chặn triệt để lỗi gãy build khi các thành viên nộp bài theo từng giai đoạn.
-* **Đường dẫn tương đối 100%:** Thiết lập `base: './'` đảm bảo mọi tài nguyên (hình ảnh, fonts, stylesheet, script, file CV PDF) hoạt động hoàn hảo trên mọi môi trường máy chủ tĩnh và thư mục con của GitHub Pages.
+* **Cơ chế quét điểm đầu vào tường minh:** File `vite.config.js` khai báo rõ ràng 7 entry points (`main`, `hieu`, `thu`, `nhu`, `chau`, `truong`, `huynh`), biên dịch độc lập từng thành viên mà không phát sinh xung đột.
+* **Đường dẫn cơ sở chuẩn hóa:** Thiết lập `base: '/portfolio-group/'` đảm bảo mọi tài nguyên (hình ảnh, fonts, stylesheet, script, file CV PDF) hoạt động hoàn hảo trên máy chủ triển khai GitHub Pages.
 
 ### 4. 🚀 Tự Động Hóa CI/CD Toàn Diện (GitHub Actions Pipeline)
 * Pipeline cấu hình tại `.github/workflows/deploy.yml` tự động kích hoạt khi có commit mới vào nhánh `main`.
@@ -104,15 +104,16 @@ portfolio-group/
 ├── .github/
 │   └── workflows/
 │       └── deploy.yml              # Quy trình CI/CD tự động build & deploy GitHub Pages
-├── members/                        # Không gian Portfolio độc lập của 6 thành viên
-│   ├── nguyen-xuan-hieu/           # Portfolio Trưởng nhóm (Mars — UTH Lanyard Badge)
-│   ├── le-nguyen-nhat-truong/      # Portfolio thành viên (Earth — UTH Metro Concept)
-│   ├── le-huu-chau/                # Portfolio thành viên (Jupiter — Khung Tranh Nghệ Thuật)
-│   ├── nguyen-thi-thao-nhu/        # Portfolio thành viên (Venus — Backend Developer Aspirant)
-│   ├── nguyen-pham-y-huynh/        # Portfolio thành viên (Mercury — Đang hoàn thiện)
-│   └── nguyen-anh-thu/             # Portfolio thành viên (Saturn — Đang hoàn thiện)
+├── members/                        # Không gian Portfolio độc lập của 6 thành viên (100% Hoàn thành)
+│   ├── nguyen-xuan-hieu/           # Portfolio Trưởng nhóm (Mars — UTH Lanyard Badge) — ✅ Đã gộp nhánh & Hoàn thành
+│   ├── le-nguyen-nhat-truong/      # Portfolio thành viên (Earth — UTH Metro Concept) — ✅ Đã gộp nhánh & Hoàn thành
+│   ├── le-huu-chau/                # Portfolio thành viên (Jupiter — Khung Tranh Nghệ Thuật) — ✅ Đã gộp nhánh & Hoàn thành
+│   ├── nguyen-thi-thao-nhu/        # Portfolio thành viên (Venus — Backend Developer Aspirant) — ✅ Đã gộp nhánh & Hoàn thành
+│   ├── nguyen-pham-y-huynh/        # Portfolio thành viên (Mercury — Frontend & Data Processing) — ✅ Đã gộp nhánh & Hoàn thành
+│   └── nguyen-anh-thu/             # Portfolio thành viên (Saturn — Business Analyst & Web Designer) — ✅ Đã gộp nhánh & Hoàn thành
 ├── public/                         # Thư mục tài nguyên tĩnh công cộng (Vite phục vụ trực tiếp)
 │   ├── avatars/                    # Ảnh chân dung đại diện của các thành viên
+│   ├── members/                    # Tài nguyên tĩnh bổ trợ (file CV PDF thành viên)
 │   └── planets/                    # Bộ texture độ phân giải cao 2K (Sun, Earth, Mars...)
 ├── group.css                       # Hệ thống định kiểu HUD viễn tưởng, Drawer và Responsive
 ├── group.js                        # Engine 3D Three.js, xử lý quỹ đạo, Shader Bloom & Web Audio
@@ -120,7 +121,7 @@ portfolio-group/
 ├── members.data.js                 # Single Source of Truth (SSOT): Dữ liệu thành viên & hành tinh
 ├── package.json                    # Khai báo dependencies (Three.js, Vite) và scripts chạy
 ├── package-lock.json               # Khóa phiên bản gói thư viện chuẩn hóa CI/CD
-├── vite.config.js                  # Cấu hình đóng gói Vite MPA tự động quét entrypoint
+├── vite.config.js                  # Cấu hình đóng gói Vite MPA với 7 entry points chuẩn hóa
 └── README.md                       # Tài liệu hướng dẫn kỹ thuật toàn diện của đồ án
 ```
 
@@ -130,12 +131,12 @@ portfolio-group/
 
 | STT | Họ và Tên | Thiên Thể Đại Diện | Vai Trò / Định Hướng Kỹ Thuật | Thư Mục Mã Nguồn | Trạng Thái Gộp Nhánh |
 | :---: | :--- | :---: | :--- | :--- | :---: |
-| 1 | **Nguyễn Xuân Hiếu** | 🔴 **Sao Hỏa** *(Mars)* | Trưởng nhóm • Full-Stack & System Admin | `members/nguyen-xuan-hieu/` | ![Merged](https://img.shields.io/badge/Merged-Done-success?style=flat-square) |
-| 2 | **Lê Nguyễn Nhật Trường** | 🌍 **Trái Đất** *(Earth)* | Thành viên • Full-Stack & Creative UI (Metro Concept) | `members/le-nguyen-nhat-truong/` | ![Merged](https://img.shields.io/badge/Merged-Done-success?style=flat-square) |
-| 3 | **Lê Hữu Châu** | ♃ **Sao Mộc** *(Jupiter)* | Thành viên • Frontend & Gallery Digital Artist | `members/le-huu-chau/` | ![Merged](https://img.shields.io/badge/Merged-Done-success?style=flat-square) |
-| 4 | **Nguyễn Thị Thảo Như** | ♀️ **Sao Kim** *(Venus)* | Thành viên • Backend Developer Aspirant | `members/nguyen-thi-thao-nhu/` | ![Merged](https://img.shields.io/badge/Merged-Done-success?style=flat-square) |
-| 5 | **Nguyễn Phạm Y Huỳnh** | ☿️ **Sao Thủy** *(Mercury)* | Thành viên • Frontend Developer Aspirant | `members/nguyen-pham-y-huynh/` | ![Merged](https://img.shields.io/badge/Merged-Done-success?style=flat-square) |
-| 6 | **Nguyễn Anh Thư** | ♄ **Sao Thổ** *(Saturn)* | Thành viên • Frontend & Web Designer Aspirant | `members/nguyen-anh-thu/` | ![Merged](https://img.shields.io/badge/Merged-Done-success?style=flat-square) |
+| 1 | **Nguyễn Xuân Hiếu** | 🔴 **Sao Hỏa** *(Mars)* | Trưởng nhóm • Full-Stack & System Admin | `members/nguyen-xuan-hieu/` | ![Merged](https://img.shields.io/badge/Merged-Done-success?style=flat-square)<br>✅ Đã gộp nhánh & Hoàn thành |
+| 2 | **Lê Nguyễn Nhật Trường** | 🌍 **Trái Đất** *(Earth)* | Thành viên • Full-Stack & Creative UI (Metro Concept) | `members/le-nguyen-nhat-truong/` | ![Merged](https://img.shields.io/badge/Merged-Done-success?style=flat-square)<br>✅ Đã gộp nhánh & Hoàn thành |
+| 3 | **Lê Hữu Châu** | ♃ **Sao Mộc** *(Jupiter)* | Thành viên • Frontend & Gallery Digital Artist | `members/le-huu-chau/` | ![Merged](https://img.shields.io/badge/Merged-Done-success?style=flat-square)<br>✅ Đã gộp nhánh & Hoàn thành |
+| 4 | **Nguyễn Thị Thảo Như** | ♀️ **Sao Kim** *(Venus)* | Thành viên • Backend Developer Aspirant | `members/nguyen-thi-thao-nhu/` | ![Merged](https://img.shields.io/badge/Merged-Done-success?style=flat-square)<br>✅ Đã gộp nhánh & Hoàn thành |
+| 5 | **Nguyễn Phạm Ý Huỳnh** | ☿️ **Sao Thủy** *(Mercury)* | Thành viên • Frontend & Data Processing | `members/nguyen-pham-y-huynh/` | ![Merged](https://img.shields.io/badge/Merged-Done-success?style=flat-square)<br>✅ Đã gộp nhánh & Hoàn thành |
+| 6 | **Nguyễn Anh Thư** | ♄ **Sao Thổ** *(Saturn)* | Thành viên • Business Analyst & Web Designer | `members/nguyen-anh-thu/` | ![Merged](https://img.shields.io/badge/Merged-Done-success?style=flat-square)<br>✅ Đã gộp nhánh & Hoàn thành |
 
 ---
 
@@ -150,8 +151,8 @@ Mở Terminal / PowerShell và thực hiện tuần tự các lệnh sau:
 
 ```bash
 # 1. Sao chép (clone) repository về máy cá nhân
-git clone https://github.com/lenguyennhattruongg/Portfolio.git
-cd Portfolio
+git clone https://github.com/nguyenxuanhieu2903/portfolio-group.git
+cd portfolio-group
 
 # 2. Cài đặt các gói thư viện phụ thuộc (bao gồm Three.js và Vite)
 npm install
@@ -177,18 +178,18 @@ npm run preview
 # (Hoặc: npm.cmd run preview)
 ```
 
-Quá trình build sẽ biên dịch toàn bộ mã nguồn vào thư mục `dist/` với kết quả chuẩn mực `0 Error`.
+Quá trình build sẽ biên dịch toàn bộ mã nguồn vào thư mục `dist/` với kết quả chuẩn mực `0 Error, 0 Warning`.
 
 ---
 
 ## 🤝 Quy Trình Đóng Góp & Gộp Nhánh (Contribution Guidelines)
 
-Nhằm đảm bảo quá trình tích hợp mã nguồn của 3 thành viên còn lại diễn ra trơn tru, không gây xung đột với Trang chủ 3D hay cấu hình hệ thống, nhóm áp dụng **Quy tắc 3 bước chuẩn công nghiệp**:
+Nhóm áp dụng **Quy tắc 3 bước chuẩn công nghiệp** để duy trì chất lượng mã nguồn:
 
 ```text
 [Nhánh cá nhân: member/<slug>]
   ├── Chỉ chỉnh sửa trong thư mục members/<slug>/
-  ├── Kiểm tra đường dẫn ảnh (./images/...) và nút về trang chủ (../../index.html)
+  ├── Kiểm tra đường dẫn tài nguyên (./images/...) và nút về trang chủ (../../index.html)
   └── git merge main (Đồng bộ code mới nhất)
              ↓
 [Mở Pull Request vào main]
@@ -219,7 +220,7 @@ Nhằm đảm bảo quá trình tích hợp mã nguồn của 3 thành viên cò
 3. **Bước 3: Mở Pull Request (PR)**
    * Mở PR trên GitHub từ `member/<slug-cua-ban>` vào `main`.
    * Kiểm tra tab **"Files changed"**: Đảm bảo **chỉ có** các file nằm trong thư mục cá nhân của bạn.
-   * Trưởng nhóm sẽ duyệt qua, cập nhật thông tin hiển thị của bạn trên quả cầu 3D (nếu cần) và thực hiện **Squash and merge**. Pipeline CI/CD sẽ tự động cập nhật sản phẩm lên GitHub Pages sau 1-2 phút!
+   * Trưởng nhóm duyệt, kiểm tra hiển thị và thực hiện **Squash and merge**. Pipeline CI/CD sẽ tự động cập nhật sản phẩm lên GitHub Pages sau 1-2 phút!
 
 ---
 

@@ -96,7 +96,7 @@ const METRO_CONFIG = {
       githubUrl: 'https://github.com/nguyenxuanhieu2903/portfolio-group',
       status: 'Đang vận hành ổn định trên XAMPP Apache localhost',
       proofImages: [
-        { src: '../../assets/veterinary-erd-VdpYieiX.svg', caption: 'CSDL QUAN HỆ: Sơ đồ ERD 12 bảng chuẩn 3NF MySQL 8.0 phân hệ Y tế & Đặt lịch' },
+        { src: new URL('../nguyen-xuan-hieu/images/veterinary-erd.svg', import.meta.url).href, caption: 'CSDL QUAN HỆ: Sơ đồ ERD 12 bảng chuẩn 3NF MySQL 8.0 phân hệ Y tế & Đặt lịch' },
         { src: './images/project-vet-architecture.png', caption: 'KIẾN TRÚC HỆ THỐNG: Mô hình phân lớp 3 tầng (Layered / 3-Tier MVC Architecture)' },
         { src: './images/project-vet-backend.png', caption: 'BÁO CÁO KỸ THUẬT: Đặc tả phân hệ Backend PHP thuần PDO & Quản trị dữ liệu' }
       ]
