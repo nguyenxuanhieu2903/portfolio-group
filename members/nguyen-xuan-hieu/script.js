@@ -90,8 +90,8 @@ const translations = {
     spec_credo_label: "NĂNG LỰC CỐT LÕI & NGUYÊN TẮC",
     spec_credo_val: "Clean Code • Thiết kế CSDL 3NF • Giao dịch ACID • Quản trị mạng",
     // Experience Section
-    experience_tag: "02 / Hành trình thực chiến",
-    experience_title: "Trải nghiệm & Nhật ký hình ảnh",
+    experience_tag: "02 / Trải nghiệm",
+    experience_title: "Hành trình & Nhật ký hình ảnh",
     exp_period_1: "2024 — HIỆN TẠI",
     exp_role_1: "Network Infrastructure Support Lead",
     exp_org_1: "Đại học Giao thông Vận tải TP.HCM (UTH - Campus 2)",
@@ -269,8 +269,8 @@ const translations = {
     spec_credo_label: "CORE COMPETENCIES & CREDO",
     spec_credo_val: "Clean Code • 3NF Normalized Schema • ACID Transactions • Network Admin",
     // Experience Section
-    experience_tag: "02 / Hands-on Journey",
-    experience_title: "Experience & Visual Journal",
+    experience_tag: "02 / Experience",
+    experience_title: "Journey & Visual Journal",
     exp_period_1: "2024 — PRESENT",
     exp_role_1: "Network Infrastructure Support Lead",
     exp_org_1: "HCM City Univ. of Transport (UTH - Campus 2)",
@@ -3201,7 +3201,7 @@ export function renderFlipbook(index, direction) {
     book.classList.add(direction === 'next' ? 'animating-next' : 'animating-prev');
     setTimeout(() => {
       book.classList.remove('animating-next', 'animating-prev');
-    }, 350);
+    }, 500);
   }
 
   // Update content
@@ -3214,7 +3214,7 @@ export function renderFlipbook(index, direction) {
 
   // Update counter
   if (counterEl) {
-    const pageWord = lang === 'vi' ? 'Trang ' : 'Page ';
+    const pageWord = lang === 'vi' ? 'TRANG ' : 'PAGE ';
     const currentNum = String(index + 1).padStart(2, '0');
     const totalNum = String(flipbookData.length).padStart(2, '0');
     counterEl.textContent = `${pageWord}${currentNum} / ${totalNum}`;

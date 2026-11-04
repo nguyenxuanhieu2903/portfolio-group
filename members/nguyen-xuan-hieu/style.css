@@ -1578,12 +1578,13 @@ main:focus {
 }
 
 /* --------------------------------------------------------------------------
-   7. EXPERIENCE SECTION: INTERACTIVE 3D PHOTO FLIPBOOK
+   7. EXPERIENCE SECTION: INTERACTIVE 3D PHOTO FLIPBOOK (EXPANDED STAGE)
    -------------------------------------------------------------------------- */
 .experience-section {
   position: relative;
   background-color: var(--color-canvas);
   overflow: hidden;
+  padding: var(--space-4xl) 0;
 }
 
 .flipbook-wrapper {
@@ -1591,58 +1592,78 @@ main:focus {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-lg);
-  max-width: 1040px;
+  gap: var(--space-xl);
+  max-width: 1220px;
   margin: 0 auto;
   perspective: 1600px;
-  padding: 0 var(--space-xs);
+  padding: 0 var(--space-sm);
 }
 
-/* 3D Book Container */
+/* 3D Book Container: Mở rộng max-width 1080px & min-height 540px */
 .flipbook-book {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.05fr 0.95fr;
   width: 100%;
-  max-width: 900px;
-  min-height: 460px;
+  max-width: 1080px;
+  min-height: 540px;
   background: #FFFFFF;
-  border-radius: 20px;
-  border: 1px solid rgba(108, 132, 128, 0.22);
+  border-radius: 22px;
+  border: 1px solid rgba(108, 132, 128, 0.24);
   box-shadow: 
-    0 22px 50px -10px rgba(15, 41, 35, 0.15),
-    0 10px 24px -5px rgba(0, 0, 0, 0.05),
-    0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+    0 24px 64px -12px rgba(15, 41, 35, 0.16),
+    0 10px 24px -4px rgba(0, 0, 0, 0.05),
+    0 0 0 1px rgba(255, 255, 255, 0.85) inset;
   overflow: hidden;
-  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  transition: box-shadow var(--transition-normal);
   transform-style: preserve-3d;
 }
 
 .flipbook-book:hover {
   box-shadow: 
-    0 28px 60px -10px rgba(15, 41, 35, 0.2),
-    0 12px 28px -5px rgba(0, 0, 0, 0.08),
-    0 0 0 1px rgba(255, 255, 255, 0.9) inset;
+    0 32px 75px -12px rgba(15, 41, 35, 0.22),
+    0 14px 30px -4px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(255, 255, 255, 0.95) inset;
 }
 
 /* Gáy sách 3D (Book Spine Crease) */
 .book-spine {
   position: absolute;
   top: 0;
-  left: 50%;
+  left: 52.5%;
   transform: translateX(-50%);
-  width: 26px;
+  width: 24px;
   height: 100%;
   background: linear-gradient(
     to right,
     rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.06) 35%,
-    rgba(0, 0, 0, 0.16) 50%,
-    rgba(0, 0, 0, 0.06) 65%,
+    rgba(0, 0, 0, 0.05) 30%,
+    rgba(0, 0, 0, 0.15) 50%,
+    rgba(0, 0, 0, 0.05) 70%,
     rgba(0, 0, 0, 0) 100%
   );
   z-index: 6;
   pointer-events: none;
+}
+
+/* Dải bóng gáy sách tương tác 3D (.book-fold-shadow) */
+.book-fold-shadow {
+  position: absolute;
+  top: 0;
+  left: 52.5%;
+  transform: translateX(-50%);
+  width: 110px;
+  height: 100%;
+  background: radial-gradient(ellipse at center, rgba(15, 41, 35, 0.28) 0%, rgba(15, 41, 35, 0.08) 55%, transparent 80%);
+  pointer-events: none;
+  z-index: 5;
+  opacity: 0.55;
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.flipbook-book.animating-next .book-fold-shadow,
+.flipbook-book.animating-prev .book-fold-shadow {
+  opacity: 1;
 }
 
 /* Book Pages */
@@ -1650,17 +1671,19 @@ main:focus {
   position: relative;
   display: flex;
   flex-direction: column;
-  transition: opacity 0.35s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .book-page.page-left {
-  padding: 30px 24px 30px 32px;
+  padding: 32px 28px 32px 36px;
   background: #FFFFFF;
   border-right: 1px solid rgba(108, 132, 128, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .book-page.page-right {
-  padding: 36px 36px 32px 28px;
+  padding: 40px 42px 40px 36px;
   background: #FCFDFB;
   display: flex;
   flex-direction: column;
@@ -1673,33 +1696,37 @@ main:focus {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  transform-origin: center center;
 }
 
-/* Photo Frame (Trang Trái) */
+/* Khung ảnh chất lượng cao 460px: Hiển thị 100% bố cục không xén */
 .photo-frame {
   position: relative;
   width: 100%;
-  height: 380px;
+  height: 460px;
   border-radius: 14px;
   overflow: hidden;
-  background: #EEF2EB;
+  background: #0F2923; /* Nền Rêu Đêm sang trọng giúp nổi bật cả ảnh dọc lẫn ngang */
   border: 1px solid rgba(108, 132, 128, 0.25);
   box-shadow: 
-    inset 0 2px 6px rgba(0, 0, 0, 0.06),
-    0 10px 24px -4px rgba(15, 41, 35, 0.1);
+    inset 0 2px 8px rgba(0, 0, 0, 0.3),
+    0 12px 28px -4px rgba(15, 41, 35, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .flipbook-photo {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* 100% trọn vẹn bố cục ảnh, không bị cắt góc */
   object-position: center;
   display: block;
-  transition: opacity 0.35s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.4s ease, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .photo-frame:hover .flipbook-photo {
-  transform: scale(1.035);
+  transform: scale(1.025);
 }
 
 /* Page Meta & Content (Trang Phải) */
@@ -1708,7 +1735,7 @@ main:focus {
   align-items: center;
   justify-content: space-between;
   gap: var(--space-sm);
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-md);
   flex-wrap: wrap;
 }
 
@@ -1723,7 +1750,7 @@ main:focus {
 .page-badge {
   display: inline-flex;
   align-items: center;
-  padding: 4px 12px;
+  padding: 5px 14px;
   background: rgba(0, 124, 137, 0.1);
   color: var(--uth-teal-dark, #005863);
   border: 1px solid rgba(0, 124, 137, 0.25);
@@ -1736,16 +1763,16 @@ main:focus {
 }
 
 .page-title {
-  font-size: clamp(1.2rem, 1.8vw, 1.45rem);
+  font-size: clamp(1.3rem, 1.9vw, 1.6rem);
   font-weight: 800;
   color: var(--color-primary);
   line-height: 1.35;
-  margin: 0 0 14px 0;
+  margin: 0 0 16px 0;
   letter-spacing: -0.01em;
 }
 
 .page-divider {
-  width: 52px;
+  width: 56px;
   height: 3px;
   background: linear-gradient(90deg, var(--color-accent) 0%, var(--uth-teal) 100%);
   border-radius: var(--radius-full);
@@ -1753,20 +1780,20 @@ main:focus {
 }
 
 .page-desc {
-  font-size: 1.02rem;
-  line-height: 1.75;
+  font-size: 1.05rem;
+  line-height: 1.8;
   color: var(--color-text-muted);
   margin: 0;
   font-weight: 400;
 }
 
-/* Side Navigation Buttons */
+/* Nút điều hướng hình tròn 56px phát sáng UTH Teal */
 .flip-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 54px;
-  height: 54px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   background: #FFFFFF;
   border: 1px solid rgba(108, 132, 128, 0.3);
@@ -1798,13 +1825,13 @@ main:focus {
   box-shadow: none;
 }
 
-/* Flipbook Controls & Dots */
+/* Controls & Indicators */
 .flipbook-controls {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
-  margin-top: var(--space-xl);
+  gap: 16px;
+  margin-top: var(--space-2xl);
 }
 
 .page-counter {
@@ -1814,7 +1841,7 @@ main:focus {
   text-transform: uppercase;
   color: var(--color-primary);
   background: #FFFFFF;
-  padding: 6px 20px;
+  padding: 7px 22px;
   border-radius: var(--radius-full);
   border: 1px solid rgba(108, 132, 128, 0.22);
   box-shadow: 0 2px 10px rgba(15, 41, 35, 0.05);
@@ -1852,21 +1879,83 @@ main:focus {
   box-shadow: 0 0 10px var(--uth-teal-glow, rgba(0, 124, 137, 0.4));
 }
 
-/* Page Turn Animation States */
-.flipbook-book.animating-next .page-left,
-.flipbook-book.animating-next .page-right {
-  opacity: 0.25;
-  transform: scale(0.985);
+/* =========================================================================
+   HIỆU ỨNG LẬT SÁCH 3D SIÊU MƯỢT (EASING CUBIC-BEZIER 0.4, 0, 0.2, 1)
+   ========================================================================= */
+.flipbook-book.animating-next #page-inner-right {
+  animation: flip3DNextRight 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-.flipbook-book.animating-prev .page-left,
-.flipbook-book.animating-prev .page-right {
-  opacity: 0.25;
-  transform: scale(0.985);
+.flipbook-book.animating-next #page-inner-left {
+  animation: flip3DNextLeft 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.flipbook-book.animating-prev #page-inner-left {
+  animation: flip3DPrevLeft 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.flipbook-book.animating-prev #page-inner-right {
+  animation: flip3DPrevRight 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes flip3DNextRight {
+  0% {
+    transform: perspective(1500px) rotateY(0deg);
+    opacity: 1;
+    transform-origin: left center;
+  }
+  50% {
+    transform: perspective(1500px) rotateY(-40deg) scale(0.97);
+    opacity: 0.4;
+  }
+  100% {
+    transform: perspective(1500px) rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes flip3DNextLeft {
+  0% {
+    transform: perspective(1500px) rotateY(25deg);
+    opacity: 0.5;
+    transform-origin: right center;
+  }
+  100% {
+    transform: perspective(1500px) rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes flip3DPrevLeft {
+  0% {
+    transform: perspective(1500px) rotateY(0deg);
+    opacity: 1;
+    transform-origin: right center;
+  }
+  50% {
+    transform: perspective(1500px) rotateY(40deg) scale(0.97);
+    opacity: 0.4;
+  }
+  100% {
+    transform: perspective(1500px) rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes flip3DPrevRight {
+  0% {
+    transform: perspective(1500px) rotateY(-25deg);
+    opacity: 0.5;
+    transform-origin: left center;
+  }
+  100% {
+    transform: perspective(1500px) rotateY(0deg);
+    opacity: 1;
+  }
 }
 
 /* Responsive for Mobile / Tablet */
-@media (max-width: 900px) {
+@media (max-width: 960px) {
   .flipbook-wrapper {
     flex-direction: column;
     gap: var(--space-md);
@@ -1874,10 +1963,12 @@ main:focus {
 
   .flipbook-book {
     grid-template-columns: 1fr;
-    max-width: 600px;
+    max-width: 640px;
+    min-height: auto;
   }
 
-  .book-spine {
+  .book-spine,
+  .book-fold-shadow {
     display: none;
   }
 
@@ -1888,11 +1979,11 @@ main:focus {
   }
 
   .photo-frame {
-    height: 300px;
+    height: 340px;
   }
 
   .book-page.page-right {
-    padding: 24px;
+    padding: 28px 24px;
   }
 
   .flip-btn {
@@ -1902,22 +1993,22 @@ main:focus {
   }
 
   .flip-btn.prev-btn {
-    left: 10px;
+    left: 8px;
   }
 
   .flip-btn.next-btn {
-    right: 10px;
+    right: 8px;
   }
 }
 
 @media (max-width: 600px) {
   .photo-frame {
-    height: 240px;
+    height: 270px;
   }
 
   .flip-btn {
-    width: 44px;
-    height: 44px;
+    width: 46px;
+    height: 46px;
   }
 
   .page-dot.active {

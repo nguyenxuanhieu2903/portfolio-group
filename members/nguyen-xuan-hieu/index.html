@@ -462,9 +462,11 @@
     <!-- ========================================================================= -->
     <section class="section experience-section" id="experience" aria-labelledby="experience-title">
   <div class="container">
+    
+    <!-- HEADER SECTION (ĐÃ ĐỔI TÊN TIÊU ĐỀ CHUẨN) -->
     <header class="section-header">
-      <span class="section-tag" data-i18n="experience_tag">02 / Hành trình thực chiến</span>
-      <h2 class="section-title" id="experience-title" data-i18n="experience_title">Trải nghiệm &amp; Nhật ký hình ảnh</h2>
+      <span class="section-tag" data-i18n="experience_tag">02 / Trải nghiệm</span>
+      <h2 class="section-title" id="experience-title" data-i18n="experience_title">Hành trình &amp; Nhật ký hình ảnh</h2>
       <div class="section-divider" aria-hidden="true"></div>
     </header>
 
@@ -476,13 +478,14 @@
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
       </button>
 
-      <!-- CUỐN SÁCH (BOOK STAGE) -->
+      <!-- CUỐN SÁCH (BOOK STAGE 3D - RỘNG VÀ CAO HƠN) -->
       <div class="flipbook-book" id="flipbook-book">
         <div class="book-spine" aria-hidden="true"></div>
+        <div class="book-fold-shadow" id="book-shadow" aria-hidden="true"></div>
         
-        <!-- TRANG TRÁI: HIỂN THỊ ẢNH -->
+        <!-- TRANG TRÁI: HIỂN THỊ ẢNH TRỌN VẸN -->
         <div class="book-page page-left">
-          <div class="page-inner">
+          <div class="page-inner" id="page-inner-left">
             <div class="photo-frame">
               <img id="flipbook-img" src="./images/thoi-vu-tc.jpg" alt="Nhật ký hành trình" class="flipbook-photo">
             </div>
@@ -491,7 +494,7 @@
 
         <!-- TRANG PHẢI: HIỂN THỊ NỘI DUNG -->
         <div class="book-page page-right">
-          <div class="page-inner">
+          <div class="page-inner" id="page-inner-right">
             <div class="page-meta">
               <span class="page-period" id="flipbook-period">2023 — Trước chuyên ngành</span>
               <span class="page-badge" id="flipbook-badge">Khởi đầu</span>
@@ -515,7 +518,7 @@
 
     <!-- THANH CHỈ SỐ TRANG & DOTS INDICATOR -->
     <div class="flipbook-controls">
-      <span class="page-counter" id="flipbook-counter">Trang 01 / 11</span>
+      <span class="page-counter" id="flipbook-counter">TRANG 01 / 11</span>
       <div class="page-dots" id="flipbook-dots"></div>
     </div>
 
