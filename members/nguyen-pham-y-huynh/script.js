@@ -1417,8 +1417,7 @@ marqueeItems.forEach(item => {
   const memoryImage = document.getElementById("memoryImage");
   const memoryCaption = document.getElementById("memoryCaption");
 
-  const hint = document.getElementById("chargingHint");
-
+const hint = document.getElementById("chargingHint") || { textContent: "" };
   const cablePath = document.getElementById("cablePath");
   const cableHighlight = document.getElementById("cableHighlight");
 
@@ -2208,7 +2207,62 @@ document.addEventListener("DOMContentLoaded", () => {
   hio.observe(heart);
   hio.observe(content);
 })();
+(function () {
+  function init() {
+    var section = document.getElementById('skills');
+    if (!section) { console.warn('Không tìm thấy #skills'); return; }
+    var cols = section.querySelectorAll('.skill-box-col');
+    var seen = false;
 
+    function drop(col, delay) {
+      var chest = col.querySelector('.chest');
+      col.classList.remove('play');
+      chest.classList.remove('jiggle');
+      void col.offsetWidth;
+      setTimeout(function () {
+        chest.classList.add('jiggle');
+        col.classList.add('play');
+      }, delay || 0);
+    }
+
+    function dropAll() {
+      cols.forEach(function (col, i) { drop(col, i * 350); });
+    }
+
+    function isVisible() {
+      var r = section.getBoundingClientRect();
+      var vw = window.innerWidth, vh = window.innerHeight;
+      var cs = getComputedStyle(section);
+      if (cs.display === 'none' || cs.visibility === 'hidden' || +cs.opacity === 0) return false;
+      var w = Math.min(r.right, vw) - Math.max(r.left, 0);
+      var h = Math.min(r.bottom, vh) - Math.max(r.top, 0);
+      return w > vw * 0.4 && h > vh * 0.3;
+    }
+
+    // Cứ 0.3s kiểm tra: hiện ra thì rơi, rời đi thì reset để lần sau rơi lại
+    setInterval(function () {
+      var v = isVisible();
+      if (v && !seen) { seen = true; dropAll(); }
+      if (!v && seen) {
+        seen = false;
+        cols.forEach(function (c) { c.classList.remove('play'); });
+      }
+    }, 300);
+
+    // Bấm vào thùng để thả lại
+    cols.forEach(function (col) {
+      col.querySelector('.chest').addEventListener('click', function () { drop(col, 0); });
+    });
+
+    window.replaySkillsDrop = dropAll;
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
 
 /* ==========================================
    9. AUTO HANGING SIGN FOR EVERY SECTION (OCEAN PEARL THEME)
@@ -2314,3 +2368,78 @@ document.addEventListener("DOMContentLoaded", () => {
   sections.forEach(section => observer.observe(section));
 
 })();
+/* ===== ABOUT: ảnh + video "Khoảnh khắc hàng ngày" tự chuyển ===== */
+(() => {
+  const box = document.getElementById('aboutSlides');
+  if (!box) return;
+
+  const DELAY = 2000;        // mỗi ảnh hiện 2 giây (1000 = 1 giây)
+  const MAX_VIDEO = 8000;    // video dài hơn 8 giây sẽ bị cắt ở 8 giây
+
+  let slides = [...box.querySelectorAll('img, video')];
+  let index = 0, timer = null, running = false;
+
+  const isVideo = el => el.tagName === 'VIDEO';
+
+  function schedule() {
+    clearTimeout(timer);
+    if (!running || slides.length < 2) return;
+
+    const cur = slides[index];
+    if (isVideo(cur)) {
+      cur.currentTime = 0;
+      cur.play().catch(() => {});
+      const done = () => { cur.removeEventListener('ended', done); next(); };
+      cur.addEventListener('ended', done, { once: true });
+      timer = setTimeout(() => { cur.removeEventListener('ended', done); next(); }, MAX_VIDEO);
+    } else {
+      timer = setTimeout(next, DELAY);
+    }
+  }
+
+  function next() {
+    const cur = slides[index];
+    cur.classList.remove('active');
+    if (isVideo(cur)) cur.pause();
+    index = (index + 1) % slides.length;
+    slides[index].classList.add('active');
+    schedule();
+  }
+
+  // File nào không tải được thì bỏ qua, không làm hỏng slideshow
+  slides.forEach(el => el.addEventListener('error', () => {
+    const wasActive = el.classList.contains('active');
+    slides = slides.filter(s => s !== el);
+    el.remove();
+    if (wasActive && slides.length) {
+      index = 0;
+      slides[0].classList.add('active');
+      schedule();
+    }
+  }));
+
+  // Chỉ chạy khi đang nhìn thấy phần Giới thiệu
+  new IntersectionObserver(([en]) => {
+    running = en.isIntersecting;
+    if (running) {
+      schedule();
+    } else {
+      clearTimeout(timer);
+      const cur = slides[index];
+      if (cur && isVideo(cur)) cur.pause();
+    }
+  }, { threshold: 0.3 }).observe(box);
+})();
+ // File nào không tải được thì bỏ qua, không làm hỏng slideshow
+  slides.forEach(el => el.addEventListener('error', () => {
+    console.warn('Không tải được:', el.src, el.error && el.error.code);
+    const wasActive = el.classList.contains('active');
+    slides = slides.filter(s => s !== el);
+    el.remove();
+    if (wasActive && slides.length) {
+      index = 0;
+      slides[0].classList.add('active');
+      schedule();
+    }
+  }));
+  

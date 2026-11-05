@@ -41,31 +41,21 @@
 
 <!-- ======================= 3. HEADER ======================= -->
 <header>
-<div class="top-right">
-  <div class="tools">
-    <button class="tool" id="theme-btn" type="button"></button>
 
-    <div class="lang" id="lang">
-      <button class="tool lang-btn" id="lang-btn"
-              type="button"
-              aria-haspopup="listbox"
-              aria-expanded="false">
-        <span class="flag" id="lang-flag"></span>
-        <span class="nm" id="lang-name">Tiếng Việt</span>
-        <span class="caret">▾</span>
-      </button>
-
-      <ul class="lang-list" role="listbox" hidden>
-        <li role="option" tabindex="0" data-lang="vi">
-          <span class="flag" data-flag="vi"></span>Tiếng Việt
-        </li>
-        <li role="option" tabindex="0" data-lang="en">
-          <span class="flag" data-flag="en"></span>English
-        </li>
-      </ul>
+  <!-- Góc TRÊN CÙNG BÊN PHẢI: đổi theme + đổi ngôn ngữ (+ nút ☰ chỉ hiện trên màn hình hẹp) -->
+  <div class="top-right">
+    <div class="tools">
+      <button class="tool" id="theme-btn" type="button"></button>
+      <div class="lang" id="lang">
+        <button class="tool lang-btn" id="lang-btn" type="button" aria-haspopup="listbox" aria-expanded="false"><span class="flag" id="lang-flag"></span> <span class="nm" id="lang-name">Tiếng Việt</span> <span class="caret">▾</span></button>
+        <ul class="lang-list" role="listbox" hidden>
+          <li role="option" tabindex="0" data-lang="vi"><span class="flag" data-flag="vi"></span>Tiếng Việt</li>
+          <li role="option" tabindex="0" data-lang="en"><span class="flag" data-flag="en"></span>English</li>
+        </ul>
+      </div>
     </div>
-
-    <a class="tool cv-download"
+    <button class="burger" aria-label="Mở menu" aria-expanded="false">☰</button>
+   <a class="tool cv-download"
        href="images/cv.pdf"
        download="Nguyen_Pham_Y_Huynh_CV.pdf"
        title="Tải CV (PDF)">
@@ -74,18 +64,14 @@
     </a>
   </div>
 
-  <button class="burger"
-          aria-label="Mở menu"
-          aria-expanded="false">☰</button>
-</div>
   <!-- Menu dạng CỘT BIỂN CHỈ ĐƯỜNG (cố định bên trái) -->
 <ul class="menu" aria-label="Điều hướng chính">
   <li><a href="#home" class="active">Trang chủ</a></li>
   <li><a href="#about">Giới thiệu</a></li>
   <li><a href="#hobbies">Sở thích</a></li>
   <li><a href="#skills">Kỹ năng</a></li>
-  <li><a href="#projects">Dự án</a></li>
   <li><a href="#experience">Kinh nghiệm</a></li>
+  <li><a href="#projects">Dự án</a></li>
   <li><a href="#contact">Liên hệ</a></li>
 </ul>
 </header>
@@ -162,7 +148,7 @@
     <path id="archPath" d="M 50,220 Q 500,20 950,220" fill="transparent"/>
     <text class="curved-portfolio-text">
       <textPath href="#archPath" startOffset="50%" text-anchor="middle">
-      PORTFOLIO
+        PORTFOLIO
       </textPath>
     </text>
   </svg>
@@ -294,7 +280,7 @@
               </div>
 
               <div class="screen-on" id="screenOn">
-                <img id="screenPhoto" src="images/hobby-11.jpg" alt="Portfolio photo"/>
+                <img id="screenPhoto" src="images/avatar.png" alt="Portfolio photo"/>
                 <span class="screen-label">MEMORIES.exe</span>
               </div>
             </div>
@@ -327,7 +313,7 @@
 
           <!-- Ảnh Polaroid phóng to khi mở -->
           <div class="memory-photo" id="memoryPhoto">
-            <img id="memoryImage" src="images/hobby-11.jpg" alt="Memory photo"/>
+            <img id="memoryImage" src="images/avatar.jpg" alt="Memory photo"/>
             <span class="memory-caption" id="memoryCaption">Memory 01</span>
           </div>
 
@@ -397,18 +383,25 @@
     <!-- Bố cục 2 cột (Ảnh & Text) -->
     <div class="about-grid">
       
-      <!-- CỘT TRÁI: ẢNH CÁ NHÂN -->
+        <!-- CỘT TRÁI: ẢNH CÁ NHÂN -->
       <div class="about-visual">
         <div class="about-photo-frame">
           <div class="photo-top-label">
             <span>✦</span> KHOẢNG KHẮC HÀNG NGÀY CỦA MÌNH
           </div>
-          <img src="images/student.jpg" alt="Mình đang học tập và làm việc với laptop">
+          <div class="about-slides" id="aboutSlides">
+            <img class="active" src="images/student.jpg"   alt="Khoảnh khắc 1">
+            <video src="images/video.mp4" muted playsinline preload="metadata"></video>
+            <img src="images/student-2.jpg" alt="Khoảnh khắc 2">
+            <img src="images/student-3.jpg" alt="Khoảnh khắc 3">
+            <img src="images/student-4.jpg" alt="Khoảnh khắc 4">
+            <img src="images/student-5.jpg" alt="Khoảnh khắc 5">
+            <img src="images/student-6.jpg" alt="Khoảnh khắc 6">
+          </div>
           <div class="photo-bottom">
             <span>❤️ 2026</span>
           </div>
         </div>
-
         <!-- Thẻ tag lơ lửng -->
         <div class="about-floating-tag">
           <span>⌘</span>
@@ -512,22 +505,22 @@
 
       <!-- CỘT TRÁI: TRÁI TIM ẢNH -->
       <div class="about-visual hobby-visual">
-          <!-- Thay ô trống bằng ảnh: <div class="hobby-tile" style="..."><img src="images/hobby-1.jpg" alt="Đi biển"></div> -->
+          <!-- Thay ô trống bằng ảnh: <div class="hobby-tile" style="..."><img src="img/hobby-1.jpg" alt="Đi biển"></div> -->
     <div class="hobby-heart" aria-label="Bộ sưu tập ảnh hình trái tim">
-      <div class="hobby-tile" style="--l:15.6;--t:9.3;--w:12.9;--h:12"><img src="images/hobby-1.jpg" alt="Sở thích 1"></div>
+      <div class="hobby-tile" style="--l:15.6;--t:9.3;--w:12.9;--h:12"><img src="images/hobby-6.jpg" alt="Sở thích 1"></div>
       <div class="hobby-tile" style="--l:29.7;--t:9.3;--w:12.9;--h:12"><img src="images/hobby-2.jpg" alt="Sở thích 2"></div>
-      <div class="hobby-tile" style="--l:58.4;--t:11.6;--w:28.9;--h:21.8"><img src="images/hobby-3.jpg" alt="Sở thích 3"></div>
+      <div class="hobby-tile" style="--l:58.4;--t:11.6;--w:28.9;--h:21.8"><img src="images/hobby-14.jpg" alt="Sở thích 3"></div>
       <div class="hobby-tile" style="--l:84.9;--t:20.9;--w:12.9;--h:12"><img src="images/hobby-4.jpg" alt="Sở thích 4"></div>
       <div class="hobby-tile" style="--l:2.4;--t:22.7;--w:12;--h:11.1"><img src="images/hobby-5.jpg" alt="Sở thích 5"></div>
-      <div class="hobby-tile" style="--l:15.6;--t:22.7;--w:25.8;--h:24"><img src="images/hobby-6.jpg" alt="Sở thích 6"></div>
+      <div class="hobby-tile" style="--l:15.6;--t:22.7;--w:25.8;--h:24"><img src="images/hobby-1.jpg" alt="Sở thích 6"></div>
       <div class="hobby-tile" style="--l:42.6;--t:22.7;--w:13.2;--h:12.2"><img src="images/hobby-7.jpg" alt="Sở thích 7"></div>
       <div class="hobby-tile" style="--l:2.4;--t:35.1;--w:12;--h:11.1"><img src="images/hobby-8.jpg" alt="Sở thích 8"></div>
       <div class="hobby-tile" style="--l:42.6;--t:35.6;--w:13.2;--h:12.2"><img src="images/hobby-9.jpg" alt="Sở thích 9"></div>
-      <div class="hobby-tile" style="--l:57.4;--t:35.6;--w:25.8;--h:24"><img src="images/hobby-10.jpg" alt="Sở thích 10"></div>
-      <div class="hobby-tile" style="--l:84.4;--t:35.1;--w:13;--h:12"><img src="images/hobby-11.jpg" alt="Sở thích 11"></div>
+      <div class="hobby-tile" style="--l:57.4;--t:35.6;--w:25.8;--h:24"><img src="images/hobby-11.jpg" alt="Sở thích 10"></div>
+      <div class="hobby-tile" style="--l:84.4;--t:35.1;--w:13;--h:12"><img src="images/hobby-10.jpg" alt="Sở thích 11"></div>
       <div class="hobby-tile" style="--l:13.4;--t:47.6;--w:14.8;--h:13.8"><img src="images/hobby-12.jpg" alt="Sở thích 12"></div>
       <div class="hobby-tile" style="--l:29.7;--t:48.9;--w:25.8;--h:23.6"><img src="images/hobby-13.jpg" alt="Sở thích 13"></div>
-      <div class="hobby-tile" style="--l:57;--t:60.4;--w:13.9;--h:12.9"><img src="images/hobby-14.jpg" alt="Sở thích 14"></div>
+      <div class="hobby-tile" style="--l:57;--t:60.4;--w:13.9;--h:12.9"><img src="images/hobby-3.jpg" alt="Sở thích 14"></div>
       <div class="hobby-tile" style="--l:43;--t:73.8;--w:13.9;--h:12.9"><img src="images/hobby-15.jpg" alt="Sở thích 15"></div>
     </div>
 
@@ -588,71 +581,99 @@
     </div>
   </div>
 </section>
-<!-- ==========================================
-     4.3 SKILLS – KỸ NĂNG (bản đơn giản)
-     (thay toàn bộ <section id="skills"> cũ)
-========================================== -->
-<section id="skills">
+<!-- 4.4 KỸ NĂNG -->
+       <!-- Hình thùng dùng chung (đặt 1 lần) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <g id="carton">
+      <polygon points="-72,22 72,22 62,-14 -62,-14" style="fill:var(--a)"/>
+      <polygon points="-62,-14 62,-14 60,-8 -60,-8" style="fill:var(--d);opacity:.35"/>
+      <polygon points="-78,22 78,22 90,160 -90,160" style="fill:var(--b)"/>
+      <polygon points="-78,22 78,22 80,40 -80,40" style="fill:var(--d);opacity:.28"/>
+      <polygon points="-90,160 -78,22 -128,150 -138,200" style="fill:var(--c)"/>
+      <polygon points="90,160 78,22 128,150 138,200" style="fill:var(--c)"/>
+      <polygon points="-90,160 90,160 100,244 -100,244" style="fill:var(--a)"/>
+      <polygon points="-90,160 90,160 92,174 -92,174" style="fill:var(--d);opacity:.4"/>
+      <polygon points="-90,160 -100,244 -138,200" style="fill:var(--d);opacity:.55"/>
+      <polygon points="90,160 100,244 138,200" style="fill:var(--d);opacity:.55"/>
+      <rect x="-18" y="160" width="36" height="84" fill="#efe9d6" opacity=".35"/>
+      <rect x="-58" y="52" width="116" height="72" rx="4" fill="#1f3a3a"/>
+      <rect x="-58" y="52" width="116" height="72" rx="4" fill="none" stroke="#fff" stroke-opacity=".25"/>
+      <g fill="#efe9d6" fill-opacity=".92">
+        <rect x="-72" y="47" width="30" height="11" transform="rotate(-38 -57 52)"/>
+        <rect x="42" y="47" width="30" height="11" transform="rotate(38 57 52)"/>
+        <rect x="-72" y="118" width="30" height="11" transform="rotate(38 -57 124)"/>
+        <rect x="42" y="118" width="30" height="11" transform="rotate(-38 57 124)"/>
+      </g>
+    </g>
+  </defs>
+</svg>
 
-  <!-- BẢNG HIỆU -->
-  <div class="station-sign">
-    <div class="pearl-rope rope-left"></div>
-    <div class="pearl-rope rope-right"></div>
-    <div class="station-plaque">
-      <div class="plaque-stars"></div>
-      <div class="decor-shell">
-        <div class="shell-top"></div>
-        <div class="shell-pearl"></div>
-        <div class="shell-bottom"></div>
+<section id="skills" class="skills-box-section">
+  <div class="skills-box-grid">
+
+    <!-- THÙNG 1: CORE TECH -->
+    <div class="skill-box-col" style="--accent:#7fc0ae">
+      <div class="chest" title="Bấm để thả lại">
+        <svg viewBox="-145 -22 290 280" role="img" aria-label="Core tech">
+          <use href="#carton" style="--a:#7fc0ae;--b:#5fa593;--c:#4a8a7a;--d:#2b5a50"/>
+          <text x="0" y="82" text-anchor="middle" font-size="11" font-weight="700" fill="#f3c969" letter-spacing="2">01</text>
+          <text x="0" y="106" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">CORE TECH</text>
+        </svg>
       </div>
-      <div class="ocean-bubble b-1"></div>
-      <div class="ocean-bubble b-2"></div>
-      <div class="ocean-bubble b-3"></div>
-      <div class="ocean-bubble b-4"></div>
-      <div class="ocean-bubble b-5"></div>
-      <h2 class="station-name">kỹ năng</h2>
-      <div class="decor-pendant">
-        <div class="pendant-chain"></div>
-        <div class="pendant-gem"><div class="gem-glare"></div></div>
-        <div class="pendant-tail">
-          <div class="fin left-fin"></div>
-          <div class="fin right-fin"></div>
-        </div>
+      <div class="skills-drop-list">
+        <div class="skill-chip" style="--i:0;--rot:-2.5deg;--dx:-14px"><div class="skill-chip-inner">HTML5</div></div>
+        <div class="skill-chip" style="--i:1;--rot:2.5deg;--dx:16px"><div class="skill-chip-inner">CSS3</div></div>
+        <div class="skill-chip" style="--i:2;--rot:-2deg;--dx:-10px"><div class="skill-chip-inner">JavaScript (ES6+)</div></div>
+        <div class="skill-chip" style="--i:3;--rot:2.5deg;--dx:12px"><div class="skill-chip-inner">C++</div></div>
+        <div class="skill-chip" style="--i:4;--rot:-2.5deg;--dx:-16px"><div class="skill-chip-inner">SQL</div></div>
       </div>
     </div>
-  </div>
 
-  <div class="wrap">
-    <div class="skills-simple">
-
-      <div class="skill-row">
-        <h4><span>01</span>Core Tech</h4>
-        <div class="skill-tags">
-          <span>HTML5</span><span>CSS3</span><span>JavaScript (ES6+)</span><span>C++</span><span>SQL</span>
-        </div>
+    <!-- THÙNG 2: CÔNG CỤ & MÔI TRƯỜNG -->
+    <div class="skill-box-col" style="--accent:#bccf8e">
+      <div class="chest" title="Bấm để thả lại">
+        <svg viewBox="-145 -22 290 280" role="img" aria-label="Công cụ và môi trường">
+          <use href="#carton" style="--a:#d4e2ac;--b:#bccf8e;--c:#a3b974;--d:#6b7f48"/>
+          <text x="0" y="78" text-anchor="middle" font-size="11" font-weight="700" fill="#f3c969" letter-spacing="2">02</text>
+          <text x="0" y="97" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">CÔNG CỤ &amp;</text>
+          <text x="0" y="115" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">MÔI TRƯỜNG</text>
+        </svg>
       </div>
-
-      <div class="skill-row">
-        <h4><span>02</span>Công cụ &amp; môi trường</h4>
-        <div class="skill-tags">
-          <span>VS Code</span><span>Git / GitHub</span><span>MySQL Workbench</span><span>Figma</span>
-        </div>
+      <div class="skills-drop-list">
+        <div class="skill-chip" style="--i:0;--rot:2.5deg;--dx:14px"><div class="skill-chip-inner">VS Code</div></div>
+        <div class="skill-chip" style="--i:1;--rot:-2.5deg;--dx:-16px"><div class="skill-chip-inner">Git / GitHub</div></div>
+        <div class="skill-chip" style="--i:2;--rot:2deg;--dx:10px"><div class="skill-chip-inner">MySQL Workbench</div></div>
+        <div class="skill-chip" style="--i:3;--rot:-2.5deg;--dx:-12px"><div class="skill-chip-inner">Figma</div></div>
       </div>
-
-      <div class="skill-row">
-        <h4><span>03</span>Kỹ năng mềm &amp; kiểm thử</h4>
-        <div class="skill-tags">
-          <span>Teamwork</span><span>Giao tiếp</span><span>Tự học</span><span>Test case</span><span>Bug report</span><span>Lighthouse</span>
-        </div>
-      </div>
-
     </div>
+
+    <!-- THÙNG 3: MỀM & KIỂM THỬ -->
+    <div class="skill-box-col" style="--accent:#d98a54">
+      <div class="chest" title="Bấm để thả lại">
+        <svg viewBox="-145 -22 290 280" role="img" aria-label="Mềm và kiểm thử">
+          <use href="#carton" style="--a:#d98a54;--b:#bd6c3a;--c:#a45a2d;--d:#6e3615"/>
+          <text x="0" y="78" text-anchor="middle" font-size="11" font-weight="700" fill="#f3c969" letter-spacing="2">03</text>
+          <text x="0" y="97" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">MỀM &amp;</text>
+          <text x="0" y="115" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">KIỂM THỬ</text>
+        </svg>
+      </div>
+      <div class="skills-drop-list">
+        <div class="skill-chip" style="--i:0;--rot:-2.5deg;--dx:-14px"><div class="skill-chip-inner">Teamwork</div></div>
+        <div class="skill-chip" style="--i:1;--rot:2.5deg;--dx:16px"><div class="skill-chip-inner">Giao tiếp</div></div>
+        <div class="skill-chip" style="--i:2;--rot:-2deg;--dx:-10px"><div class="skill-chip-inner">Tự học</div></div>
+        <div class="skill-chip" style="--i:3;--rot:2.5deg;--dx:12px"><div class="skill-chip-inner">Test case</div></div>
+        <div class="skill-chip" style="--i:4;--rot:-2.5deg;--dx:-16px"><div class="skill-chip-inner">Bug report</div></div>
+        <div class="skill-chip" style="--i:5;--rot:2.5deg;--dx:14px"><div class="skill-chip-inner">Lighthouse</div></div>
+      </div>
+    </div>
+
   </div>
 </section>
-     
       <!-- 4.6  KINH NGHIỆM -->
       <section id="experience">
         <div class="wrap">
+          <h2>Kinh nghiệm</h2>
           <p class="lead">Hoạt động nhóm, nghiên cứu và đồ án đã hoàn thành.</p>
 
           <div class="timeline">
@@ -685,7 +706,7 @@
         <symbol id="i-plane" viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></symbol>
         <symbol id="i-shell" viewBox="0 0 40 36"><path d="M20 2C10 2 3 12 2 24c4 3 9 5 18 5s14-2 18-5C37 12 30 2 20 2z"/><rect x="14" y="29" width="12" height="5" rx="2"/><path d="M20 6v22M12 8l5 20M28 8l-5 20M6 14l10 14M34 14L24 28" fill="none" stroke="#06142c" stroke-width="1.4"/></symbol>
       </svg>
-       4.3 PROJECTS -->
+<!-- 4.3 PROJECTS -->
       <section id="projects">
         <div class="wrap">
         
@@ -699,7 +720,9 @@
 
           <div class="grid carousel" id="projects-grid" tabindex="0" aria-label="Danh sách dự án">
             <article class="glass tilt card" data-cat="web">
-              <div class="thumb thumb--blue">🌐</div>
+              <div class="thumb thumb--blue">
+  <img src="images/flux.jpg" alt="Multi-File Downloader" draggable="false">
+</div>
               <h3>Multi-File Downloader</h3>
               <span class="role-tag">Vai trò: Thiết kế Frontend &amp; lập trình</span>
               <p class="lead lead--tight">Công cụ tải nhiều tệp, hỗ trợ xử lý các tác vụ tải xuống.</p>
@@ -722,7 +745,9 @@
             </article>
 
             <article class="glass tilt card" data-cat="web">
-              <div class="thumb thumb--sunset">👤</div>
+              <div class="thumb thumb--blue">
+                <img src="images/pfo.png" alt="Profile" draggable="false">
+              </div>
               <h3>Profile</h3>
               <span class="role-tag">Dự án cá nhân</span>
               <p class="lead lead--tight">Trang web cá nhân giới thiệu thông tin bản thân, kinh nghiệm và dự án.</p>
@@ -744,7 +769,9 @@
             </article>
 
             <article class="glass tilt card" data-cat="web">
-              <div class="thumb thumb--violet">⚙️</div>
+              <div class="thumb thumb--sunset">
+                <img src="images/Gia-su.png" alt="Profile" draggable="false">
+              </div>
               <h3>CNPM Flask API</h3>
               <span class="role-tag">Dự án học tập</span>
               <p class="lead lead--tight">Dự án liên quan đến phát triển API bằng Flask.</p>
@@ -767,7 +794,9 @@
             </article>
 
             <article class="glass tilt card" data-cat="web">
-              <div class="thumb thumb--violet">🐾</div>
+              <div class="thumb thumb--violet">🐾
+                <img src="images/Thu-y.png" alt="Profile" draggable="false">
+              </div>
               <h3>Veterinary Center Web</h3>
               <span class="role-tag">Đang phát triển</span>
               <p class="lead lead--tight">Website trung tâm thú y, đang trong quá trình xây dựng và hoàn thiện.</p>
@@ -807,17 +836,11 @@
           </div>
         </div>
       </section>
-<!--  ==========================================
-     4.4 PORTFOLIO – DỰ ÁN ĐÃ THỰC
-========================================== -->
+      <!-- 4.5 CONTACT -->
       <section id="contact" class="contact-section">
         <div class="wrap">
           <div class="contact-grid">
             <div class="contact-left">
-              <svg class="helm" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
-                <circle cx="32" cy="32" r="16"/><circle cx="32" cy="32" r="5"/>
-                <path d="M32 4v12M32 48v12M4 32h12M48 32h12M12.2 12.2l8.5 8.5M43.3 43.3l8.5 8.5M12.2 51.8l8.5-8.5M43.3 20.7l8.5-8.5"/>
-              </svg>
 
               <h2 class="contact-title">
                 <span class="t1">Trạm Kết Nối</span>
