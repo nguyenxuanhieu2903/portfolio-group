@@ -1,281 +1,992 @@
 <!DOCTYPE html>
 <html lang="vi">
+
+<!-- ============================================================
+     MỤC LỤC
+     1. HEAD ............ meta, font, CSS
+     2. BACKGROUND ...... nền gradient động
+     3. HEADER .......... menu, đổi theme, đổi ngôn ngữ
+     4. MAIN
+        4.1 #home ........ hero + máy console tương tác
+        4.2 #skills ...... marquee công nghệ + thẻ kỹ năng
+        4.3 #projects .... danh sách dự án
+        4.4 #experience .. timeline kinh nghiệm
+        4.5 #contact ..... thông tin + form liên hệ
+        4.6 footer
+     5. SCRIPT
+     ============================================================ -->
+
+<!-- ======================= 1. HEAD ======================= -->
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Nguyễn Phạm Y Huỳnh – Frontend Developer & UI/UX</title>
-<meta name="description" content="Portfolio cá nhân của Nguyễn Phạm Y Huỳnh – sinh viên CNTT, Frontend Developer và UI/UX Enthusiast.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;800&family=Fraunces:opsz,wght@9..144,600;9..144,800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Nguyễn Phạm Y Huỳnh – Frontend Developer &amp; UI/UX</title>
+  <meta name="description" content="Portfolio cá nhân của Nguyễn Phạm Y Huỳnh – sinh viên CNTT, Frontend Developer và UI/UX Enthusiast.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;800&family=Fraunces:opsz,wght@9..144,600;9..144,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&display=swap" rel="stylesheet">
+  <!-- Stylesheet chính -->
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-<a class="back-group" href="../../index.html">&larr; Về trang chủ nhóm</a>
 
-<!-- Animated gradient background behind the main content sections -->
-<div class="bg" aria-hidden="true"><span></span><span></span><span></span></div>
+  <!-- ======================= 2. BACKGROUND ======================= -->
+  <div class="bg" aria-hidden="true"><span></span><span></span><span></span></div>
 
+<!-- ======================= 3. HEADER ======================= -->
 <header>
-  <div class="wrap">
-    <nav class="glass" aria-label="Điều hướng chính">
-      <a href="#home" class="logo">YHuynh<i>.dev</i></a>
-      <button class="burger" aria-label="Mở menu" aria-expanded="false">☰</button>
-      <ul class="menu">
-        <li><a href="#home" class="active">Trang chủ</a></li>
-        <li><a href="#skills">Kỹ năng</a></li>
-        <li><a href="#projects">Dự án</a></li>
-        <li><a href="#experience">Kinh nghiệm</a></li>
-        <li><a href="#contact">Liên hệ</a></li>
-      </ul>
-          <div class="tools">
-        <button class="tool" id="theme-btn" type="button"></button>
-        <div class="lang" id="lang">
-          <button class="tool lang-btn" id="lang-btn" type="button" aria-haspopup="listbox" aria-expanded="false"><span class="flag" id="lang-flag"></span> <span class="nm" id="lang-name">Tiếng Việt</span> <span class="caret">▾</span></button>
-          <ul class="lang-list" role="listbox" hidden>
-            <li role="option" tabindex="0" data-lang="vi"><span class="flag" data-flag="vi"></span>Tiếng Việt</li>
-            <li role="option" tabindex="0" data-lang="en"><span class="flag" data-flag="en"></span>English</li>
-          </ul>
+
+  <!-- Góc TRÊN CÙNG BÊN PHẢI: đổi theme + đổi ngôn ngữ (+ nút ☰ chỉ hiện trên màn hình hẹp) -->
+  <div class="top-right">
+    <div class="tools">
+      <button class="tool" id="theme-btn" type="button"></button>
+      <div class="lang" id="lang">
+        <button class="tool lang-btn" id="lang-btn" type="button" aria-haspopup="listbox" aria-expanded="false"><span class="flag" id="lang-flag"></span> <span class="nm" id="lang-name">Tiếng Việt</span> <span class="caret">▾</span></button>
+        <ul class="lang-list" role="listbox" hidden>
+          <li role="option" tabindex="0" data-lang="vi"><span class="flag" data-flag="vi"></span>Tiếng Việt</li>
+          <li role="option" tabindex="0" data-lang="en"><span class="flag" data-flag="en"></span>English</li>
+        </ul>
+      </div>
+    </div>
+    <button class="burger" aria-label="Mở menu" aria-expanded="false">☰</button>
+   <a class="tool cv-download"
+       href="images/cv.pdf"
+       download="Nguyen_Pham_Y_Huynh_CV.pdf"
+       title="Tải CV (PDF)">
+        <span class="cv-icon">⬇</span>
+        <span class="cv-text">Tải CV</span>
+    </a>
+  </div>
+
+  <!-- Menu dạng CỘT BIỂN CHỈ ĐƯỜNG (cố định bên trái) -->
+<ul class="menu" aria-label="Điều hướng chính">
+  <li><a href="#home" class="active">Trang chủ</a></li>
+  <li><a href="#about">Giới thiệu</a></li>
+  <li><a href="#hobbies">Sở thích</a></li>
+  <li><a href="#skills">Kỹ năng</a></li>
+  <li><a href="#experience">Kinh nghiệm</a></li>
+  <li><a href="#projects">Dự án</a></li>
+  <li><a href="#contact">Liên hệ</a></li>
+</ul>
+</header>
+<!-- ---------- 4.1 HOME (hero) ---------- -->
+ <main>
+    <section id="home">
+  <!-- BẢNG HIỆU -->
+  <div class="station-sign">
+    <div class="pearl-rope rope-left"></div>
+    <div class="pearl-rope rope-right"></div>
+    <div class="station-plaque">
+      <div class="plaque-stars"></div>
+      <div class="decor-shell">
+        <div class="shell-top"></div>
+        <div class="shell-pearl"></div>
+        <div class="shell-bottom"></div>
+      </div>
+      <div class="ocean-bubble b-1"></div>
+      <div class="ocean-bubble b-2"></div>
+      <div class="ocean-bubble b-3"></div>
+      <div class="ocean-bubble b-4"></div>
+      <div class="ocean-bubble b-5"></div>
+      <h2 class="station-name">trang chủ</h2>
+      <div class="decor-pendant">
+        <div class="pendant-chain"></div>
+        <div class="pendant-gem"><div class="gem-glare"></div></div>
+        <div class="pendant-tail">
+          <div class="fin left-fin"></div>
+          <div class="fin right-fin"></div>
         </div>
       </div>
-    </nav>
+    </div>
   </div>
-</header>
+      <!-- Canvas cho hiệu ứng 3D cá voi -->
+      <canvas id="c"></canvas>
 
-<main>
-<!-- Home hero section with a 3D whale animation and a liquid-glass SVG displacement filter -->
-<section id="home">
-  <canvas id="c"></canvas>
-  <!-- SVG displacement filter used to create the liquid-glass distortion effect -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <!-- Bộ lọc SVG tạo hiệu ứng kính lỏng -->
+      <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+          <filter id="liquid" filterUnits="userSpaceOnUse" x="0" y="0" width="600" height="500" color-interpolation-filters="sRGB">
+            <feImage id="dispMap" x="0" y="0" width="600" height="500" preserveAspectRatio="none" result="map"/>
+            <feDisplacementMap in="SourceGraphic" in2="map" scale="120" xChannelSelector="R" yChannelSelector="G"/>
+          </filter>
+        </defs>
+      </svg>
+
+      <div class="hero-container">
+        <!-- ===================================================
+     BÊN TRÁI: KHỐI RUBIK 3D 6 MẶT
+    =================================================== -->
+    <div class="rubik-hero-card">
+        <!-- Chữ PROFIO uốn cong ngay trên đầu Rubik -->
+<div class="curved-portfolio-wrapper">
+    <!-- Các ngôi sao lơ lửng đung đưa xung quanh chữ -->
+  <span class="star-float sf1">✦</span>
+  <span class="star-float sf2">✧</span>
+  <span class="star-float sf3">★</span>
+  <span class="star-float sf4">✦</span>
+  <span class="star-float sf5">✧</span>
+
+  <!-- Các ngôi sao băng rơi từ chữ xuống -->
+  <span class="star-fall fall1">✦</span>
+  <span class="star-fall fall2">✧</span>
+  <span class="star-fall fall3">★</span>
+
+  <svg viewBox="0 0 1000 300" class="curved-svg">
     <defs>
-      <filter id="liquid" filterUnits="userSpaceOnUse" x="0" y="0" width="600" height="500" color-interpolation-filters="sRGB">
-        <feImage id="dispMap" x="0" y="0" width="600" height="500" preserveAspectRatio="none" result="map"/>
-        <feDisplacementMap in="SourceGraphic" in2="map" scale="120" xChannelSelector="R" yChannelSelector="G"/>
-      </filter>
+      <linearGradient id="oceanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#7052ff" />
+        <stop offset="50%" stop-color="#73aaff" />
+        <stop offset="100%" stop-color="#7fe5ff" />
+      </linearGradient>
     </defs>
+    <path id="archPath" d="M 50,220 Q 500,20 950,220" fill="transparent"/>
+    <text class="curved-portfolio-text">
+      <textPath href="#archPath" startOffset="50%" text-anchor="middle">
+        PORTFOLIO
+      </textPath>
+    </text>
   </svg>
+</div>
+    <div class="rubik-area" id="rubikArea">
 
-  <div class="hero-container">
-    <div class="glass tilt hero-card">
-      <span class="role">Frontend Engineer · UI/UX Developer</span>
+        <div class="rubik-container">
+        <div class="rubik-cube" id="rubikCube">
+
+            <!-- Mặt 1: Yêu thiên nhiên -->
+            <div class="cube-face face-front">
+            <div class="tile tile-icon">🌿</div>
+            <div class="tile tile-title">Yêu Thiên Nhiên</div>
+            <div class="tile tile-tag">01<br>NATURE<br>SOUL</div>
+
+            <div class="tile">Chậm lại để ngắm vạn vật</div>
+            <div class="tile">Lắng nghe tiếng thở của gió</div>
+            <div class="tile">Hòa mình vào cỏ cây</div>
+            <div class="tile">Hoàng hôn bình yên</div>
+            <div class="tile tile-icon">🍃</div>
+            <div class="tile">Thiên nhiên chữa lành</div>
+            </div>
+
+        <!-- Mặt 2: Đam mê Design & FE -->
+        <div class="cube-face face-right">
+          <div class="tile tile-icon">💻</div>
+          <div class="tile tile-title">Đam Mê Sáng Tạo</div>
+          <div class="tile tile-tag">02<br>DESIGN<br>&amp; FE</div>
+
+          <div class="tile">UI / UX</div>
+          <div class="tile">Front-End Developer</div>
+          <div class="tile">Thổi hồn vào dòng code</div>
+          <div class="tile">Ý tưởng trừu tượng</div>
+          <div class="tile tile-icon">➜</div>
+          <div class="tile">Giao diện mượt mà</div>
+        </div>
+
+        <!-- Mặt 3: Cá voi 52Hz -->
+        <div class="cube-face face-back">
+          <div class="tile tile-icon">🐋</div>
+          <div class="tile tile-title">Cá Voi 52Hz</div>
+          <div class="tile tile-tag">03<br>52HZ<br>WHALE</div>
+
+          <div class="tile">Biểu tượng của portfolio</div>
+          <div class="tile">Hành trình kiêu hãnh</div>
+          <div class="tile">Độc bản</div>
+          <div class="tile">Kiên trì</div>
+          <div class="tile tile-icon">〰️</div>
+          <div class="tile">Cất lên bản sắc riêng</div>
+        </div>
+
+        <!-- Mặt 4: Vu vơ & Chiêm nghiệm -->
+        <div class="cube-face face-left">
+          <div class="tile tile-icon">☕</div>
+          <div class="tile tile-title">Chuyện Vu Vơ</div>
+          <div class="tile tile-tag">04<br>RANDOM<br>VIBE</div>
+
+          <div class="tile">Thả trôi theo dòng nước</div>
+          <div class="tile">Nghe một bản nhạc nhẹ</div>
+          <div class="tile">Tin vào sự ngẫu hứng</div>
+          <div class="tile">Mỗi điều có vẻ đẹp riêng</div>
+          <div class="tile tile-icon">🎧</div>
+          <div class="tile">...</div>
+        </div>
+
+        <!-- Mặt 5: Mặt trên -->
+        <div class="cube-face face-top">
+          <div class="tile tile-icon">🌌</div>
+          <div class="tile tile-title">Ước Mơ Bay Cao</div>
+          <div class="tile tile-tag">05<br>SKY<br>DREAM</div>
+
+          <div class="tile">Luôn học điều mới</div>
+          <div class="tile">Mơ lớn, làm từng bước</div>
+          <div class="tile">Mục tiêu rõ ràng</div>
+          <div class="tile">Không ngừng cải thiện</div>
+          <div class="tile tile-icon">✨</div>
+          <div class="tile">Hướng về phía trước</div>
+        </div>
+
+        <!-- Mặt 6: Mặt dưới -->
+        <div class="cube-face face-bottom">
+          <div class="tile tile-icon">🌊</div>
+          <div class="tile tile-title">Biển Sâu Lắng</div>
+          <div class="tile tile-tag">06<br>DEEP<br>OCEAN</div>
+
+          <div class="tile">Tĩnh lặng nơi đáy biển</div>
+          <div class="tile">Lắng nghe chính mình</div>
+          <div class="tile">Sâu sắc và bình tĩnh</div>
+          <div class="tile">Nơi mọi thứ bắt đầu</div>
+          <div class="tile tile-icon">🐚</div>
+          <div class="tile">Cứ thế mà trôi</div>
+        </div>
+
+      </div> <!-- đóng rubik-cube -->
+    </div>   <!-- đóng rubik-container -->
+    </div>   <!-- đóng rubik-area -->
+
+    <!-- Nút điều khiển + gợi ý cho rubik -->
+    <div class="rubik-controls">
+      <button type="button" class="rubik-btn" id="rubikShuffle">Xáo trộn</button>
+      <button type="button" class="rubik-btn" id="rubikReset">Đặt lại</button>
+    </div>
+</div>     <!-- đóng rubik-hero-card -->
+
+        <!-- ===================================================
+             BÊN PHẢI: GAME CONSOLE TƯƠNG TÁC + POLAROID TO
+        =================================================== -->
+        <div class="game-area" id="gameArea">
+
+          <!-- Dây sạc mảnh -->
+          <svg class="cable-svg" id="cableSvg">
+            <path id="cablePath" d="" fill="none" stroke="#d9d9e0" stroke-width="3.5" stroke-linecap="round"/>
+            <path id="cableHighlight" d="" fill="none" stroke="#ffffff" stroke-opacity=".55" stroke-width="1" stroke-linecap="round"/>
+          </svg>
+
+          <!-- Thân máy (Hiệu ứng kính trong suốt, bám giọt nước và chiều sâu 3D) -->
+          <div class="game-console" id="gameConsole">
+
+            <!-- Logo trên máy -->
+            <div class="console-top">
+              <span>groff</span>
+            </div>
+
+            <!-- Màn hình -->
+            <div class="console-screen">
+              <div class="screen-off" id="screenOff">
+                <span class="power-icon">⏻</span>
+                <p>Connect to power</p>
+              </div>
+
+              <div class="screen-on" id="screenOn">
+                <img id="screenPhoto" src="images/avatar.png" alt="Portfolio photo"/>
+                <span class="screen-label">MEMORIES.exe</span>
+              </div>
+            </div>
+
+            <div class="console-play">PLAY</div>
+            <div class="console-cross">✣</div>
+
+            <!-- Ba nút chọn ảnh -->
+            <div class="console-buttons">
+              <button class="game-btn blue" data-photo="0" aria-label="Chọn ảnh 1"></button>
+              <button class="game-btn yellow" data-photo="1" aria-label="Chọn ảnh 2"></button>
+              <button class="game-btn red" data-photo="2" aria-label="Chọn ảnh 3"></button>
+            </div>
+
+            <!-- Nút mặt cười -->
+            <button class="smile-btn" id="smileBtn" aria-label="Mở hoặc thu ảnh">☺</button>
+
+            <!-- Cổng sạc -->
+            <div class="charging-port" id="chargingPort"></div>
+
+          </div>
+
+          <!-- Đầu sạc USB-C -->
+          <button class="charging-plug" id="chargingPlug" aria-label="Kéo đầu sạc">
+            <span class="plug-metal"></span>
+            <span class="plug-body">
+              <span class="plug-label">USB-C</span>
+            </span>
+          </button>
+
+          <!-- Ảnh Polaroid phóng to khi mở -->
+          <div class="memory-photo" id="memoryPhoto">
+            <img id="memoryImage" src="images/avatar.jpg" alt="Memory photo"/>
+            <span class="memory-caption" id="memoryCaption">Memory 01</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Marquee thông tin cá nhân (Dải băng xéo màu xanh đại dương) -->
+      <div class="hero-marquee-wrapper" id="hero-marquee">
+        <div class="marquee" id="marquee-single" tabindex="0" aria-label="Thông tin cá nhân">
+          <div class="track"></div>
+        </div>
+      </div>
+    </section>
+    <!--4 ---------- PHẦN NỘI DUNG BÊN DƯỚI (MAIN CONTENT) ---------- -->
+    <div class="main-content">
+      <canvas id="bg-canvas"></canvas>
+       
+<!-- ==========================================
+     4.1 ABOUT – GIỚI THIỆU
+========================================== -->
+<section id="about">
+  
+  <!-- ĐẶT BẢNG HIỆU Ở ĐÂY (NGOÀI THẺ WRAP) -->
+  <div class="station-sign">
+    <!-- Dây treo ngọc trai -->
+    <div class="pearl-rope rope-left"></div>
+    <div class="pearl-rope rope-right"></div>
+
+    <!-- Mặt bảng hiệu -->
+    <div class="station-plaque">
+      <div class="plaque-stars"></div>
       
-      <h1>Xin chào, tôi là <span class="wave">
-        <span>N</span><span>g</span><span>u</span><span>y</span><span>ễ</span><span>n</span> 
-        <span>P</span><span>h</span><span>ạ</span><span>m</span> 
-        <span>Y</span> 
-        <span>H</span><span>u</span><span>ỳ</span><span>n</span><span>h</span><span>.</span>
-      </span></h1>
+      <!-- Trang trí: Vỏ sò ngọc trai -->
+      <div class="decor-shell">
+        <div class="shell-top"></div>
+        <div class="shell-pearl"></div>
+        <div class="shell-bottom"></div>
+      </div>
 
-      <p>Sinh viên Công nghệ Thông tin định hướng phát triển Web Front-End. Chuyên xây dựng giao diện tối ưu trải nghiệm người dùng (UX), đảm bảo tính tương thích đa thiết bị và chuyển đổi thiết kế thành các sản phẩm web hiện đại.</p>
-      <div class="cta">
-        <a class="btn" href="#contact">Liên hệ</a>
+      <!-- Trang trí: Bóng nước pha lê -->
+      <div class="ocean-bubble b-1"></div>
+      <div class="ocean-bubble b-2"></div>
+      <div class="ocean-bubble b-3"></div>
+      <div class="ocean-bubble b-4"></div>
+      <div class="ocean-bubble b-5"></div>
+
+      <!-- Nội dung chữ -->
+      <h2 class="station-name">giới thiệu</h2>
+
+      <!-- Trang trí: Dây chuyền đuôi tiên cá -->
+      <div class="decor-pendant">
+        <div class="pendant-chain"></div>
+        <div class="pendant-gem">
+          <div class="gem-glare"></div>
+        </div>
+        <div class="pendant-tail">
+          <div class="fin left-fin"></div>
+          <div class="fin right-fin"></div>
+        </div>
       </div>
     </div>
-    <div class="glass tilt avatar">
-      <img src="images/avatar.jpg" alt="Nguyễn Phạm Y Huỳnh">
-    </div>
   </div>
 
-  <!-- Scrolling marquee displayed below the hero section -->
-  <div class="hero-marquee-wrapper" id="hero-marquee">
-    <div class="marquee" id="marquee-single" tabindex="0" aria-label="Thông tin cá nhân"><div class="track"></div></div>
+  <!-- NỘI DUNG CHÍNH -->
+  <div class="wrap">
+    
+    <!-- Bố cục 2 cột (Ảnh & Text) -->
+    <div class="about-grid">
+      
+        <!-- CỘT TRÁI: ẢNH CÁ NHÂN -->
+      <div class="about-visual">
+        <div class="about-photo-frame">
+          <div class="photo-top-label">
+            <span>✦</span> KHOẢNG KHẮC HÀNG NGÀY CỦA MÌNH
+          </div>
+          <div class="about-slides" id="aboutSlides">
+            <img class="active" src="images/student.jpg"   alt="Khoảnh khắc 1">
+            <video src="images/video.mp4" muted playsinline preload="metadata"></video>
+            <img src="images/student-2.jpg" alt="Khoảnh khắc 2">
+            <img src="images/student-3.jpg" alt="Khoảnh khắc 3">
+            <img src="images/student-4.jpg" alt="Khoảnh khắc 4">
+            <img src="images/student-5.jpg" alt="Khoảnh khắc 5">
+            <img src="images/student-6.jpg" alt="Khoảnh khắc 6">
+          </div>
+          <div class="photo-bottom">
+            <span>❤️ 2026</span>
+          </div>
+        </div>
+        <!-- Thẻ tag lơ lửng -->
+        <div class="about-floating-tag">
+          <span>⌘</span>
+          <div>
+            <strong>Creative Mind</strong>
+            <small>Always exploring</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- CỘT PHẢI: NỘI DUNG GIỚI THIỆU -->
+      <div class="about-content">
+        <span class="about-label">XIN CHÀO! RẤT VUI ĐƯỢC GẶP BẠN</span>
+        
+        <h3>
+          Mình là ai?<br> <span class="about-name">Nguyễn Phạm Y Huỳnh.</span>
+        </h3>
+
+        <p class="about-description">
+          Sinh viên Công nghệ Thông tin, có niềm yêu thích với công nghệ, thiết kế giao diện và sáng tạo những trải nghiệm web thú vị.
+        </p>
+        <p class="about-description">
+          Mình đặc biệt quan tâm đến Frontend Development, thích khám phá cách HTML, CSS và JavaScript kết hợp để biến những ý tưởng thành sản phẩm trực quan, thân thiện và có tính ứng dụng.
+        </p>
+
+        <!-- Điểm nhấn thông tin -->
+        <div class="about-highlight">
+          <div class="highlight-item">
+            <span class="highlight-icon">🎓</span>
+            <div>
+              <strong>Học vấn</strong>
+              <small>Đại Học Giao thông Vận tải TP.HCM (UTH)</small>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-icon">💻</span>
+            <div>
+              <strong>Định hướng nghề nghiệp</strong>
+              <small>Frontend Developer</small>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-icon">✨</span>
+            <div>
+              <strong>My Mindset</strong>
+              <small>Sáng tạo &amp; Không ngừng học hỏi</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nút Call-to-action -->
+        <a href="#skills" class="about-explore-btn">
+          KHÁM PHÁ KỸ NĂNG CỦA MÌNH <span>↗</span>
+        </a>
+      </div>
+
+    </div>
   </div>
 </section>
+      <!-- 4.2 SỞ THÍCH -->
+<section id="hobbies">
 
-<div class="main-content">
+  <!-- BẢNG HIỆU (giống phần Giới thiệu) -->
+  <div class="station-sign">
+    <div class="pearl-rope rope-left"></div>
+    <div class="pearl-rope rope-right"></div>
 
-  <!-- SKILLS -->
-  <section id="skills">
-    <div class="wrap">
-      <h2>Kỹ năng & công cụ</h2>
-      <!-- Infinite-scrolling strip of technology logo items -->
-      <div class="marquee-container">
-        <div class="marquee-track">
-          <!-- First set of technology logo items -->
-          <div class="marquee-item">HTML5</div>
-          <div class="marquee-item">CSS3</div>
-          <div class="marquee-item">JavaScript</div>
-          <div class="marquee-item">C++</div>
-          <div class="marquee-item">SQL</div>
-          <div class="marquee-item">Git & GitHub</div>
-          <div class="marquee-item">Figma</div>
-          <div class="marquee-item">VS Code</div>
-          
-          <!-- Duplicate set for seamless marquee looping -->
-          <div class="marquee-item">HTML5</div>
-          <div class="marquee-item">CSS3</div>
-          <div class="marquee-item">JavaScript</div>
-          <div class="marquee-item">C++</div>
-          <div class="marquee-item">SQL</div>
-          <div class="marquee-item">Git & GitHub</div>
-          <div class="marquee-item">Figma</div>
-          <div class="marquee-item">VS Code</div>
+    <div class="station-plaque">
+      <div class="plaque-stars"></div>
+
+      <div class="decor-shell">
+        <div class="shell-top"></div>
+        <div class="shell-pearl"></div>
+        <div class="shell-bottom"></div>
+      </div>
+
+      <div class="ocean-bubble b-1"></div>
+      <div class="ocean-bubble b-2"></div>
+      <div class="ocean-bubble b-3"></div>
+      <div class="ocean-bubble b-4"></div>
+      <div class="ocean-bubble b-5"></div>
+
+      <h2 class="station-name">sở thích</h2>
+
+      <div class="decor-pendant">
+        <div class="pendant-chain"></div>
+        <div class="pendant-gem">
+          <div class="gem-glare"></div>
+        </div>
+        <div class="pendant-tail">
+          <div class="fin left-fin"></div>
+          <div class="fin right-fin"></div>
         </div>
       </div>
-      <div class="tabs" data-filter="skills">
-        <button class="tab on" data-f="all">Tất cả</button>
-        <button class="tab" data-f="core">Core Tech</button>
-        <button class="tab" data-f="tools">Công cụ & môi trường</button>
-        <button class="tab" data-f="soft">Kỹ năng mềm & kiểm thử</button>
-      </div>
-      <div class="grid" id="skills-grid">
-        <article class="glass tilt card" data-cat="core"><h3>HTML5</h3><p class="lead" style="margin:0">Semantic, accessible</p><div class="bar"><i data-w="90"></i></div></article>
-        <article class="glass tilt card" data-cat="core"><h3>CSS3</h3><p class="lead" style="margin:0">Flex, Grid, animation</p><div class="bar"><i data-w="88"></i></div></article>
-        <article class="glass tilt card" data-cat="core"><h3>JavaScript (ES6+)</h3><p class="lead" style="margin:0">DOM, async, module</p><div class="bar"><i data-w="78"></i></div></article>
-        <article class="glass tilt card" data-cat="core"><h3>C++</h3><p class="lead" style="margin:0">OOP, thuật toán</p><div class="bar"><i data-w="72"></i></div></article>
-        <article class="glass tilt card" data-cat="core"><h3>SQL</h3><p class="lead" style="margin:0">Truy vấn, thiết kế CSDL</p><div class="bar"><i data-w="75"></i></div></article>
-        <article class="glass tilt card" data-cat="tools"><h3>VS Code</h3><p class="lead" style="margin:0">Snippet, debug, Live Server</p><div class="bar"><i data-w="92"></i></div></article>
-        <article class="glass tilt card" data-cat="tools"><h3>Git / GitHub</h3><p class="lead" style="margin:0">Branch, PR, issue</p><div class="bar"><i data-w="76"></i></div></article>
-        <article class="glass tilt card" data-cat="tools"><h3>MySQL Workbench</h3><p class="lead" style="margin:0">ERD, query</p><div class="bar"><i data-w="70"></i></div></article>
-        <article class="glass tilt card" data-cat="tools"><h3>Figma</h3><p class="lead" style="margin:0">Wireframe, prototype</p><div class="bar"><i data-w="80"></i></div></article>
-        <article class="glass tilt card" data-cat="soft"><h3>Kỹ năng mềm</h3><p class="lead" style="margin:0">Làm việc nhóm, thuyết trình, quản lý thời gian</p><div class="chips"><span class="chip">Teamwork</span><span class="chip">Giao tiếp</span><span class="chip">Tự học</span></div></article>
-        <article class="glass tilt card" data-cat="soft"><h3>Quy trình kiểm thử</h3><p class="lead" style="margin:0">Test case, kiểm thử thủ công, DevTools, kiểm tra responsive</p><div class="chips"><span class="chip">Test case</span><span class="chip">Bug report</span><span class="chip">Lighthouse</span></div></article>
-      </div>
     </div>
-  </section>
-  <section id="projects">
-    <div class="wrap">
-      <h2>Dự án & sản phẩm</h2>
-      <p class="lead">Các dự án cá nhân và học thuật được phát triển trong quá trình học tập cùng nhóm trong môi trường đại học.</p>
+  </div>
 
-      <div class="tabs" data-filter="projects">
-    
-      </div>
+  <!-- NỘI DUNG CHÍNH -->
+  <div class="wrap">
+    <div class="about-grid hobby-grid">
 
-      <div class="grid carousel" id="projects-grid" tabindex="0" aria-label="Danh sách dự án">
-        <!-- PROJECT 1: MULTI-FILE DOWNLOADER -->
-        <article class="glass tilt card" data-cat="web">
-          <div class="thumb" style="background:linear-gradient(135deg,#85b2e9,#3b6cff)">🌐</div>
-          <h3>Multi-File Downloader</h3>
-          <span class="role-tag">Vai trò: Thiết kế Frontend & lập trình</span>
-          <p class="lead" style="margin:8px 0 0">Công cụ tải nhiều tệp, hỗ trợ xử lý các tác vụ tải xuống.</p>
-          <div class="chips">
-            <span class="chip">JavaScript</span>
-            <span class="chip">Frontend</span>
-          </div>
-          <div class="links">
-            <a class="btn sm" href="https://github.com/BobananaGH/multi-file-downloader" target="_blank" rel="noopener noreferrer">GitHub</a>
-          </div>
-        </article>
-
-        <!-- PROJECT 2: PROFILE -->
-        <article class="glass tilt card" data-cat="web">
-          <div class="thumb" style="background:linear-gradient(135deg,#ffd27a,#ff7a7a)">👤</div>
-          <h3>Profile</h3>
-          <span class="role-tag">Dự án cá nhân</span>
-          <p class="lead" style="margin:8px 0 0">Trang web cá nhân giới thiệu thông tin bản thân, kinh nghiệm và dự án.</p>
-          <div class="chips">
-            <span class="chip">HTML</span>
-            <span class="chip">CSS</span>
-            <span class="chip">JavaScript</span>
-          </div>
-          <div class="links">
-            <a class="btn sm" href="https://github.com/yhuynh06/Profile" target="_blank" rel="noopener noreferrer">GitHub</a>
-          </div>
-        </article>
-
-        <!-- PROJECT 3: CNPM FLASK API -->
-        <article class="glass tilt card" data-cat="web">
-          <div class="thumb" style="background:linear-gradient(135deg,#6a5cff,#42e6d4)">⚙️</div>
-          <h3>CNPM Flask API</h3>
-          <span class="role-tag">Dự án học tập</span>
-          <p class="lead" style="margin:8px 0 0">Dự án liên quan đến phát triển API bằng Flask.</p>
-          <div class="chips">
-            <span class="chip">Python</span>
-            <span class="chip">Flask</span>
-            <span class="chip">API</span>
-          </div>
-          <div class="links">
-            <a class="btn sm" href="https://github.com/PhuongHuyN/cnpm-flaskapi" target="_blank" rel="noopener noreferrer">GitHub</a>
-          </div>
-        </article>
-
-        <!-- PROJECT 4: VETERINARY CENTER WEB -->
-        <article class="glass tilt card" data-cat="web">
-          <div class="thumb" style="background:linear-gradient(135deg,#6a5cff,#42e6d4)">🐾</div>
-          <h3>Veterinary Center Web</h3>
-          <span class="role-tag">Đang phát triển</span>
-          <p class="lead" style="margin:8px 0 0">Website trung tâm thú y, đang trong quá trình xây dựng và hoàn thiện.</p>
-          <div class="chips">
-            <span class="chip">Web Development</span>
-          </div>
-          <div class="links">
-            <a class="btn sm" href="https://github.com/nguyenxuanhieu2903/veterinary-center-web" target="_blank" rel="noopener noreferrer">GitHub</a>
-          </div>
-        </article>
-
-      </div><!-- /grid -->
-        <div class="car-nav">
-        <button class="btn sm" id="car-prev" type="button" aria-label="Dự án trước">‹</button>
-        <span id="car-count">1 / 4</span>
-        <button class="btn sm" id="car-next" type="button" aria-label="Dự án sau">›</button>
-      </div>
-    </div><!-- /wrap -->
-  </section>
-  <!-- EXPERIENCE -->
-  <section id="experience">
-    <div class="wrap">
-      <h2>Kinh nghiệm</h2>
-      <p class="lead">Hoạt động nhóm, nghiên cứu và đồ án đã hoàn thành.</p>
-    <div class="timeline">
-        <article class="glass tilt tl">
-          <time>2026</time>
-          <h3>Thiết kế & Quản trị CSDL Hệ thống Quản lý Thư viện</h3>
-          <p>Xây dựng sơ đồ ERD chuẩn hóa gồm 12+ bảng dữ liệu quan hệ, viết các truy vấn SQL phức tạp phục vụ thống kê mượn trả sách.</p>
-        </article>
-          <article class="glass tilt tl">
-          <time>2025</time>
-          <h3>Lập trình Hướng đối tượng (OOP)</h3>
-          <p>Áp dụng thành thạo 4 tính chất OOP (Đóng gói, Kế thừa, Đa hình, Trừu tượng), quản lý bộ nhớ và thao tác đọc/ghi file dữ liệu.</p>
-        </article>
-
-        <article class="glass tilt tl">
-          <time>2024</time>
-          <h3>CLB Lập trình – Ban Truyền thông</h3>
-          <p>Thiết kế ấn phẩm và tổ chức workshop HTML/CSS.</p>
-        </article>
-
-      </div>
-
+      <!-- CỘT TRÁI: TRÁI TIM ẢNH -->
+      <div class="about-visual hobby-visual">
+          <!-- Thay ô trống bằng ảnh: <div class="hobby-tile" style="..."><img src="img/hobby-1.jpg" alt="Đi biển"></div> -->
+    <div class="hobby-heart" aria-label="Bộ sưu tập ảnh hình trái tim">
+      <div class="hobby-tile" style="--l:15.6;--t:9.3;--w:12.9;--h:12"><img src="images/hobby-6.jpg" alt="Sở thích 1"></div>
+      <div class="hobby-tile" style="--l:29.7;--t:9.3;--w:12.9;--h:12"><img src="images/hobby-2.jpg" alt="Sở thích 2"></div>
+      <div class="hobby-tile" style="--l:58.4;--t:11.6;--w:28.9;--h:21.8"><img src="images/hobby-14.jpg" alt="Sở thích 3"></div>
+      <div class="hobby-tile" style="--l:84.9;--t:20.9;--w:12.9;--h:12"><img src="images/hobby-4.jpg" alt="Sở thích 4"></div>
+      <div class="hobby-tile" style="--l:2.4;--t:22.7;--w:12;--h:11.1"><img src="images/hobby-5.jpg" alt="Sở thích 5"></div>
+      <div class="hobby-tile" style="--l:15.6;--t:22.7;--w:25.8;--h:24"><img src="images/hobby-1.jpg" alt="Sở thích 6"></div>
+      <div class="hobby-tile" style="--l:42.6;--t:22.7;--w:13.2;--h:12.2"><img src="images/hobby-7.jpg" alt="Sở thích 7"></div>
+      <div class="hobby-tile" style="--l:2.4;--t:35.1;--w:12;--h:11.1"><img src="images/hobby-8.jpg" alt="Sở thích 8"></div>
+      <div class="hobby-tile" style="--l:42.6;--t:35.6;--w:13.2;--h:12.2"><img src="images/hobby-9.jpg" alt="Sở thích 9"></div>
+      <div class="hobby-tile" style="--l:57.4;--t:35.6;--w:25.8;--h:24"><img src="images/hobby-11.jpg" alt="Sở thích 10"></div>
+      <div class="hobby-tile" style="--l:84.4;--t:35.1;--w:13;--h:12"><img src="images/hobby-10.jpg" alt="Sở thích 11"></div>
+      <div class="hobby-tile" style="--l:13.4;--t:47.6;--w:14.8;--h:13.8"><img src="images/hobby-12.jpg" alt="Sở thích 12"></div>
+      <div class="hobby-tile" style="--l:29.7;--t:48.9;--w:25.8;--h:23.6"><img src="images/hobby-13.jpg" alt="Sở thích 13"></div>
+      <div class="hobby-tile" style="--l:57;--t:60.4;--w:13.9;--h:12.9"><img src="images/hobby-3.jpg" alt="Sở thích 14"></div>
+      <div class="hobby-tile" style="--l:43;--t:73.8;--w:13.9;--h:12.9"><img src="images/hobby-15.jpg" alt="Sở thích 15"></div>
     </div>
-  </section>
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="wrap">
-      <h2>Liên hệ</h2>
-      <p class="lead">Có cơ hội thực tập hoặc muốn hợp tác? Gửi tin nhắn, tôi sẽ phản hồi trong 24 giờ.</p>
-      <div class="contact">
-        <div class="glass tilt info">
-            <a href="#home"><span>🏠</span>Quê quán: Châu Phú, An Giang</a>
-            <a href="https://maps.google.com" target="_blank" rel="noopener"><span>📍</span>TP. Hồ Chí Minh, Việt Nam</a>
-          <a href="mailto:nguyenphammyquynh@gmail.com"><span>✉️</span>nguyenphammyquynh@gmail.com</a>
-          <a href="tel:0329217992"><span>📞</span>0329 217 992</a>
-          <div class="socials">
-          <a href="https://zalo.me/0329217992" aria-label="Zalo" target="_blank" rel="noopener">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2C6.48 2 2 6.13 2 11.23c0 2.91 1.46 5.51 3.74 7.17-.16.96-.65 2.57-1.42 3.63 1.54 0 3.19-.57 4.38-1.34.84.23 1.74.36 2.67.36 5.52 0 10-4.13 10-9.23S17.52 2 12 2zm-1.88 12.18h-2.5v-1.12l1.64-2.19h-1.64v-.96h2.5v1.07l-1.66 2.24h1.66v.96zm2.38 0h-1.07v-4.32h1.07v4.32zm2.84 0c-1.15 0-1.95-.81-1.95-2.16 0-1.35.8-2.16 1.95-2.16s1.95.81 1.95 2.16c0 1.35-.8 2.16-1.95 2.16z"/>
-            </svg>
-          </a>
-            <a href="https://github.com/" aria-label="GitHub" target="_blank" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg></a>
-            <a href="https://linkedin.com/" aria-label="LinkedIn" target="_blank" rel="noopener"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11.5H3V9.75Zm6.5 0h3.83v1.57h.06c.53-1 1.84-2.07 3.78-2.07 4.05 0 4.8 2.66 4.8 6.12v5.88h-4v-5.2c0-1.24-.02-2.84-1.73-2.84-1.73 0-2 1.35-2 2.75v5.29h-4V9.75Z"/></svg></a>
+
+        <!-- Thẻ tag lơ lửng -->
+        <div class="about-floating-tag hobby-tag">
+          <span>❤</span>
+          <div>
+            <strong>Good Vibes Only</strong>
+            <small>Lưu giữ khoảnh khắc</small>
           </div>
         </div>
-        <form class="glass" id="contact-form" novalidate>
-          <label>Họ và tên<input name="name" type="text" placeholder="Nguyễn Văn A" required></label>
-          <label>Email<input name="email" type="email" placeholder="ban@email.com" required></label>
-          <label>Tin nhắn<textarea name="msg" rows="4" placeholder="Bạn muốn trao đổi điều gì?" required></textarea></label>
-          <button class="btn primary" type="submit">Gửi tin nhắn</button>
-          <p class="status" role="status" aria-live="polite"></p>
-        </form>
+      </div>
+
+      <!-- CỘT PHẢI: DANH SÁCH SỞ THÍCH -->
+      <div class="about-content">
+        <h3>
+          Những điều làm mình<br> <span class="about-name">mỉm cười mỗi ngày.</span>
+        </h3>
+        <div class="about-highlight hobby-list">
+          <div class="highlight-item hobby-item">
+            <span class="highlight-icon">🌍</span>
+            <div>
+              <strong>Du lịch khắp thế giới</strong>
+              <small>Mỗi chuyến đi là một trang mới, mình muốn đặt chân đến thật nhiều nơi</small>
+            </div>
+          </div>
+          <div class="highlight-item hobby-item">
+            <span class="highlight-icon">🌊</span>
+            <div>
+              <strong>Đi biển</strong>
+              <small>Nghe sóng vỗ, ngắm hoàng hôn – nơi mình thấy bình yên nhất</small>
+            </div>
+          </div>
+          <div class="highlight-item hobby-item">
+            <span class="highlight-icon">🐾</span>
+            <div>
+              <strong>Yêu thú cưng</strong>
+              <small>Những người bạn bốn chân luôn làm ngày của mình ấm áp hơn</small>
+            </div>
+          </div>
+          <div class="highlight-item hobby-item">
+            <span class="highlight-icon">📚</span>
+            <div>
+              <strong>Đọc sách</strong>
+              <small>Một cuốn sách hay và một góc yên tĩnh là đủ cho cả buổi chiều</small>
+            </div>
+          </div>
+          <div class="highlight-item hobby-item">
+            <span class="highlight-icon">🎧</span>
+            <div>
+              <strong>Nghe nhạc &amp; chụp ảnh</strong>
+              <small>Lưu lại những khoảnh khắc và giai điệu theo mình mọi nơi</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- 4.4 KỸ NĂNG -->
+       <!-- Hình thùng dùng chung (đặt 1 lần) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <g id="carton">
+      <polygon points="-72,22 72,22 62,-14 -62,-14" style="fill:var(--a)"/>
+      <polygon points="-62,-14 62,-14 60,-8 -60,-8" style="fill:var(--d);opacity:.35"/>
+      <polygon points="-78,22 78,22 90,160 -90,160" style="fill:var(--b)"/>
+      <polygon points="-78,22 78,22 80,40 -80,40" style="fill:var(--d);opacity:.28"/>
+      <polygon points="-90,160 -78,22 -128,150 -138,200" style="fill:var(--c)"/>
+      <polygon points="90,160 78,22 128,150 138,200" style="fill:var(--c)"/>
+      <polygon points="-90,160 90,160 100,244 -100,244" style="fill:var(--a)"/>
+      <polygon points="-90,160 90,160 92,174 -92,174" style="fill:var(--d);opacity:.4"/>
+      <polygon points="-90,160 -100,244 -138,200" style="fill:var(--d);opacity:.55"/>
+      <polygon points="90,160 100,244 138,200" style="fill:var(--d);opacity:.55"/>
+      <rect x="-18" y="160" width="36" height="84" fill="#efe9d6" opacity=".35"/>
+      <rect x="-58" y="52" width="116" height="72" rx="4" fill="#1f3a3a"/>
+      <rect x="-58" y="52" width="116" height="72" rx="4" fill="none" stroke="#fff" stroke-opacity=".25"/>
+      <g fill="#efe9d6" fill-opacity=".92">
+        <rect x="-72" y="47" width="30" height="11" transform="rotate(-38 -57 52)"/>
+        <rect x="42" y="47" width="30" height="11" transform="rotate(38 57 52)"/>
+        <rect x="-72" y="118" width="30" height="11" transform="rotate(38 -57 124)"/>
+        <rect x="42" y="118" width="30" height="11" transform="rotate(-38 57 124)"/>
+      </g>
+    </g>
+  </defs>
+</svg>
+
+<section id="skills" class="skills-box-section">
+  <div class="skills-box-grid">
+
+    <!-- THÙNG 1: CORE TECH -->
+    <div class="skill-box-col" style="--accent:#7fc0ae">
+      <div class="chest" title="Bấm để thả lại">
+        <svg viewBox="-145 -22 290 280" role="img" aria-label="Core tech">
+          <use href="#carton" style="--a:#7fc0ae;--b:#5fa593;--c:#4a8a7a;--d:#2b5a50"/>
+          <text x="0" y="82" text-anchor="middle" font-size="11" font-weight="700" fill="#f3c969" letter-spacing="2">01</text>
+          <text x="0" y="106" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">CORE TECH</text>
+        </svg>
+      </div>
+      <div class="skills-drop-list">
+        <div class="skill-chip" style="--i:0;--rot:-2.5deg;--dx:-14px"><div class="skill-chip-inner">HTML5</div></div>
+        <div class="skill-chip" style="--i:1;--rot:2.5deg;--dx:16px"><div class="skill-chip-inner">CSS3</div></div>
+        <div class="skill-chip" style="--i:2;--rot:-2deg;--dx:-10px"><div class="skill-chip-inner">JavaScript (ES6+)</div></div>
+        <div class="skill-chip" style="--i:3;--rot:2.5deg;--dx:12px"><div class="skill-chip-inner">C++</div></div>
+        <div class="skill-chip" style="--i:4;--rot:-2.5deg;--dx:-16px"><div class="skill-chip-inner">SQL</div></div>
       </div>
     </div>
-  </section>
 
-  <footer>© 2026 Nguyễn Phạm Y Huỳnh. Thiết kế và code bằng HTML, CSS, JavaScript thuần.</footer>
+    <!-- THÙNG 2: CÔNG CỤ & MÔI TRƯỜNG -->
+    <div class="skill-box-col" style="--accent:#bccf8e">
+      <div class="chest" title="Bấm để thả lại">
+        <svg viewBox="-145 -22 290 280" role="img" aria-label="Công cụ và môi trường">
+          <use href="#carton" style="--a:#d4e2ac;--b:#bccf8e;--c:#a3b974;--d:#6b7f48"/>
+          <text x="0" y="78" text-anchor="middle" font-size="11" font-weight="700" fill="#f3c969" letter-spacing="2">02</text>
+          <text x="0" y="97" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">CÔNG CỤ &amp;</text>
+          <text x="0" y="115" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">MÔI TRƯỜNG</text>
+        </svg>
+      </div>
+      <div class="skills-drop-list">
+        <div class="skill-chip" style="--i:0;--rot:2.5deg;--dx:14px"><div class="skill-chip-inner">VS Code</div></div>
+        <div class="skill-chip" style="--i:1;--rot:-2.5deg;--dx:-16px"><div class="skill-chip-inner">Git / GitHub</div></div>
+        <div class="skill-chip" style="--i:2;--rot:2deg;--dx:10px"><div class="skill-chip-inner">MySQL Workbench</div></div>
+        <div class="skill-chip" style="--i:3;--rot:-2.5deg;--dx:-12px"><div class="skill-chip-inner">Figma</div></div>
+      </div>
+    </div>
+
+    <!-- THÙNG 3: MỀM & KIỂM THỬ -->
+    <div class="skill-box-col" style="--accent:#d98a54">
+      <div class="chest" title="Bấm để thả lại">
+        <svg viewBox="-145 -22 290 280" role="img" aria-label="Mềm và kiểm thử">
+          <use href="#carton" style="--a:#d98a54;--b:#bd6c3a;--c:#a45a2d;--d:#6e3615"/>
+          <text x="0" y="78" text-anchor="middle" font-size="11" font-weight="700" fill="#f3c969" letter-spacing="2">03</text>
+          <text x="0" y="97" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">MỀM &amp;</text>
+          <text x="0" y="115" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">KIỂM THỬ</text>
+        </svg>
+      </div>
+      <div class="skills-drop-list">
+        <div class="skill-chip" style="--i:0;--rot:-2.5deg;--dx:-14px"><div class="skill-chip-inner">Teamwork</div></div>
+        <div class="skill-chip" style="--i:1;--rot:2.5deg;--dx:16px"><div class="skill-chip-inner">Giao tiếp</div></div>
+        <div class="skill-chip" style="--i:2;--rot:-2deg;--dx:-10px"><div class="skill-chip-inner">Tự học</div></div>
+        <div class="skill-chip" style="--i:3;--rot:2.5deg;--dx:12px"><div class="skill-chip-inner">Test case</div></div>
+        <div class="skill-chip" style="--i:4;--rot:-2.5deg;--dx:-16px"><div class="skill-chip-inner">Bug report</div></div>
+        <div class="skill-chip" style="--i:5;--rot:2.5deg;--dx:14px"><div class="skill-chip-inner">Lighthouse</div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+      <!-- 4.6  KINH NGHIỆM -->
+      <section id="experience">
+        <div class="wrap">
+          <h2>Kinh nghiệm</h2>
+          <p class="lead">Hoạt động nhóm, nghiên cứu và đồ án đã hoàn thành.</p>
+
+          <div class="timeline">
+            <article class="glass tilt tl">
+              <time>2026</time>
+              <h3>Thiết kế &amp; Quản trị CSDL Hệ thống Quản lý Thư viện</h3>
+              <p>Xây dựng sơ đồ ERD chuẩn hóa gồm 12+ bảng dữ liệu quan hệ, viết các truy vấn SQL phức tạp phục vụ thống kê mượn trả sách.</p>
+            </article>
+
+            <article class="glass tilt tl">
+              <time>2025</time>
+              <h3>Lập trình Hướng đối tượng (OOP)</h3>
+              <p>Áp dụng thành thạo 4 tính chất OOP (Đóng gói, Kế thừa, Đa hình, Trừu tượng), quản lý bộ nhớ và thao tác đọc/ghi file dữ liệu.</p>
+            </article>
+
+            <article class="glass tilt tl">
+              <time>2024</time>
+              <h3>CLB Lập trình – Ban Truyền thông</h3>
+              <p>Thiết kế ấn phẩm và tổ chức workshop HTML/CSS.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bộ icon dùng chung -->
+      <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z"/></symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 011 1v.5l-10 6.5L2 6.5V6a1 1 0 011-1zM2 9l10 6.5L22 9v9a1 1 0 01-1 1H3a1 1 0 01-1-1z"/></symbol>
+        <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 012 2v10a2 2 0 01-2 2h-7l-5 4v-4H4a2 2 0 01-2-2V6a2 2 0 012-2z"/></symbol>
+        <symbol id="i-plane" viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></symbol>
+        <symbol id="i-shell" viewBox="0 0 40 36"><path d="M20 2C10 2 3 12 2 24c4 3 9 5 18 5s14-2 18-5C37 12 30 2 20 2z"/><rect x="14" y="29" width="12" height="5" rx="2"/><path d="M20 6v22M12 8l5 20M28 8l-5 20M6 14l10 14M34 14L24 28" fill="none" stroke="#06142c" stroke-width="1.4"/></symbol>
+      </svg>
+<!-- 4.3 PROJECTS -->
+      <section id="projects">
+        <div class="wrap">
+        
+          <ul class="points">
+            <li><a class="mini-sign" href="#projects-grid">Dự án</a></li>
+            <li><a class="mini-sign" href="#projects-grid">Sản phẩm</a></li>
+            <li><a class="mini-sign" href="#proj-achievements">Thành tựu</a></li>
+            <li><a class="mini-sign" href="#proj-certs">Chứng chỉ</a></li>
+          </ul>
+          <div class="tabs" data-filter="projects"></div>
+
+          <div class="grid carousel" id="projects-grid" tabindex="0" aria-label="Danh sách dự án">
+            <article class="glass tilt card" data-cat="web">
+              <div class="thumb thumb--blue">
+  <img src="images/flux.jpg" alt="Multi-File Downloader" draggable="false">
 </div>
-</main>
+              <h3>Multi-File Downloader</h3>
+              <span class="role-tag">Vai trò: Thiết kế Frontend &amp; lập trình</span>
+              <p class="lead lead--tight">Công cụ tải nhiều tệp, hỗ trợ xử lý các tác vụ tải xuống.</p>
+              <div class="chips"><span class="chip">JavaScript</span><span class="chip">Frontend</span></div>
 
-<script type="module" src="./script.js"></script>
+              <!-- TODO: sửa % và các ý cho đúng thực tế -->
+              <div class="contrib">
+                <div class="contrib-head">
+                  <span class="contrib-label">Đóng góp của tôi</span>
+                  <span class="contrib-pct">60%</span>
+                </div>
+                <div class="contrib-bar"><i style="--w:60%"></i></div>
+                <ul class="contrib-list">
+                  <li>Thiết kế giao diện Frontend</li>
+                  <li>Lập trình xử lý tải nhiều tệp</li>
+                </ul>
+              </div>
+
+              <div class="links"><a class="btn sm" href="https://github.com/BobananaGH/multi-file-downloader" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+            </article>
+
+            <article class="glass tilt card" data-cat="web">
+              <div class="thumb thumb--blue">
+                <img src="images/pfo.png" alt="Profile" draggable="false">
+              </div>
+              <h3>Profile</h3>
+              <span class="role-tag">Dự án cá nhân</span>
+              <p class="lead lead--tight">Trang web cá nhân giới thiệu thông tin bản thân, kinh nghiệm và dự án.</p>
+              <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span></div>
+
+              <div class="contrib">
+                <div class="contrib-head">
+                  <span class="contrib-label">Đóng góp của tôi</span>
+                  <span class="contrib-pct">100%</span>
+                </div>
+                <div class="contrib-bar"><i style="--w:100%"></i></div>
+                <ul class="contrib-list">
+                  <li>Tự thiết kế &amp; xây dựng toàn bộ</li>
+                  <li>Hiệu ứng 3D, giao diện sáng/tối</li>
+                </ul>
+              </div>
+
+              <div class="links"><a class="btn sm" href="https://github.com/yhuynh06/Profile" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+            </article>
+
+            <article class="glass tilt card" data-cat="web">
+              <div class="thumb thumb--sunset">
+                <img src="images/Gia-su.png" alt="Profile" draggable="false">
+              </div>
+              <h3>CNPM Flask API</h3>
+              <span class="role-tag">Dự án học tập</span>
+              <p class="lead lead--tight">Dự án liên quan đến phát triển API bằng Flask.</p>
+              <div class="chips"><span class="chip">Python</span><span class="chip">Flask</span><span class="chip">API</span></div>
+
+              <!-- TODO: sửa % và các ý cho đúng thực tế -->
+              <div class="contrib">
+                <div class="contrib-head">
+                  <span class="contrib-label">Đóng góp của tôi</span>
+                  <span class="contrib-pct">30%</span>
+                </div>
+                <div class="contrib-bar"><i style="--w:30%"></i></div>
+                <ul class="contrib-list">
+                  <li>Xây dựng các endpoint API</li>
+                  <li>Kiểm thử &amp; sửa lỗi</li>
+                </ul>
+              </div>
+
+              <div class="links"><a class="btn sm" href="https://github.com/PhuongHuyN/cnpm-flaskapi" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+            </article>
+
+            <article class="glass tilt card" data-cat="web">
+              <div class="thumb thumb--violet">🐾
+                <img src="images/Thu-y.png" alt="Profile" draggable="false">
+              </div>
+              <h3>Veterinary Center Web</h3>
+              <span class="role-tag">Đang phát triển</span>
+              <p class="lead lead--tight">Website trung tâm thú y, đang trong quá trình xây dựng và hoàn thiện.</p>
+              <div class="chips"><span class="chip">Web Development</span></div>
+
+              <!-- TODO: sửa % và các ý cho đúng thực tế -->
+              <div class="contrib">
+                <div class="contrib-head">
+                  <span class="contrib-label">Đóng góp của tôi</span>
+                  <span class="contrib-pct">25%</span>
+                </div>
+                <div class="contrib-bar"><i style="--w:25%"></i></div>
+                <ul class="contrib-list">
+                  <li>Phát triển các trang web</li>
+                  <li>Phối hợp nhóm qua GitHub</li>
+                </ul>
+              </div>
+
+              <div class="links"><a class="btn sm" href="https://github.com/nguyenxuanhieu2903/veterinary-center-web" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+            </article>
+          </div>
+
+          <!-- Thành tựu + chứng chỉ -->
+          <div class="topic-grid proj-extra">
+            <article class="glass topic" id="proj-achievements">
+              <span class="mini-sign">Thành tựu</span>
+              <h3>Giải Ba hội thi tin học trẻ</h3>
+              <p>Nội dung lập trình C++.</p>
+            </article>
+
+            <!-- TODO: thêm chứng chỉ thật của bạn vào đây (mỗi chứng chỉ một <li>) -->
+            <article class="glass topic" id="proj-certs">
+              <span class="mini-sign">Chứng chỉ</span>
+              <h3>Đang cập nhật chứng chỉ</h3>
+              <p>Các chứng chỉ sẽ được thêm vào đây.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- 4.5 CONTACT -->
+      <section id="contact" class="contact-section">
+        <div class="wrap">
+          <div class="contact-grid">
+            <div class="contact-left">
+
+              <h2 class="contact-title">
+                <span class="t1">Trạm Kết Nối</span>
+                <span class="t2">Đại Dương</span>
+              </h2>
+
+              <svg class="swoosh" viewBox="0 0 520 50" fill="none" aria-hidden="true">
+                <defs>
+                  <linearGradient id="wave-fade" x1="0" x2="1" y1="0" y2="0">
+                    <stop offset="0"   stop-color="#000"/>
+                    <stop offset=".22" stop-color="#fff"/>
+                    <stop offset=".78" stop-color="#fff"/>
+                    <stop offset="1"   stop-color="#000"/>
+                  </linearGradient>
+                  <mask id="wave-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="520" height="50">
+                    <rect width="520" height="50" fill="url(#wave-fade)"/>
+                  </mask>
+                </defs>
+                <g mask="url(#wave-mask)" stroke-linecap="round">
+                  <g class="wave-back">
+                    <path d="M-260 28 Q-195 8 -130 28 T0 28 T130 28 T260 28 T390 28 T520 28 T650 28 T780 28" stroke="#4fa8ff" stroke-opacity=".45" stroke-width="2"/>
+                  </g>
+                  <g class="wave-front">
+                    <path d="M0 25 Q65 -3 130 25 T260 25 T390 25 T520 25 T650 25 T780 25" stroke="#9fe6ff" stroke-width="3"/>
+                  </g>
+                </g>
+              </svg>
+
+              <p class="contact-tagline"><em>Cùng tạo nên những <b>trải nghiệm</b> khác biệt cùng mình nhé.</em></p>
+              <p class="contact-desc">Mỗi dự án, mỗi cuộc trò chuyện đều như một chuyến hải trình khám phá vùng biển mới. Dù bạn muốn thảo luận về công nghệ, nghệ thuật hay chỉ là chia sẻ một câu chuyện bình yên về thiên nhiên, hãy "phát tín hiệu" cho tôi nhé. <b>Mình luôn sẵn sàng kết nối cùng bạn!</b></p>
+
+              <div class="shell-divider" aria-hidden="true">
+                <svg class="shell"><use href="#i-shell"/></svg>
+              </div>
+
+              <div class="link-grid">
+                <a class="link-card" href="https://www.facebook.com/share/1HRYtoTvHg/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
+                  <span class="brand fb"><img src="https://cdn.simpleicons.org/facebook/ffffff" alt=""></span>
+                  <span class="link-text"><strong>Facebook</strong><small>Huỳnh Nguyễn</small></span>
+                  <span class="go" aria-hidden="true">&rarr;</span>
+                </a>
+                <a class="link-card" href="https://zalo.me/0329217992" target="_blank" rel="noopener noreferrer">
+                  <span class="brand zl"><img src="https://cdn.simpleicons.org/zalo/ffffff" alt=""></span>
+                  <span class="link-text"><strong>Zalo</strong><small>0329 217 992</small></span>
+                  <span class="go" aria-hidden="true">&rarr;</span>
+                </a>
+                <a class="link-card" href="https://github.com/yhuynh06" target="_blank" rel="noopener noreferrer">
+                  <span class="brand gh"><img src="https://cdn.simpleicons.org/github/ffffff" alt=""></span>
+                  <span class="link-text"><strong>GitHub</strong><small>@yhuynh06</small></span>
+                  <span class="go" aria-hidden="true">&rarr;</span>
+                </a>
+                <a class="link-card" href="mailto:nguyenphammyquynh@gmail.com">
+                  <span class="brand ml"><svg class="ic"><use href="#i-mail"/></svg></span>
+                  <span class="link-text"><strong>Email</strong><small>nguyenphammyquynh@gmail.com</small></span>
+                  <span class="go" aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </div>
+
+            <form class="contact-form" id="contact-form">
+              <svg class="form-shell" aria-hidden="true"><use href="#i-shell"/></svg>
+              <h3 class="form-heading"><span>Gửi tín hiệu cho mình nào</span></h3>
+
+              <div class="field">
+                <label for="cf-name"><svg class="ic"><use href="#i-user"/></svg> Tên của bạn</label>
+                <div class="input-wrap">
+                  <svg class="ic in"><use href="#i-user"/></svg>
+                  <input id="cf-name" name="name" type="text" placeholder="Nguyễn Văn A" required>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="cf-email"><svg class="ic"><use href="#i-mail"/></svg> Email</label>
+                <div class="input-wrap">
+                  <svg class="ic in"><use href="#i-mail"/></svg>
+                  <input id="cf-email" name="email" type="email" placeholder="ban@email.com" required>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="cf-msg"><svg class="ic"><use href="#i-chat"/></svg> Lời nhắn</label>
+                <textarea id="cf-msg" name="message" rows="5" placeholder="Bạn muốn trao đổi điều gì?" required></textarea>
+              </div>
+
+              <button type="submit" class="send-btn"><svg class="ic"><use href="#i-plane"/></svg> Gửi tín hiệu</button>
+              <p class="form-status" id="cf-status" role="status"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4.6 FOOTER -->
+      <footer>🪼🪼</footer>
+    </div>
+  </main>
+
+  <!-- Nút mỏ neo trở về đầu trang -->
+  <a href="#home" class="back-to-top-anchor" id="backToTopBtn" aria-label="Kéo neo về bờ">
+    <svg class="anchor-raw-svg" viewBox="0 0 320 360" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="anchor-glow" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="6" result="blur" />
+          <feComponentTransfer in="blur" result="glow1"><feFuncA type="linear" slope="1.5"/></feComponentTransfer>
+          <feMerge><feMergeNode in="glow1" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
+      </defs>
+      <path d="M160 50 L160 260" stroke="#324a69" stroke-width="22" stroke-linecap="round" filter="url(#anchor-glow)"/>
+      <path d="M160 50 L160 260" stroke="#7ae0ff" stroke-width="6" stroke-linecap="round"/>
+      <circle cx="160" cy="35" r="22" fill="none" stroke="#2a3c54" stroke-width="12"/>
+      <circle cx="160" cy="35" r="22" fill="none" stroke="#7ae0ff" stroke-width="4"/>
+      <circle cx="160" cy="180" r="65" fill="none" stroke="#3d2314" stroke-width="16"/>
+      <circle cx="160" cy="180" r="65" fill="none" stroke="#8b5a2b" stroke-width="10"/>
+      <circle cx="160" cy="180" r="65" fill="none" stroke="#ffd27a" stroke-width="1" opacity="0.6"/>
+      <circle cx="160" cy="180" r="35" fill="#1b120c" stroke="#5c3a21" stroke-width="6"/>
+      <circle cx="160" cy="180" r="15" fill="#ffd27a" opacity="0.9"/>
+      <line x1="160" y1="115" x2="160" y2="95" stroke="#8b5a2b" stroke-width="8" stroke-linecap="round"/>
+      <circle cx="160" cy="90" r="6" fill="#ffd27a"/>
+      <line x1="160" y1="245" x2="160" y2="265" stroke="#8b5a2b" stroke-width="8" stroke-linecap="round"/>
+      <circle cx="160" cy="270" r="6" fill="#ffd27a"/>
+      <line x1="95" y1="180" x2="75" y2="180" stroke="#8b5a2b" stroke-width="8" stroke-linecap="round"/>
+      <circle cx="70" cy="180" r="6" fill="#ffd27a"/>
+      <line x1="225" y1="180" x2="245" y2="180" stroke="#8b5a2b" stroke-width="8" stroke-linecap="round"/>
+      <circle cx="250" cy="180" r="6" fill="#ffd27a"/>
+      <line x1="114" y1="134" x2="98" y2="118" stroke="#8b5a2b" stroke-width="6" stroke-linecap="round"/>
+      <line x1="206" y1="226" x2="222" y2="242" stroke="#8b5a2b" stroke-width="6" stroke-linecap="round"/>
+      <line x1="206" y1="134" x2="222" y2="118" stroke="#8b5a2b" stroke-width="6" stroke-linecap="round"/>
+      <line x1="114" y1="226" x2="98" y2="242" stroke="#8b5a2b" stroke-width="6" stroke-linecap="round"/>
+      <path d="M100 95 L220 95" stroke="#2a3c54" stroke-width="16" stroke-linecap="round"/>
+      <path d="M102 95 L218 95" stroke="#7ae0ff" stroke-width="5" stroke-linecap="round"/>
+      <polygon points="95,95 75,82 85,108" fill="#324a69" stroke="#7ae0ff" stroke-width="2"/>
+      <polygon points="225,95 245,82 235,108" fill="#324a69" stroke="#7ae0ff" stroke-width="2"/>
+      <circle cx="160" cy="95" r="5" fill="#ffd27a"/>
+      <path d="M150 20 Q190 40 160 70 Q130 100 170 130 Q210 160 170 200 Q130 240 180 300" fill="none" stroke="#20150c" stroke-width="12" stroke-linecap="round"/>
+      <path d="M150 20 Q190 40 160 70 Q130 100 170 130 Q210 160 170 200 Q130 240 180 300" fill="none" stroke="#d4b583" stroke-width="8" stroke-linecap="round"/>
+      <path d="M175 295 Q185 320 180 335" fill="none" stroke="#d4b583" stroke-width="6" stroke-linecap="round"/>
+      <circle cx="180" cy="338" r="4" fill="#d4b583"/>
+      <path d="M70 270 C95 335 225 335 250 270" fill="none" stroke="#2a3c54" stroke-width="20" stroke-linecap="round"/>
+      <path d="M72 270 C95 330 225 330 248 270" fill="none" stroke="#7ae0ff" stroke-width="6" stroke-linecap="round"/>
+      <polygon points="68,265 38,245 58,290" fill="#324a69" stroke="#7ae0ff" stroke-width="2"/>
+      <polygon points="252,265 282,245 262,290" fill="#324a69" stroke="#7ae0ff" stroke-width="2"/>
+      <circle cx="160" cy="315" r="8" fill="#ffd27a"/>
+    </svg>
+    <span class="anchor-tooltip">Kéo neo về bờ</span>
+  </a>
+
+  <!-- ======================= 5. SCRIPT ======================= -->
+  <script src="script.js"></script>
 </body>
 </html>
