@@ -47,7 +47,7 @@
   --bg-base: #050a1e;
   --bg-grad:
     linear-gradient(rgba(3, 8, 30, .2), rgba(3, 8, 30, .2)),
-    url('nen-sao.png') center/cover,
+
     linear-gradient(180deg, #050a1e, #0b1d4a);
 
   /* Chip, ô nhập, menu, thanh tiến độ */
@@ -114,6 +114,8 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 90px;
+  overflow-x: hidden !important;
+  max-width: 100vw;
 }
 
 body {
@@ -122,7 +124,8 @@ body {
   line-height: 1.65;
   min-height: 100vh;
   background: var(--bg-base);
-  overflow-x: hidden;
+  overflow-x: hidden !important;
+  max-width: 100vw;
 }
 
 a {
@@ -356,7 +359,7 @@ header {
 }
 /* ---- MENU ỐNG NGHIỆM ĐO MỰC NƯỚC: mực nước dâng dần khi bạn cuộn xuống; mỗi mục là một bong bóng trong ống + nhãn kính trong suốt ---- */
 /* Font "Hey Poster": tự thêm file vào fonts/HeyPoster.woff2 (hoặc .ttf). Chưa có thì dùng Oswald. */
-@font-face{font-family:'Hey Poster';src:local('Hey Poster'),local('HeyPoster'),url('fonts/HeyPoster.woff2') format('woff2'),url('fonts/HeyPoster.ttf') format('truetype');font-display:swap}
+@font-face{font-family:'Hey Poster';src:local('Hey Poster'),local('HeyPoster');font-display:swap}
 .menu{
   --pad:18px;
   --lvl:.1;                  /* mực nước 0–1, tự đổi theo mục đang xem (xem các rule :has bên dưới) */
@@ -5466,4 +5469,107 @@ section {
   .skill-chip { opacity: 1; }
   .skill-box-col.play .skill-chip { animation: none; }
   .chest.jiggle { animation: none; }
+}
+
+
+/* Nút quay về trang chủ nhóm */
+.back-group {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 1000;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background: rgba(10, 18, 50, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #7ae0ff;
+  border: 1px solid rgba(122, 224, 255, 0.4);
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  transition: all 0.25s ease;
+}
+.back-group:hover {
+  transform: translateY(-2px);
+  background: rgba(122, 224, 255, 0.2);
+  color: #ffd27a;
+  border-color: rgba(255, 210, 122, 0.7);
+  box-shadow: 0 6px 20px rgba(122, 224, 255, 0.3);
+}
+:root[data-theme="light"] .back-group {
+  background: rgba(255, 255, 255, 0.9);
+  color: #0a7fae;
+  border-color: rgba(10, 127, 174, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+:root[data-theme="light"] .back-group:hover {
+  background: #0a7fae;
+  color: #ffffff;
+  border-color: #0a7fae;
+}
+@media (max-width: 768px) {
+  .back-group {
+    top: 12px;
+    left: 12px;
+    padding: 6px 14px;
+    font-size: 0.78rem;
+  }
+}
+
+
+
+/* Nút quay về trang chủ nhóm */
+.back-group {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 1000;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background: rgba(10, 18, 50, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #7ae0ff;
+  border: 1px solid rgba(122, 224, 255, 0.4);
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  transition: all 0.25s ease;
+}
+.back-group:hover {
+  transform: translateY(-2px);
+  background: rgba(122, 224, 255, 0.2);
+  color: #ffd27a;
+  border-color: rgba(255, 210, 122, 0.7);
+  box-shadow: 0 6px 20px rgba(122, 224, 255, 0.3);
+}
+:root[data-theme="light"] .back-group {
+  background: rgba(255, 255, 255, 0.9);
+  color: #0a7fae;
+  border-color: rgba(10, 127, 174, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+:root[data-theme="light"] .back-group:hover {
+  background: #0a7fae;
+  color: #ffffff;
+  border-color: #0a7fae;
+}
+@media (max-width: 768px) {
+  .back-group {
+    top: 12px;
+    left: 12px;
+    padding: 6px 14px;
+    font-size: 0.78rem;
+  }
 }
