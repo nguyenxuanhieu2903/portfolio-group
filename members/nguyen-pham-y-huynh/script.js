@@ -149,20 +149,20 @@
   const themeBtn = document.getElementById('theme-btn');
   const langBtn = document.getElementById('lang-btn');
   const langBox = document.getElementById('lang');
-  const langList = langBox.querySelector('.lang-list');
+  const langList = langBox ? langBox.querySelector('.lang-list') : null;
   const langName = document.getElementById('lang-name');
 
   function setTheme(t) {
     root.dataset.theme = t;
-    themeBtn.textContent = t === 'light' ? '🌙' : '☀️';
-
-    themeBtn.setAttribute(
-      'aria-label',
-      t === 'light'
-        ? tr('Chuyển sang giao diện tối', 'Switch to dark mode')
-        : tr('Chuyển sang giao diện sáng', 'Switch to light mode')
-    );
-
+    if (themeBtn) {
+      themeBtn.textContent = t === 'light' ? '🌙' : '☀️';
+      themeBtn.setAttribute(
+        'aria-label',
+        t === 'light'
+          ? tr('Chuyển sang giao diện tối', 'Switch to dark mode')
+          : tr('Chuyển sang giao diện sáng', 'Switch to light mode')
+      );
+    }
     save('pf-theme', t);
   }
 
@@ -181,14 +181,17 @@
     root.lang = l;
     applyLanguage(l);
 
-    langName.textContent = l === 'en' ? 'English' : 'Tiếng Việt';
-    document.getElementById('lang-flag').innerHTML = FLAGS[l];
+    if (langName) langName.textContent = l === 'en' ? 'English' : 'Tiếng Việt';
+    const langFlagEl = document.getElementById('lang-flag');
+    if (langFlagEl) langFlagEl.innerHTML = FLAGS[l];
 
-    langBtn.setAttribute('aria-label', tr('Chọn ngôn ngữ', 'Select language'));
+    if (langBtn) langBtn.setAttribute('aria-label', tr('Chọn ngôn ngữ', 'Select language'));
 
-    langList.querySelectorAll('[data-lang]').forEach(li => {
-      li.setAttribute('aria-selected', li.dataset.lang === l);
-    });
+    if (langList) {
+      langList.querySelectorAll('[data-lang]').forEach(li => {
+        li.setAttribute('aria-selected', li.dataset.lang === l);
+      });
+    }
 
     save('pf-lang', l);
 
@@ -196,43 +199,47 @@
     document.dispatchEvent(new Event('langchange'));
   }
 
-  themeBtn.addEventListener('click', () => {
-    setTheme(root.dataset.theme === 'light' ? 'dark' : 'light');
-  });
+  if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+      setTheme(root.dataset.theme === 'light' ? 'dark' : 'light');
+    });
+  }
 
   const toggleList = open => {
-    langList.hidden = !open;
-    langBtn.setAttribute('aria-expanded', open);
+    if (langList) langList.hidden = !open;
+    if (langBtn) langBtn.setAttribute('aria-expanded', open);
   };
 
-  langBtn.addEventListener('click', e => {
-    e.stopPropagation();
-    toggleList(langList.hidden);
-  });
-
-  langList.querySelectorAll('[data-lang]').forEach(li => {
-    const pick = () => {
-      setLang(li.dataset.lang);
-      toggleList(false);
-      langBtn.focus();
-    };
-
-    li.addEventListener('click', pick);
-
-    li.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        pick();
-      }
+  if (langBtn && langList) {
+    langBtn.addEventListener('click', e => {
+      e.stopPropagation();
+      toggleList(langList.hidden);
     });
-  });
+
+    langList.querySelectorAll('[data-lang]').forEach(li => {
+      const pick = () => {
+        setLang(li.dataset.lang);
+        toggleList(false);
+        langBtn.focus();
+      };
+
+      li.addEventListener('click', pick);
+
+      li.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          pick();
+        }
+      });
+    });
+  }
 
   document.addEventListener('click', e => {
-    if (!langBox.contains(e.target)) toggleList(false);
+    if (langBox && !langBox.contains(e.target)) toggleList(false);
   });
 
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') toggleList(false);
+    if (e.key === 'Escape' && langList) toggleList(false);
   });
 
   setTheme(load('pf-theme') === 'light' ? 'light' : 'dark');
@@ -356,14 +363,16 @@
   const burger = document.querySelector('.burger');
   const menu = document.querySelector('.menu');
 
-  burger.addEventListener('click', () => {
-    const open = menu.classList.toggle('open');
-    burger.setAttribute('aria-expanded', open);
-  });
+  if (burger && menu) {
+    burger.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open);
+    });
 
-  menu.addEventListener('click', e => {
-    if (e.target.tagName === 'A') menu.classList.remove('open');
-  });
+    menu.addEventListener('click', e => {
+      if (e.target.tagName === 'A') menu.classList.remove('open');
+    });
+  }
 
 
   /* 3. Highlight the active menu item */
@@ -388,6 +397,7 @@
   /* 4. Skills & Projects filters */
   document.querySelectorAll('[data-filter]').forEach(bar => {
     const grid = document.getElementById(bar.dataset.filter + '-grid');
+    if (!grid) return;
 
     bar.addEventListener('click', e => {
       const btn = e.target.closest('.tab');
@@ -423,8 +433,11 @@
 
 
 /* ===== 6. 3D WHALE EFFECT SCRIPT (RUNS ONLY ON THE HOME SECTION) ===== */
-const cv = document.getElementById('c');
-const ctx = cv.getContext('2d');
+(() => {
+  const cv = document.getElementById('c');
+  if (!cv) return;
+  const ctx = cv.getContext('2d');
+  if (!ctx) return;
 
 let W, H, dpr, S, stars = [];
 
@@ -882,23 +895,27 @@ buildModel();
 resize();
 requestAnimationFrame(frame);
 
-cv.addEventListener('pointermove', e => {
-  const rect = cv.getBoundingClientRect();
+  cv.addEventListener('pointermove', e => {
+    const rect = cv.getBoundingClientRect();
 
-  mouse.x = e.clientX - rect.left;
-  mouse.y = e.clientY - rect.top;
-});
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
+  });
+})();
 
 /* Click highlight effect for the looping language tags (Marquee) */
-const marqueeItems = document.querySelectorAll('.marquee-item');
+(() => {
+  const marqueeItems = document.querySelectorAll('.marquee-item');
+  if (!marqueeItems || !marqueeItems.length) return;
 
-marqueeItems.forEach(item => {
-  item.addEventListener('click', () => {
-    // Click a tag to highlight it and automatically clear the others
-    marqueeItems.forEach(i => i.classList.remove('active'));
-    item.classList.add('active');
+  marqueeItems.forEach(item => {
+    item.addEventListener('click', () => {
+      // Click a tag to highlight it and automatically clear the others
+      marqueeItems.forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
+    });
   });
-});
+})();
 
 
 (() => {
@@ -1426,7 +1443,13 @@ const hint = document.getElementById("chargingHint") || { textContent: "" };
     !consoleEl ||
     !plug ||
     !port ||
-    !cablePath
+    !cablePath ||
+    !cableHighlight ||
+    !screenPhoto ||
+    !smileBtn ||
+    !memoryPhoto ||
+    !memoryImage ||
+    !memoryCaption
   ) {
     return;
   }
@@ -1436,15 +1459,15 @@ const hint = document.getElementById("chargingHint") || { textContent: "" };
   ====================================== */
   const photos = [
     {
-      src: "images/hobby-11.jpg",
+      src: new URL('./images/hobby-11.jpg', import.meta.url).href,
       title: "Memory 01"
     },
     {
-      src: "images/avatar1.jpg",
+      src: new URL('./images/avatar1.jpg', import.meta.url).href,
       title: "Memory 02"
     },
     {
-      src: "images/avatar2.jpg",
+      src: new URL('./images/avatar2.jpg', import.meta.url).href,
       title: "Memory 03"
     }
   ];
@@ -2210,7 +2233,7 @@ document.addEventListener("DOMContentLoaded", () => {
 (function () {
   function init() {
     var section = document.getElementById('skills');
-    if (!section) { console.warn('Không tìm thấy #skills'); return; }
+    if (!section) return;
     var cols = section.querySelectorAll('.skill-box-col');
     var seen = false;
 
@@ -2251,7 +2274,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Bấm vào thùng để thả lại
     cols.forEach(function (col) {
-      col.querySelector('.chest').addEventListener('click', function () { drop(col, 0); });
+      var chest = col.querySelector('.chest');
+      if (chest) {
+        chest.addEventListener('click', function () { drop(col, 0); });
+      }
     });
 
     window.replaySkillsDrop = dropAll;
@@ -2377,6 +2403,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const MAX_VIDEO = 8000;    // video dài hơn 8 giây sẽ bị cắt ở 8 giây
 
   let slides = [...box.querySelectorAll('img, video')];
+  if (!slides || !slides.length) return;
   let index = 0, timer = null, running = false;
 
   const isVideo = el => el.tagName === 'VIDEO';
@@ -2430,16 +2457,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }, { threshold: 0.3 }).observe(box);
 })();
- // File nào không tải được thì bỏ qua, không làm hỏng slideshow
-  slides.forEach(el => el.addEventListener('error', () => {
-    console.warn('Không tải được:', el.src, el.error && el.error.code);
-    const wasActive = el.classList.contains('active');
-    slides = slides.filter(s => s !== el);
-    el.remove();
-    if (wasActive && slides.length) {
-      index = 0;
-      slides[0].classList.add('active');
-      schedule();
-    }
-  }));
-  
